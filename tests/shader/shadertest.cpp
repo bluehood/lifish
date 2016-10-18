@@ -4,6 +4,8 @@
 #include <cstdlib>
 #include <iostream>
 
+#define MAX_LIGHTS 16
+
 const int random_pool_size = 1000;
 float random_pool[random_pool_size];
 
@@ -31,7 +33,7 @@ int main() {
 	playerTex.setSmooth(false);
 
 	sf::Shader shader;
-	shader.loadFromFile("lighting.frag", sf::Shader::Fragment);
+	shader.loadFromFile("lighting2.frag", sf::Shader::Fragment);
 
 	fill_random_pool();
 	const int flickerLen = 10;
@@ -39,17 +41,23 @@ int main() {
 	for (int i = 0; i < flickerLen; ++i)
 		flickerStep(smoothing, flickerLen);
 
-	sf::Glsl::Vec2 lights[1] = {
+	sf::Glsl::Vec2 light_pos[1] = {
 		sf::Glsl::Vec2(400, 300)
 	};
-	float base_light_intensities[1] = {
+	sf::Glsl::Vec3 light_color[1] = {
+		sf::Glsl::Vec3(1.0, 0.0, 0.4)
+	};
+	float light_intensity[1] = {
 		0.3	
 	};
-	float light_intensities[1] = {
-		0.3	
+	float light_radius[1] = {
+		50.0
 	};
-	shader.setUniformArray("lights", lights, 128);
-	shader.setUniformArray("light_intensities", light_intensities, 128);
+	shader.setUniform("tex", sf::Shader::CurrentTexture);
+	shader.setUniformArray("light_pos", light_pos, MAX_LIGHTS);
+	shader.setUniformArray("light_color", light_color, MAX_LIGHTS);
+	shader.setUniformArray("light_intensity", light_intensity, MAX_LIGHTS);
+	shader.setUniformArray("light_radius", light_radius, MAX_LIGHTS);
 	shader.setUniform("n_lights", 1);
 
 	bool withShader = true;
@@ -75,31 +83,33 @@ int main() {
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-			lights[0].y += 5;
-			shader.setUniformArray("lights", lights, 128);
+			light_pos[0].y += 5;
+			shader.setUniformArray("light_pos", light_pos, MAX_LIGHTS);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-			lights[0].y -= 5;
-			shader.setUniformArray("lights", lights, 128);
+			light_pos[0].y -= 5;
+			shader.setUniformArray("light_pos", light_pos, MAX_LIGHTS);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-			lights[0].x -= 5;
-			shader.setUniformArray("lights", lights, 128);
+			light_pos[0].x -= 5;
+			shader.setUniformArray("light_pos", light_pos, MAX_LIGHTS);
 		} 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-			lights[0].x += 5;
-			shader.setUniformArray("lights", lights, 128);
+			light_pos[0].x += 5;
+			shader.setUniformArray("light_pos", light_pos, MAX_LIGHTS);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add)) {
-			base_light_intensities[0] += 0.005;
+			light_radius[0] += 0.5;
+			shader.setUniformArray("light_radius", light_radius, MAX_LIGHTS);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Subtract)) {
-			base_light_intensities[0] -= 0.005;
+			light_radius[0] -= 0.5;
+			shader.setUniformArray("light_radius", light_radius, MAX_LIGHTS);
 		}
 
 		// flickering
-		light_intensities[0] = base_light_intensities[0] * flickerStep(smoothing, flickerLen);
-		shader.setUniformArray("light_intensities", light_intensities, 128);
+		light_intensity[0] = flickerStep(smoothing, flickerLen);
+		shader.setUniformArray("light_intensity", light_intensity, MAX_LIGHTS);
 
 		renderTex.clear();
 		renderTex.draw(bg);
