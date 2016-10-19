@@ -1,5 +1,5 @@
 #define N_MAX_LIGHTS 16
-#define STARTING_ALPHA 0.3
+#define DARKNESS_LEVEL 0.9
 #define MIX_LIGHT(n) \
 	if (n_lights > n) { \
 		vec4 c = light_influence(n, light_color[n]); \
@@ -21,8 +21,8 @@ vec4 light_influence(int idx, vec3 lcol) {
 	vec2 c = gl_FragCoord.xy;
 
 	float dist = (l.x - c.x)*(l.x - c.x) + (l.y - c.y)*(l.y - c.y);
-	float alpha = light_intensity[idx] * (1.0 - dist / light_radius[idx] / light_radius[idx]);
-	alpha = max(alpha, 0);
+	float alpha = light_intensity[idx] * (1000.0/(1.0+dist));//(1.0 - dist / light_radius[idx] / light_radius[idx]);
+	alpha = max(alpha, 0.0);
 
 	return vec4(lcol.xyz, alpha);
 }
@@ -30,9 +30,9 @@ vec4 light_influence(int idx, vec3 lcol) {
 /* Calculate the sum of light contributions for this fragment 
  * and return it.
  */
-vec4 calc_color() {
+vec4 calc_light_contrib() {
 	int i = 0;
-	vec4 color = vec4(1.0, 1.0, 1.0, 1.0);
+	vec4 color = vec4(0.0, 0.0, 0.0, 0.0);
 	vec4 c;
 
 	// This is needed since GLSL doesn't support indexing with variables
@@ -57,8 +57,17 @@ vec4 calc_color() {
 }
 
 void main() {
-	vec4 orig_color = texture2D(tex, gl_TexCoord[0].st);
-	vec4 mixed_color = calc_color();
+	vec4 color = texture2D(tex, gl_TexCoord[0].st);
+
+	// Add the initial darkness
+	vec4 darkness = vec4(0.01, 0.01, 0.01, DARKNESS_LEVEL);
+	color = mix(color, darkness, darkness.a);
+
+	// Add the lights contribution
+	vec4 light_contrib = calc_light_contrib();
+	//color = mix(color, light_contrib, light_contrib.a);
+	color += light_contrib;
+
 	// Blend the colors together
-	gl_FragColor = orig_color * mixed_color; //mix(orig_color, mixed_color, mixed_color.a);
+	gl_FragColor = color;
 }

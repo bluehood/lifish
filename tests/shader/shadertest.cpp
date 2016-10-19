@@ -5,6 +5,7 @@
 #include <iostream>
 
 #define MAX_LIGHTS 16
+#define FLICKER_AMT 0.8
 
 const int random_pool_size = 1000;
 float random_pool[random_pool_size];
@@ -32,8 +33,10 @@ int main() {
 	player.setScale(10, 10);
 	playerTex.setSmooth(false);
 
-	sf::Shader shader;
-	shader.loadFromFile("lighting2.frag", sf::Shader::Fragment);
+	sf::Shader shader1;
+	shader1.loadFromFile("lighting.frag", sf::Shader::Fragment);
+	sf::Shader shader2;
+	shader2.loadFromFile("lighting2.frag", sf::Shader::Fragment);
 
 	fill_random_pool();
 	const int flickerLen = 10;
@@ -41,26 +44,36 @@ int main() {
 	for (int i = 0; i < flickerLen; ++i)
 		flickerStep(smoothing, flickerLen);
 
-	sf::Glsl::Vec2 light_pos[1] = {
-		sf::Glsl::Vec2(400, 300)
+	sf::Glsl::Vec2 light_pos[] = {
+		sf::Glsl::Vec2(400, 300),
+		sf::Glsl::Vec2(600, 400)
 	};
-	sf::Glsl::Vec3 light_color[1] = {
-		sf::Glsl::Vec3(1.0, 0.0, 0.4)
+	sf::Glsl::Vec3 light_color[] = {
+		sf::Glsl::Vec3(1.0, 1.0, 0.0),
+		sf::Glsl::Vec3(0.3, 0.4, 1.0)
 	};
-	float light_intensity[1] = {
-		0.3	
+	float light_intensity[] = {
+		0.2,
+		2.0
 	};
-	float light_radius[1] = {
-		50.0
+	float light_radius[] = {
+		50.0,
+		100.0
 	};
-	shader.setUniform("tex", sf::Shader::CurrentTexture);
-	shader.setUniformArray("light_pos", light_pos, MAX_LIGHTS);
-	shader.setUniformArray("light_color", light_color, MAX_LIGHTS);
-	shader.setUniformArray("light_intensity", light_intensity, MAX_LIGHTS);
-	shader.setUniformArray("light_radius", light_radius, MAX_LIGHTS);
-	shader.setUniform("n_lights", 1);
+	shader1.setUniform("tex", sf::Shader::CurrentTexture);
+	shader1.setUniformArray("lights", light_pos, MAX_LIGHTS);
+	shader1.setUniformArray("light_intensities", light_intensity, MAX_LIGHTS);
+	shader1.setUniform("n_lights", 2);
+	shader2.setUniform("tex", sf::Shader::CurrentTexture);
+	shader2.setUniformArray("light_pos", light_pos, MAX_LIGHTS);
+	shader2.setUniformArray("light_color", light_color, MAX_LIGHTS);
+	shader2.setUniformArray("light_intensity", light_intensity, MAX_LIGHTS);
+	shader2.setUniformArray("light_radius", light_radius, MAX_LIGHTS);
+	shader2.setUniform("n_lights", 2);
 
-	bool withShader = true;
+	sf::Shader* shaders[] = {&shader1, &shader2};
+
+	int nshader = 1;
 
 	while (window.isOpen()) {
 		sf::Event ev;
@@ -75,7 +88,7 @@ int main() {
 					window.close();
 					break;
 				case sf::Keyboard::T:
-					withShader = !withShader;
+					nshader = (nshader + 1) % 2;
 					break;
 				}
 				break;
@@ -84,32 +97,37 @@ int main() {
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 			light_pos[0].y += 5;
-			shader.setUniformArray("light_pos", light_pos, MAX_LIGHTS);
+			shader1.setUniformArray("lights", light_pos, MAX_LIGHTS);
+			shader2.setUniformArray("light_pos", light_pos, MAX_LIGHTS);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
 			light_pos[0].y -= 5;
-			shader.setUniformArray("light_pos", light_pos, MAX_LIGHTS);
+			shader1.setUniformArray("lights", light_pos, MAX_LIGHTS);
+			shader2.setUniformArray("light_pos", light_pos, MAX_LIGHTS);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 			light_pos[0].x -= 5;
-			shader.setUniformArray("light_pos", light_pos, MAX_LIGHTS);
+			shader1.setUniformArray("lights", light_pos, MAX_LIGHTS);
+			shader2.setUniformArray("light_pos", light_pos, MAX_LIGHTS);
 		} 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 			light_pos[0].x += 5;
-			shader.setUniformArray("light_pos", light_pos, MAX_LIGHTS);
+			shader1.setUniformArray("lights", light_pos, MAX_LIGHTS);
+			shader2.setUniformArray("light_pos", light_pos, MAX_LIGHTS);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add)) {
 			light_radius[0] += 0.5;
-			shader.setUniformArray("light_radius", light_radius, MAX_LIGHTS);
+			shader2.setUniformArray("light_radius", light_radius, MAX_LIGHTS);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Subtract)) {
 			light_radius[0] -= 0.5;
-			shader.setUniformArray("light_radius", light_radius, MAX_LIGHTS);
+			shader2.setUniformArray("light_radius", light_radius, MAX_LIGHTS);
 		}
 
 		// flickering
 		light_intensity[0] = flickerStep(smoothing, flickerLen);
-		shader.setUniformArray("light_intensity", light_intensity, MAX_LIGHTS);
+		shader1.setUniformArray("light_intensities", light_intensity, MAX_LIGHTS);
+		shader2.setUniformArray("light_intensity", light_intensity, MAX_LIGHTS);
 
 		renderTex.clear();
 		renderTex.draw(bg);
@@ -118,10 +136,7 @@ int main() {
 
 		window.clear();
 		sf::Sprite renderSprite(renderTex.getTexture());
-		if (withShader)
-			window.draw(renderSprite, &shader);
-		else
-			window.draw(renderSprite);
+		window.draw(renderSprite, shaders[nshader]);
 
 		window.display();
 	}
@@ -129,7 +144,7 @@ int main() {
 
 void fill_random_pool() {
 	for (int i = 0; i < random_pool_size; ++i) {
-		random_pool[i] = float(rand())/RAND_MAX; 
+		random_pool[i] = (1-FLICKER_AMT) + FLICKER_AMT* float(rand())/RAND_MAX; 
 	}
 }
 
