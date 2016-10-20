@@ -19,19 +19,19 @@ class RegularEntityDeath;
 
 /** This structs contains all the data which is persistent through different levels. */
 struct PlayerInfo {
-	unsigned short id;
+	unsigned id;
 	struct {
-		unsigned short bombRadius = Game::Conf::Bomb::DEFAULT_RADIUS;
-		unsigned short maxBombs   = Game::Conf::Player::DEFAULT_MAX_BOMBS;
+		unsigned bombRadius = Game::Conf::Bomb::DEFAULT_RADIUS;
+		unsigned maxBombs   = Game::Conf::Player::DEFAULT_MAX_BOMBS;
 		sf::Time bombFuseTime     = Game::Conf::Bomb::DEFAULT_FUSE;
 	} powers;
 
-	short remainingLives = Game::Conf::Player::INITIAL_LIVES - 1;
+	int remainingLives = Game::Conf::Player::INITIAL_LIVES - 1;
 
 	/** The EXTRA letters of this player */
 	std::array<bool, Game::Conf::Player::N_EXTRA_LETTERS> extra;
 
-	PlayerInfo(unsigned short id) : id(id) {
+	PlayerInfo(unsigned id) : id(id) {
 		extra.fill(false);
 	}
 
@@ -61,9 +61,9 @@ class Player : public Game::Entity {
 
 	friend class Game::PlayerDrawProxy;
 
-	constexpr static unsigned short WALK_N_FRAMES = 8;
-	constexpr static unsigned short DEATH_N_FRAMES = 3;
-	constexpr static unsigned short IDLE_N_FRAMES = 20;
+	constexpr static unsigned WALK_N_FRAMES = 8;
+	constexpr static unsigned DEATH_N_FRAMES = 3;
+	constexpr static unsigned IDLE_N_FRAMES = 20;
 	const static sf::Time DEATH_TIME;
 
 	/** While true, the idle pose becomes ANIM_WIN */
@@ -87,7 +87,7 @@ class Player : public Game::Entity {
 
 public:
 	/** Creates a player with the default state and id `id` */
-	explicit Player(const sf::Vector2f& pos, const unsigned short id);
+	explicit Player(const sf::Vector2f& pos, const unsigned id);
 	/** Creates a player whose state is described by `info` */
 	explicit Player(const sf::Vector2f& pos, const Game::PlayerInfo& info);
 
@@ -96,11 +96,11 @@ public:
 	void setWinning(bool b) { winning = b; }
 
 	const Game::PlayerInfo& getInfo() const { return info; }
-	void setBombRadius(unsigned short r) { info.powers.bombRadius = r; }
-	void setMaxBombs(unsigned short m) { info.powers.maxBombs = m; }
+	void setBombRadius(unsigned r) { info.powers.bombRadius = r; }
+	void setMaxBombs(unsigned m) { info.powers.maxBombs = m; }
 	void setBombFuseTime(sf::Time t) { info.powers.bombFuseTime = t; }
-	void setExtra(unsigned short n, bool e) { info.extra[n] = e; }
-	void setRemainingLives(short l) { info.remainingLives = l; }
+	void setExtra(unsigned n, bool e) { info.extra[n] = e; }
+	void setRemainingLives(int l) { info.remainingLives = l; }
 
 	void update() override;
 };

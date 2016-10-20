@@ -45,10 +45,10 @@ void Entity::update() {
 		c->update();
 }
 
-std::string Entity::_toString(unsigned short indent) const {
+std::string Entity::_toString(unsigned indent) const {
 	std::stringstream ss;
-	auto put_indent = [&ss] (unsigned short indent) -> std::stringstream& { 
-		for (unsigned short i = 0; i < indent; ++i) 
+	auto put_indent = [&ss] (unsigned indent) -> std::stringstream& { 
+		for (unsigned i = 0; i < indent; ++i) 
 			ss << "    ";
 		return ss;
 	};

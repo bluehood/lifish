@@ -14,7 +14,7 @@ class Letter : public Game::Entity {
 	const static sf::Time TRANSITION_DELAY;
 
 	/** What letter is this (currently) */
-	unsigned short id;
+	unsigned id;
 
 	/** The clock driving the letter's transitions */
 	Game::Clock *transitionClock = nullptr;
@@ -25,11 +25,11 @@ class Letter : public Game::Entity {
 	bool transitioning = false;
 
 public:
-	static unsigned short randomId();
+	static unsigned randomId();
 
-	explicit Letter(const sf::Vector2f& pos, unsigned short id);
+	explicit Letter(const sf::Vector2f& pos, unsigned id);
 
-	unsigned short getId() const { return id; }
+	unsigned getId() const { return id; }
 
 	void update() override;
 };

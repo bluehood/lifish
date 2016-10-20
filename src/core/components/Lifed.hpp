@@ -9,10 +9,10 @@ namespace Game {
  */
 class Lifed : public Game::Component {
 protected:
-	short life;
-	const short maxLife;
+	int life;
+	const int maxLife;
 public:
-	explicit Lifed(Game::Entity& owner, const short life)
+	explicit Lifed(Game::Entity& owner, const int life)
 		: Game::Component(owner)
 		, life(life) 
 		, maxLife(life) 
@@ -22,10 +22,10 @@ public:
 	}
 
 	bool isAlive() const { return life > 0; }
-	short getLife() const { return life; }
-	short getMaxLife() const { return maxLife; }
-	short decLife(short dam) { life -= dam > life ? life : dam; return life; }
-	void setLife(short lf) { life = lf < 0 ? 0 : lf; }
+	int getLife() const { return life; }
+	int getMaxLife() const { return maxLife; }
+	int decLife(int dam) { life -= dam > life ? life : dam; return life; }
+	void setLife(int lf) { life = lf < 0 ? 0 : lf; }
 	void refillLife() { life = maxLife; }
 };
 

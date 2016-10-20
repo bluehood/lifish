@@ -12,7 +12,7 @@ class ShootingPoint;
 class AlienBoss : public Game::Boss {
 	static const sf::Vector2i SIZE;
 
-	unsigned short shotsFired = 0;
+	unsigned shotsFired = 0;
 	Game::Clock *shootClock = nullptr;
 	std::array<Game::ShootingPoint*, 2> eyes;
 

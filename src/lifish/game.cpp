@@ -7,8 +7,8 @@
 #include <array>
 #include "game_values.hpp"
 
-std::array<unsigned int, Game::MAX_PLAYERS> Game::score;
-std::array<unsigned short, Game::MAX_PLAYERS> Game::playerContinues;
+std::array<unsigned, Game::MAX_PLAYERS> Game::score;
+std::array<unsigned, Game::MAX_PLAYERS> Game::playerContinues;
 
 bool Game::init() {
 	if (!Game::initCore()) return false;

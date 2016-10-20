@@ -24,7 +24,7 @@ class Spawning : public Game::Component {
 	SpawnCondition spawnCondition;
 	SpawnFunction spawnFunction;
 
-	unsigned short _nSpawned = 0;
+	unsigned _nSpawned = 0;
 
 
 	/** Returns the condition for "spawn on death". 
@@ -42,7 +42,7 @@ public:
 	/** Returns the spawned entities and resets the internal spawned list */
 	std::unique_ptr<Game::Entity> spawn();
 
-	unsigned short nSpawned() const { return _nSpawned; }
+	unsigned nSpawned() const { return _nSpawned; }
 };
 
 }

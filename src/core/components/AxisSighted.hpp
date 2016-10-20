@@ -7,10 +7,10 @@ namespace Game {
 
 /** An AxisSighted entity has knowledge of entities around it along axis directions. */
 class AxisSighted : public Game::Sighted {
-	using PartSeenEntitiesList = std::vector<std::pair<const Game::Entity*, unsigned short>>;
+	using PartSeenEntitiesList = std::vector<std::pair<const Game::Entity*, unsigned>>;
 	using TotSeenEntitiesList = std::array<
 		PartSeenEntitiesList,
-		static_cast<unsigned short>(Game::Direction::NONE)>;
+		static_cast<unsigned>(Game::Direction::NONE)>;
 
 	/** all entities seen in each direction, and their distance (nearest first) */
 	TotSeenEntitiesList seen;

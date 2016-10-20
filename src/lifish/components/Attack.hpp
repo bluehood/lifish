@@ -21,7 +21,7 @@ namespace Game {
  *  AXIS_BOUND: the bullet travels along axes, therefore its instance
  *              will be an AxisBullet.
  */
-enum AttackType : unsigned int {
+enum AttackType : unsigned {
 	SIMPLE     = 1,
 	CONTACT    = 1 << 1,
 	RANGED     = 1 << 2,
@@ -44,10 +44,10 @@ struct Attack {
 	AttackType type;
 
 	/** Bullet id */
-	unsigned short id;
+	unsigned id;
 
 	/** Damage dealt */
-	short damage;
+	int damage;
 	
 	/** Projectile speed, in units of Bullet::BASE_SPEED */
 	float speed;
@@ -59,7 +59,7 @@ struct Attack {
 	
 	/** If attack is RANGED, bullet dies after `range` tiles (or pixels) from source */
 	union {
-		short tileRange;
+		int tileRange;
 		float pixelRange;
 	};
 	bool rangeInTiles;

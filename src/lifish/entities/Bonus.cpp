@@ -23,8 +23,8 @@ Bonus::Bonus(const sf::Vector2f& pos, const Game::BonusType type)
 	sprite = addComponent(new Game::Sprite(*this,
 				Game::getAsset("graphics", "bonuses.png"), 
 				sf::IntRect(
-					static_cast<unsigned short>(type) * TILE_SIZE, 
-					static_cast<unsigned short>(type) / 10 * TILE_SIZE, 
+					static_cast<unsigned>(type) * TILE_SIZE, 
+					static_cast<unsigned>(type) / 10 * TILE_SIZE, 
 					TILE_SIZE,
 					TILE_SIZE)));
 	addComponent(new Game::Collider(*this, [this] (const Game::Collider& cld) {

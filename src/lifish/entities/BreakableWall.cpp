@@ -22,12 +22,12 @@ using Game::BreakableWall;
 using Game::TILE_SIZE;
 
 BreakableWall::BreakableWall(const sf::Vector2f& pos, const std::string& texture_name, 
-		unsigned short life, unsigned int score)
+		unsigned life, unsigned score)
 	: Game::Entity(pos)
 {
 	_setupComponents(life, score);
 	auto& animation = _setupAnimations(texture_name);
-	for (unsigned short i = 0; i < 4; ++i)
+	for (unsigned i = 0; i < 4; ++i)
 		animation.addFrame(sf::IntRect(
 					i * TILE_SIZE, 
 					0,
@@ -38,12 +38,12 @@ BreakableWall::BreakableWall(const sf::Vector2f& pos, const std::string& texture
 }
 
 BreakableWall::BreakableWall(const sf::Vector2f& pos, 
-		const unsigned short id, unsigned short life)
+		const unsigned id, unsigned life)
 	: Game::Entity(pos)
 {
 	_setupComponents(life, Game::Conf::Wall::Breakable::VALUE);
 	auto& animation = _setupAnimations(Game::getAsset("graphics", "breakable.png"));	
-	for (unsigned short i = 0; i < 4; ++i)
+	for (unsigned i = 0; i < 4; ++i)
 		animation.addFrame(sf::IntRect(
 					i * TILE_SIZE, 
 					(id-1) * TILE_SIZE, 
@@ -52,7 +52,7 @@ BreakableWall::BreakableWall(const sf::Vector2f& pos,
 	animated->setAnimation(animation);
 }
 
-void BreakableWall::_setupComponents(unsigned short life, unsigned int score) {
+void BreakableWall::_setupComponents(unsigned life, unsigned score) {
 	addComponent(new Game::Fixed(*this));
 	addComponent(new Game::Scored(*this, score));
 	addComponent(new Game::Lifed(*this, life));

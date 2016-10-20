@@ -13,16 +13,16 @@ class Points : public Game::Entity {
 	Game::ShadedText text;
 
 public:
-	constexpr static unsigned short CHARACTER_SIZE = 10;
+	constexpr static unsigned CHARACTER_SIZE = 10;
 	constexpr static float SPEED = 30.f;
 
 	explicit Points(const sf::Vector2f& pos, const std::string& str, 
 		sf::Color color = sf::Color::Blue, 
-		unsigned short charSize = CHARACTER_SIZE);
+		unsigned charSize = CHARACTER_SIZE);
 
 	explicit Points(const sf::Vector2f& pos, int pts, 
 		sf::Color color = sf::Color::Blue, 
-		unsigned short charSize = CHARACTER_SIZE);
+		unsigned charSize = CHARACTER_SIZE);
 
 	void update() override;
 	void setOrigin(const sf::Vector2f& pos) override {

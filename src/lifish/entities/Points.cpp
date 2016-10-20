@@ -10,7 +10,7 @@
 
 using Game::Points;
 
-Points::Points(const sf::Vector2f& pos, const std::string& str, sf::Color color, unsigned short charSize) 
+Points::Points(const sf::Vector2f& pos, const std::string& str, sf::Color color, unsigned charSize) 
 	: Game::Entity(pos)
 	, initialPos(pos)
 	, text(Game::getAsset("fonts", Game::Fonts::POINTS), str, pos, color, sf::Color::Black)
@@ -26,7 +26,7 @@ Points::Points(const sf::Vector2f& pos, const std::string& str, sf::Color color,
 	}));
 }
 
-Points::Points(const sf::Vector2f& pos, int pts, sf::Color color, unsigned short charSize) 
+Points::Points(const sf::Vector2f& pos, int pts, sf::Color color, unsigned charSize) 
 	: Game::Points(pos, Game::to_string(pts), color, charSize)
 {}
 

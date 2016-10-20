@@ -14,7 +14,7 @@
 //Game::Direction Game::selectRandomViable(const Game::MovingEntity *const entity,
 		//const Game::LevelManager *const lr, const Game::Direction opp) {
 	//Game::Direction dirs[4];
-	//unsigned short n = 0;
+	//unsigned n = 0;
 	//for (const auto& d : directions)
 		//if (entity->canGo(d, lr) && d != opp) dirs[n++] = d;
 	//if (n == 0)
@@ -23,7 +23,7 @@
 	//return dirs[dist(Game::rng)];
 //}
 
-short Game::KeyUtils::keyToNumber(sf::Keyboard::Key key) {
+int Game::KeyUtils::keyToNumber(sf::Keyboard::Key key) {
 	switch (key) {
 		using K = sf::Keyboard::Key;
 	case K::Num0: case K::Numpad0: return 0;

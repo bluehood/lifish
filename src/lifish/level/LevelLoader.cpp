@@ -28,14 +28,14 @@ bool Game::LevelLoader::load(const Game::Level& level, Game::LevelManager& lm) {
 	lm.reset();
 	auto& entities = lm.getEntities();
 
-	for (unsigned short top = 0; top < Game::LEVEL_HEIGHT; ++top) {
-		for (unsigned short left = 0; left < Game::LEVEL_WIDTH; ++left) {
+	for (unsigned top = 0; top < Game::LEVEL_HEIGHT; ++top) {
+		for (unsigned left = 0; left < Game::LEVEL_WIDTH; ++left) {
 
 			const sf::Vector2f curPos((left + 1) * TILE_SIZE, (top + 1) * TILE_SIZE);
-			unsigned short enemy_id = 0;
+			unsigned enemy_id = 0;
 			const auto& ls = level.getLevelSet();
 
-			auto is_game_over = [&lm] (unsigned short id) -> bool {
+			auto is_game_over = [&lm] (unsigned id) -> bool {
 				return lm.players[id] == nullptr || (
 						lm.players[id]->getInfo().remainingLives <= 0
 						&& lm.players[id]->get<Game::Lifed>()->getLife() <= 0

@@ -20,7 +20,7 @@ AxisBullet::AxisBullet(const sf::Vector2f& pos, const Game::Entity *const source
 	// TODO: refactor?
 	AxisBulletPresets::setup(*this, attack.id);
 
-	unsigned short d = 0;
+	unsigned d = 0;
 	switch (dir) {
 	case Game::Direction::DOWN: 
 		d = 0;
@@ -69,7 +69,7 @@ AxisBullet::AxisBullet(const sf::Vector2f& pos, const Game::Entity *const source
 	// 	- if directionality == 1, [motion frames] [destroy frames]
 	//	- if == 2, [up/down frames] [left/right frames] [destroy frames]
 	//	- if == 4, [down] [up] [right] [left] [destroy]
-	for (unsigned short i = 0; i < nMotionFrames && i < 8 / directionality; ++i)
+	for (unsigned i = 0; i < nMotionFrames && i < 8 / directionality; ++i)
 		a_move.addFrame(sf::IntRect(
 				(nMotionFrames * d + i) * TILE_SIZE, 
 				(attack.id - 1) * TILE_SIZE, 
@@ -77,7 +77,7 @@ AxisBullet::AxisBullet(const sf::Vector2f& pos, const Game::Entity *const source
 				TILE_SIZE));
 
 	// destroy animations are non-directional
-	for (unsigned short i = 0; i < nDestroyFrames && i < 5; ++i)
+	for (unsigned i = 0; i < nDestroyFrames && i < 5; ++i)
 		a_destroy.addFrame(sf::IntRect(
 				(nMotionFrames * directionality + i) * TILE_SIZE, 
 				(attack.id-1) * TILE_SIZE, 
@@ -92,7 +92,7 @@ AxisBullet::AxisBullet(const sf::Vector2f& pos, const Game::Entity *const source
 }
 
 /// AxisBulletPresets
-void Game::AxisBulletPresets::setup(Game::AxisBullet& b, unsigned short id) {
+void Game::AxisBulletPresets::setup(Game::AxisBullet& b, unsigned id) {
 	switch (id) {
 	case 1:
 		// shot

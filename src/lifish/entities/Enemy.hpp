@@ -24,8 +24,8 @@ class AutoShooting;
 class RegularEntityDeath;
 
 struct EnemyInfo {
-	unsigned short ai = 0;
-	unsigned short speed = 0;
+	unsigned ai = 0;
+	unsigned speed = 0;
 	Attack attack;	
 };
 
@@ -51,7 +51,7 @@ class Enemy : public Game::Entity {
 
 	friend class EnemyDrawableProxy;
 
-	constexpr static unsigned short WALK_N_FRAMES = 4;
+	constexpr static unsigned WALK_N_FRAMES = 4;
 	constexpr static int YELL_DELAY = 1000;
 	
 	Game::Shooting *shooting = nullptr;
@@ -84,9 +84,9 @@ class Enemy : public Game::Entity {
 public:
 	constexpr static float BASE_SPEED = 75.f;
 
-	unsigned short distanceWithNearestPlayer = 2 * Game::LEVEL_WIDTH * Game::TILE_SIZE;
+	unsigned distanceWithNearestPlayer = 2 * Game::LEVEL_WIDTH * Game::TILE_SIZE;
 
-	explicit Enemy(sf::Vector2f pos, unsigned short id, const Game::EnemyInfo& info);
+	explicit Enemy(sf::Vector2f pos, unsigned id, const Game::EnemyInfo& info);
 
 	void setMorphed(bool b);
 	bool isMorphed() const { return morphed; }

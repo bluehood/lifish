@@ -14,7 +14,7 @@ struct Attack;
 class Bullet : public Game::Entity {
 protected:
 	/** The actual size of this bullet in pixels */
-	unsigned short size;
+	unsigned size;
 	/** The position this bullet was shot from (used for range) */
 	const sf::Vector2f origin;
 	/** The Entity that shot this bullet */
@@ -22,11 +22,11 @@ protected:
 	/** Whether this bullet already dealt its damage */
 	bool dealtDamage = false;
 	/** The damage dealt to the impacted Entity */
-	unsigned short damage;
+	unsigned damage;
 	/** How many pixels does this bullet travel; -1 means infinite. */
 	float range;
 
-	unsigned short nMotionFrames = 1,  // up to 8/directionality for AxisBullet
+	unsigned nMotionFrames = 1,  // up to 8/directionality for AxisBullet
 		       nDestroyFrames = 4; // up to 5
 
 	/** This should be implemented by child classes */
@@ -50,7 +50,7 @@ public:
 
 	bool hasDealtDamage() const { return dealtDamage; }
 	void dealDamage() { dealtDamage = true; }
-	unsigned short getDamage() const { return damage; }
+	unsigned getDamage() const { return damage; }
 
 	void update() override;
 };

@@ -28,7 +28,7 @@ LevelSet::LevelSet(const std::string& path) {
 
 	// load tracks data
 	const auto tracksdata = levelJSON["tracks"];
-	unsigned short tracknum = 1;
+	unsigned tracknum = 1;
 	/* trackinfo = {
 	 *	"loop": {
 	 *		"start": float,
@@ -52,18 +52,18 @@ LevelSet::LevelSet(const std::string& path) {
 
 	// load enemies data
 	const auto enemydata = levelJSON["enemies"];
-	unsigned short enemynum = 0;
+	unsigned enemynum = 0;
 	/* enemyinfo = {
-	 *	"ai": ushort,
-	 *	"speed": ushort,
+	 *	"ai": uint,
+	 *	"speed": uint,
 	 *	"attack": {
 	 *		"type": string,
-	 *		"damage": short,
-	 *		"id": ushort         [opt]
+	 *		"damage": int,
+	 *		"id": uint         [opt]
 	 *		"speed": float,      [opt]
 	 *		"fireRate": float,   [opt]
 	 *		"blockTime": float,  [opt]
-	 *		"tileRange": short,  [opt, default=-1]
+	 *		"tileRange": int,  [opt, default=-1]
 	 *		"pixelRange": float, [opt, only valid if tileRange is not specified]
 	 *	}
 	 *
@@ -77,19 +77,19 @@ LevelSet::LevelSet(const std::string& path) {
 		auto atktype = atk["type"];
 		
 		enemies[enemynum].attack.type = Game::AttackType::AXIS_BOUND;
-		for (unsigned short i = 0; i < atktype.size(); ++i) {
+		for (unsigned i = 0; i < atktype.size(); ++i) {
 			AttackType type;
 			auto at = atktype[i].get<std::string>();
 			if (!Game::stringToAttackType(at, type))
 				throw std::invalid_argument(at.c_str());
 
 			enemies[enemynum].attack.type = AttackType(
-					static_cast<unsigned int>(enemies[enemynum].attack.type) 
-					| static_cast<unsigned int>(type));
+					static_cast<unsigned>(enemies[enemynum].attack.type) 
+					| static_cast<unsigned>(type));
 		}
 
 		// Mandatory fields
-		enemies[enemynum].attack.damage = atk["damage"].get<short>();
+		enemies[enemynum].attack.damage = atk["damage"].get<int>();
 		// Optional fields
 		auto it = atk.find("speed");
 		if (it != atk.end())
@@ -97,7 +97,7 @@ LevelSet::LevelSet(const std::string& path) {
 		
 		it = atk.find("id");
 		if (it != atk.end())
-			enemies[enemynum].attack.id = it->get<unsigned short>();
+			enemies[enemynum].attack.id = it->get<unsigned>();
 
 		it = atk.find("fireRate");
 		if (it != atk.end())
@@ -111,7 +111,7 @@ LevelSet::LevelSet(const std::string& path) {
 		enemies[enemynum].attack.rangeInTiles = true;
 		it = atk.find("tileRange");
 		if (it != atk.end()) {
-			enemies[enemynum].attack.tileRange = it->get<short>();
+			enemies[enemynum].attack.tileRange = it->get<int>();
 			range_found = true;
 		}
 		if (!range_found) {
@@ -133,16 +133,16 @@ LevelSet::LevelSet(const std::string& path) {
 	// load levels data
 	const auto levelsdata = levelJSON["levels"];
 
-	unsigned short lvnum = 1;
+	unsigned lvnum = 1;
 	/* lvinfo = {
 	 *	"time": uint,
 	 *	"tilemap": string,
-	 *	"music": ushort,
+	 *	"music": uint,
 	 *	"tileIDs": {
-	 *		"border": ushort,
-	 *		"bg": ushort,
-	 *		"fixed": ushort,
-	 *		"breakable": ushort
+	 *		"border": uint,
+	 *		"bg": uint,
+	 *		"fixed": uint,
+	 *		"breakable": uint
 	 *	}
 	 * }
 	 */
@@ -150,7 +150,7 @@ LevelSet::LevelSet(const std::string& path) {
 		LevelInfo info;
 		info.levelnum          = lvnum++;
 		info.time              = lvinfo["time"];
-		info.track             = tracks[lvinfo["music"].get<unsigned short>()-1];
+		info.track             = tracks[lvinfo["music"].get<unsigned>()-1];
 		info.tilemap           = lvinfo["tilemap"];
 		info.tileIDs.border    = lvinfo["tileIDs"]["border"];
 		info.tileIDs.bg        = lvinfo["tileIDs"]["bg"];
@@ -160,7 +160,7 @@ LevelSet::LevelSet(const std::string& path) {
 	}
 }
 
-std::unique_ptr<Level> LevelSet::getLevel(unsigned short num) const {
+std::unique_ptr<Level> LevelSet::getLevel(unsigned num) const {
 	std::unique_ptr<Level> level;
 	if (num > 0 && num <= levels.size()) {
 		level = std::unique_ptr<Level>(new Level(*this));

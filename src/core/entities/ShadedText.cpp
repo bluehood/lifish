@@ -42,7 +42,7 @@ void ShadedText::setOrigin(const sf::Vector2f& origin) {
 	fgtext.setOrigin(origin);
 }
 
-void ShadedText::setCharacterSize(unsigned int size) {
+void ShadedText::setCharacterSize(unsigned size) {
 	bgtext.setCharacterSize(size);
 	fgtext.setCharacterSize(size);
 }

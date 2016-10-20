@@ -19,20 +19,20 @@ class LevelNumText;
 /** Holds the data used in Level initialization. */
 struct LevelInfo {
 	struct {
-		unsigned short bg        = 1,
-			       border    = 1,
-			       fixed     = 1,
-			       breakable = 1;
+		unsigned bg        = 1,
+			 border    = 1,
+			 fixed     = 1,
+			 breakable = 1;
 	} tileIDs;
 	
 	/** This game's track info */
 	Game::Track track;
 
 	/** Number of the level */
-	unsigned short levelnum = 0;
+	unsigned levelnum = 0;
 
 	/** Time before "Hurry Up" (in seconds) */
-	unsigned int time = 0;
+	unsigned time = 0;
 
 	/** String representation of the tilemap */
 	std::string tilemap;
@@ -51,7 +51,7 @@ class Level final
 	friend class Game::LevelSet;
 
 	/** Types of bg texture tiles */
-	enum : unsigned short {
+	enum : unsigned {
 		TILE_REGULAR     = 0,
 		TILE_UPPER_LEFT  = 1,
 		TILE_UPPER_RIGHT = 2,
@@ -122,10 +122,10 @@ public:
 
 	const LevelInfo& getInfo() const { return levelInfo; }
 
-	void setTime(const unsigned int _time) { levelInfo.time = _time; }
+	void setTime(const unsigned _time) { levelInfo.time = _time; }
 
 	/** Gets tile[left][top] */
-	EntityType getTile(unsigned short left, unsigned short top) const;
+	EntityType getTile(unsigned left, unsigned top) const;
 
 	/** Changes the origin of all tiles */
 	void setOrigin(const sf::Vector2f& origin) override;

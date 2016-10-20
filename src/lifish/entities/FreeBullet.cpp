@@ -34,12 +34,12 @@ FreeBullet::FreeBullet(const sf::Vector2f& pos, const Game::Entity *const source
 	addComponent(new Game::Drawable(*this, *animated));
 	auto& a_move = animated->addAnimation("move");
 	auto& a_destroy = animated->addAnimation("destroy");
-	for (unsigned short i = 0; i < nMotionFrames; ++i) 
+	for (unsigned i = 0; i < nMotionFrames; ++i) 
 		a_move.addFrame(sf::IntRect(
 				i * TILE_SIZE,
 				(attack.id - 101) * TILE_SIZE,
 				TILE_SIZE, TILE_SIZE));
-	for (unsigned short i = 0; i < nDestroyFrames; ++i)
+	for (unsigned i = 0; i < nDestroyFrames; ++i)
 		a_destroy.addFrame(sf::IntRect(
 				(nMotionFrames + i) * TILE_SIZE,
 				(attack.id - 101) * TILE_SIZE,
@@ -52,7 +52,7 @@ FreeBullet::FreeBullet(const sf::Vector2f& pos, const Game::Entity *const source
 	animatedSprite.play();
 }
 
-void Game::FreeBulletPresets::setup(Game::FreeBullet& b, unsigned short id) {
+void Game::FreeBulletPresets::setup(Game::FreeBullet& b, unsigned id) {
 	switch (id) {
 	case 101:
 		// shot

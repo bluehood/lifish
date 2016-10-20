@@ -44,7 +44,7 @@ void WinLoseHandler::_handleWin(std::unique_ptr<Game::Level>& level) {
 			.play();
 		levelClearSoundPlayed = false;
 		playerWinSoundPlayed = false;
-		for (unsigned short id = 1; id <= Game::MAX_PLAYERS; ++id) {
+		for (unsigned id = 1; id <= Game::MAX_PLAYERS; ++id) {
 			auto player = lm.getPlayer(id);
 			if (player != nullptr)
 				player->setWinning(false);
@@ -53,7 +53,7 @@ void WinLoseHandler::_handleWin(std::unique_ptr<Game::Level>& level) {
 
 	} else if (time >= sf::seconds(1.8) && !playerWinSoundPlayed) {
 		std::cerr << "phase2\n";
-		for (unsigned short id = 1; id <= Game::MAX_PLAYERS; ++id) {
+		for (unsigned id = 1; id <= Game::MAX_PLAYERS; ++id) {
 			auto player = lm.getPlayer(id);
 			if (player != nullptr) {
 				Game::cache.playSound(player->get<Game::Sounded>()->getSoundFile(Game::Sounds::WIN));
@@ -115,10 +115,10 @@ std::unique_ptr<Game::Level> WinLoseHandler::advanceLevel(sf::RenderWindow& wind
 		SLEEP_MS(2000);
 
 		// Assign time bonus points
-		unsigned int points = 0;
+		unsigned points = 0;
 		auto givePoints = [&lr] (int amount) {
 			auto players = lr.getPlayers();
-			for (unsigned short i = 0; i < Game::MAX_PLAYERS; ++i)
+			for (unsigned i = 0; i < Game::MAX_PLAYERS; ++i)
 				if (players[i] != nullptr)
 					Game::score[i] += amount;
 		};
@@ -154,7 +154,7 @@ std::unique_ptr<Game::Level> WinLoseHandler::advanceLevel(sf::RenderWindow& wind
 
 	const auto level = lr.getLevel();
 	const auto levelSet = level->getLevelSet();
-	short lvnum = level->getLevelNum();
+	int lvnum = level->getLevelNum();
 
 	if (lvnum == levelSet->getLevelsNum()) {
 		// TODO: WIN!
@@ -165,7 +165,7 @@ std::unique_ptr<Game::Level> WinLoseHandler::advanceLevel(sf::RenderWindow& wind
 
 	// Resurrect any dead player which has a 'continue' left and
 	// remove shield and speedy effects
-	for (unsigned short i = 0; i < Game::MAX_PLAYERS; ++i) {
+	for (unsigned i = 0; i < Game::MAX_PLAYERS; ++i) {
 		auto player = lr.getPlayer(i+1);
 		if (player == nullptr && Game::playerContinues[i] > 0) {
 			if (display_continue(window, panel, i+1)) {

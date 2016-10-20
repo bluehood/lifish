@@ -45,7 +45,7 @@ void Boss::_checkCollision(Game::Collider& coll) {
 	// Calculate how many explosion tiles overlap with boss's ones
 	const auto brect = collider->getRect();
 	const auto crect = coll.getRect();
-	const short x = std::max(brect.left, crect.left),
+	const int x = std::max(brect.left, crect.left),
 	            wx = std::min(brect.left + brect.width, crect.left + crect.width),
 	            y = std::max(brect.top, crect.top),
 	            wy = std::min(brect.top + brect.height, crect.top + crect.height);
@@ -62,7 +62,7 @@ void Boss::_checkCollision(Game::Collider& coll) {
 		//<< (crect.top + crect.width) / Game::TILE_SIZE << std::endl;
 	//std::cerr << "x = " << x / Game::TILE_SIZE<< ", wx = " << wx /Game::TILE_SIZE<< std::endl;
 	//std::cerr << "y = " << y / Game::TILE_SIZE<< ", wy = " << wy /Game::TILE_SIZE<< std::endl;
-	const unsigned int damage = (wx - x) / Game::TILE_SIZE * (wy - y) / Game::TILE_SIZE * expl.getDamage();
+	const unsigned damage = (wx - x) / Game::TILE_SIZE * (wy - y) / Game::TILE_SIZE * expl.getDamage();
 	
 	//std::cerr << "dealt " << damage << " damage\n";
 	get<Game::Lifed>()->decLife(damage);

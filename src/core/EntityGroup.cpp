@@ -78,7 +78,7 @@ void EntityGroup::clear() {
 	collidingEntities.clear();
 }
 
-std::vector<std::reference_wrapper<Game::Entity>> EntityGroup::getFixedAt(unsigned short x, unsigned short y) const {
+std::vector<std::reference_wrapper<Game::Entity>> EntityGroup::getFixedAt(unsigned x, unsigned y) const {
 	std::vector<std::reference_wrapper<Game::Entity>> fxd;
 
 	if (x < 1 || x > Game::LEVEL_WIDTH || y < 1 || y > Game::LEVEL_HEIGHT)
@@ -136,13 +136,13 @@ Game::Entity* EntityGroup::_putInAux(const std::shared_ptr<Game::Entity>& entity
 	return entity.get();
 }
 
-void EntityGroup::_addFixedAt(unsigned short x, unsigned short y, const std::shared_ptr<Game::Entity>& e) {
+void EntityGroup::_addFixedAt(unsigned x, unsigned y, const std::shared_ptr<Game::Entity>& e) {
 	if (x < 1 || x > Game::LEVEL_WIDTH || y < 1 || y > Game::LEVEL_HEIGHT)
 		return;
 	fixedEntities[(y - 1) * Game::LEVEL_WIDTH + x - 1].push_back(e);
 }
 
-void EntityGroup::_rmFixedAt(unsigned short x, unsigned short y, const Game::Entity& entity) {
+void EntityGroup::_rmFixedAt(unsigned x, unsigned y, const Game::Entity& entity) {
 	if (x < 1 || x > Game::LEVEL_WIDTH || y < 1 || y > Game::LEVEL_HEIGHT)
 		return;
 	auto& fixed = fixedEntities[(y - 1) * Game::LEVEL_WIDTH + x - 1];

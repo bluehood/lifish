@@ -7,7 +7,7 @@
 
 namespace Game {
 
-constexpr unsigned short AI_FUNCTIONS_NUM = 6;
+constexpr unsigned AI_FUNCTIONS_NUM = 6;
 
 extern std::array<Game::AIFunction, Game::AI_FUNCTIONS_NUM> ai_functions;
 

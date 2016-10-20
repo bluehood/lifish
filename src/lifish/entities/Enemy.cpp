@@ -30,7 +30,7 @@ using Game::Enemy;
 using Game::TILE_SIZE;
 using Game::Direction;
 
-Enemy::Enemy(sf::Vector2f pos, unsigned short id, const Game::EnemyInfo& info)
+Enemy::Enemy(sf::Vector2f pos, unsigned id, const Game::EnemyInfo& info)
 	: Game::Entity(pos)
 	, originalSpeed(info.speed)
 {
@@ -82,7 +82,7 @@ Enemy::Enemy(sf::Vector2f pos, unsigned short id, const Game::EnemyInfo& info)
 	drawProxy = std::unique_ptr<Game::EnemyDrawableProxy>(new Game::EnemyDrawableProxy(*this));
 	addComponent(new Game::Drawable(*this, *drawProxy.get()));
 
-	unsigned short death_n_frames = 2;
+	unsigned death_n_frames = 2;
 	switch (id) {
 	case 3:
 		death_n_frames = 4;
@@ -96,7 +96,7 @@ Enemy::Enemy(sf::Vector2f pos, unsigned short id, const Game::EnemyInfo& info)
 	auto& a_right = animated->addAnimation("walk_right");
 	auto& a_left = animated->addAnimation("walk_left");
 
-	for (unsigned short i = 0; i < WALK_N_FRAMES; ++i) {
+	for (unsigned i = 0; i < WALK_N_FRAMES; ++i) {
 		a_down.addFrame(sf::IntRect(
 					i * TILE_SIZE, 
 					0,
@@ -146,7 +146,7 @@ Enemy::Enemy(sf::Vector2f pos, unsigned short id, const Game::EnemyInfo& info)
 				TILE_SIZE));
 
 	auto& a_death = animated->addAnimation("death");
-	for (unsigned short i = 0; i < death_n_frames; ++i) 
+	for (unsigned i = 0; i < death_n_frames; ++i) 
 		a_death.addFrame(sf::IntRect((WALK_N_FRAMES + i) * TILE_SIZE, 2 * TILE_SIZE, TILE_SIZE, TILE_SIZE));
 
 	auto& animatedSprite = animated->getSprite();

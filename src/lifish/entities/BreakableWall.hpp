@@ -21,14 +21,14 @@ class BreakableWall : public Game::Entity {
 protected:
 	/** Constructor used by TransparentWall */
 	BreakableWall(const sf::Vector2f& pos, const std::string& texture_name, 
-			unsigned short life, unsigned int score);
+			unsigned life, unsigned score);
 
 	Animation& _setupAnimations(const std::string& texture_name);
-	void _setupComponents(unsigned short life, unsigned int score);
+	void _setupComponents(unsigned life, unsigned score);
 	void _checkCollision(Game::Collider& cld);
 
 public:
-	explicit BreakableWall(const sf::Vector2f& pos, const unsigned short id, unsigned short life = 1);
+	explicit BreakableWall(const sf::Vector2f& pos, const unsigned id, unsigned life = 1);
 };
 
 }

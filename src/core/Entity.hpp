@@ -19,7 +19,7 @@ class Entity : public Game::WithOrigin, public Game::Stringable {
 protected:
 	std::vector<std::shared_ptr<Game::Component>> components;
 	sf::Vector2f position;
-	std::string _toString(unsigned short indent) const;
+	std::string _toString(unsigned indent) const;
 
 public:
 	explicit Entity();

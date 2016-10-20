@@ -24,26 +24,26 @@ public:
 	}
 
 	void giveBonus(Game::BonusType type, const sf::Time& time) {
-		const auto i = static_cast<unsigned short>(type);
+		const auto i = static_cast<unsigned>(type);
 		bonusTime[i] = time;
 		bonusClock[i]->restart();
 	}
 
 	bool hasBonus(Game::BonusType type) const {
-		const auto i = static_cast<unsigned short>(type);
+		const auto i = static_cast<unsigned>(type);
 		return bonusTime[i] != sf::Time::Zero && bonusClock[i]->getElapsedTime() <= bonusTime[i];
 	}
 
 	sf::Time getTime(Game::BonusType type) const {
-		return bonusTime[static_cast<unsigned short>(type)]; 
+		return bonusTime[static_cast<unsigned>(type)]; 
 	}
 
 	sf::Time getElapsedTime(Game::BonusType type) const {
-		return bonusClock[static_cast<unsigned short>(type)]->getElapsedTime();
+		return bonusClock[static_cast<unsigned>(type)]->getElapsedTime();
 	}
 
 	sf::Time getRemainingTime(Game::BonusType type) const {
-		const auto i = static_cast<unsigned short>(type);
+		const auto i = static_cast<unsigned>(type);
 		return std::max(sf::Time::Zero, bonusTime[i] - bonusClock[i]->getElapsedTime());
 	}
 	

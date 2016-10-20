@@ -70,11 +70,11 @@ class EntityGroup final : public Game::WithOrigin, private sf::NonCopyable {
 	auto _fixedAt(const sf::Vector2i& tile) -> std::vector<std::weak_ptr<Game::Entity>>&;
 	auto _fixedAt(const sf::Vector2i& tile) const -> const std::vector<std::weak_ptr<Game::Entity>>&;
 	/** Adds a fixed entity at tile x, y. Fails silently if x or y are out of bounds. */
-	void _addFixedAt(unsigned short x, unsigned short y, const std::shared_ptr<Game::Entity>& e);
+	void _addFixedAt(unsigned x, unsigned y, const std::shared_ptr<Game::Entity>& e);
 	/** Removes fixed entity `e` from tile x, y. Fails silently if x or y are out of bounds or if `e` is not
 	 *  at that tile.
 	 */
-	void _rmFixedAt(unsigned short x, unsigned short y, const Game::Entity& e);
+	void _rmFixedAt(unsigned x, unsigned y, const Game::Entity& e);
 	void _pruneFixed();
 
 	Game::Entity* _putInAux(const std::shared_ptr<Game::Entity>& entity);
@@ -128,7 +128,7 @@ public:
 	/** Returns the fixed entity at tile (x, y), where x and y range from 1 to width/height.
 	 *  Returns an empty vector if x or y are out of bounds.
 	 */ 
-	std::vector<std::reference_wrapper<Game::Entity>> getFixedAt(unsigned short x, unsigned short y) const;
+	std::vector<std::reference_wrapper<Game::Entity>> getFixedAt(unsigned x, unsigned y) const;
 };
 
 ///// Implementation /////

@@ -95,7 +95,7 @@ int main(int argc, char **argv) {
 #endif
 	// Argument parsing
 	std::string levelSetName = "";
-	unsigned short start_level = 1;
+	unsigned start_level = 1;
 	{
 		bool args_ended = false;
 		int i = 1;
@@ -178,7 +178,7 @@ int main(int argc, char **argv) {
 	//ui.getScreenHandler().setCurrent("pause");
 
 	// Load level set
-	int lvnum = start_level;
+	unsigned lvnum = start_level;
 	Game::LevelSet ls(levelSetName);
 	if (lvnum > ls.getLevelsNum())
 		lvnum %= ls.getLevelsNum();
@@ -196,7 +196,7 @@ int main(int argc, char **argv) {
 	lm.setLevel(*level);
 
 	// Adjust the origin to make room for side panel
-	sf::Vector2f origin(-Game::SIDE_PANEL_WIDTH, 0);
+	sf::Vector2f origin(-(signed)Game::SIDE_PANEL_WIDTH, 0);
 	lm.setOrigin(origin);
 
 	// Setup the music

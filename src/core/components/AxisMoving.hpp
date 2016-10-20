@@ -31,7 +31,7 @@ public:
 	sf::Vector2i getPrevAlign() const { return prevAlign; }
 
 	void setDirection(Game::Direction dir);
-	void turn(short straightAngles, bool clockwise);
+	void turn(int straightAngles, bool clockwise);
 	void setPrevAlign(const sf::Vector2i& a) { prevAlign = a; }
 	/** If set to `false`, entity won't auto-realign when colliding with solid OR when stop()ped.
 	 *  This is useful for AI-managed moving entities. Default: true

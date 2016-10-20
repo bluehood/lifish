@@ -57,7 +57,7 @@ void Level::_loadTiles() {
 	bgTiles[TILE_REGULAR].setTexture(*bgTexture);
 	bgTiles[TILE_REGULAR].setTextureRect(sf::IntRect(0, 0, TILE_SIZE * LEVEL_WIDTH, TILE_SIZE * LEVEL_HEIGHT));
 
-	const unsigned short b = (levelInfo.tileIDs.border-1) * TILE_SIZE;
+	const unsigned b = (levelInfo.tileIDs.border-1) * TILE_SIZE;
 
 	// Create images with texture subdivisions for border
 	sf::Image image(borderTexture->copyToImage());
@@ -114,7 +114,7 @@ void Level::_loadTiles() {
 }
 
 void Level::setOrigin(const sf::Vector2f& offset) {
-	for (unsigned short i = 0; i < bgTiles.size(); ++i)
+	for (unsigned i = 0; i < bgTiles.size(); ++i)
 		bgTiles[i].setOrigin(offset);
 	levelnumtext->setOrigin(offset);
 }
@@ -138,16 +138,16 @@ void Level::draw(sf::RenderTarget& window, sf::RenderStates states) const {
 		window.draw(*levelnumtext, states);
 }
 
-EntityType Level::getTile(unsigned short left, unsigned short top) const {
+EntityType Level::getTile(unsigned left, unsigned top) const {
 	if (left >= LEVEL_WIDTH || top >= LEVEL_HEIGHT) 
 		return EntityType::UNKNOWN;
 	return tiles[top][left];
 }
 
 bool Level::_setTilemap(const std::string& tilemap) {
-	unsigned short x = 0, y = 0;
+	unsigned x = 0, y = 0;
 	bool player_set[] = { false, false };
-	for (unsigned int i = 0; i < tilemap.length(); ++i) {
+	for (unsigned i = 0; i < tilemap.length(); ++i) {
 		EntityType et = Game::entityFromLetter(tilemap[i]);
 		if (et == EntityType::UNKNOWN) return false;
 		if (et == EntityType::PLAYER1) {
@@ -175,8 +175,8 @@ std::string Level::getTilemap() const {
 	if (called)
 		return ss.str();
 
-	for (unsigned short i = 0; i < LEVEL_HEIGHT; ++i) {
-		for (unsigned short j = 0; j < LEVEL_WIDTH; ++j) {
+	for (unsigned i = 0; i < LEVEL_HEIGHT; ++i) {
+		for (unsigned j = 0; j < LEVEL_WIDTH; ++j) {
 			ss << tiles[i][j] << " ";
 		}
 		ss << std::endl;

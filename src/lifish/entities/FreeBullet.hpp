@@ -22,7 +22,7 @@ public:
 class FreeBulletPresets {
 	friend class FreeBullet;
 
-	static void setup(Game::FreeBullet& b, unsigned short id);
+	static void setup(Game::FreeBullet& b, unsigned id);
 };
 
 }

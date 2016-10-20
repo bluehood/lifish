@@ -39,27 +39,27 @@ namespace Game {
 /*                         GLOBAL DEFINITIONS                               */
 /****************************************************************************/
 
-constexpr unsigned short MAX_PLAYERS = 2;
+constexpr unsigned MAX_PLAYERS = 2;
 /**
  * Level width / height in tiles. Don't take the
  * level borders into accounts, so a level will
  * occupy LEVEL_WIDTH+2, LEVEL_HEIGHT+2 tiles.
  */
-constexpr unsigned short LEVEL_WIDTH = 15; 
-constexpr unsigned short LEVEL_HEIGHT = 13;
+constexpr unsigned LEVEL_WIDTH = 15; 
+constexpr unsigned LEVEL_HEIGHT = 13;
 
-constexpr unsigned short SIDE_PANEL_WIDTH = 96;
-constexpr unsigned short SIDE_PANEL_HEIGHT = 480;
+constexpr unsigned SIDE_PANEL_WIDTH = 96;
+constexpr unsigned SIDE_PANEL_HEIGHT = 480;
 
-constexpr unsigned short WINDOW_WIDTH = SIDE_PANEL_WIDTH + (LEVEL_WIDTH + 2) * TILE_SIZE;
-constexpr unsigned short WINDOW_HEIGHT = (LEVEL_HEIGHT + 2) * TILE_SIZE;
+constexpr unsigned WINDOW_WIDTH = SIDE_PANEL_WIDTH + (LEVEL_WIDTH + 2) * TILE_SIZE;
+constexpr unsigned WINDOW_HEIGHT = (LEVEL_HEIGHT + 2) * TILE_SIZE;
 
 /** How much the main game window is shifted relative to the
  *  SFML window (horizontally)
  */
 constexpr float MAIN_WINDOW_SHIFT = 1 + SIDE_PANEL_WIDTH;
 
-constexpr unsigned short N_ENEMIES = 10;
+constexpr unsigned N_ENEMIES = 10;
 
 namespace Fonts {
 	constexpr auto POINTS = "pf_tempesta_seven_bold.ttf";
@@ -74,17 +74,17 @@ namespace Fonts {
 /** Indexing convention for Game::Sounded entities */
 namespace Sounds {
 	/** Enemy's, player's, boss's death, bullet's hit */
-	constexpr unsigned short DEATH  = 0;
+	constexpr unsigned DEATH  = 0;
 	/** Bullet's shooting sound */
-	constexpr unsigned short SHOT   = 1;
+	constexpr unsigned SHOT   = 1;
 	/** Enemy's yell */
-	constexpr unsigned short YELL   = 1;
+	constexpr unsigned YELL   = 1;
 	/** Boss's / Player's hurt sound */
-	constexpr unsigned short HURT   = 1;
+	constexpr unsigned HURT   = 1;
 	/** Player's win sound */
-	constexpr unsigned short WIN    = 2;
+	constexpr unsigned WIN    = 2;
 	/** Enemy's attack sound */
-	constexpr unsigned short ATTACK = 2;
+	constexpr unsigned ATTACK = 2;
 }
 
 constexpr auto HURRY_UP_SOUND    = "hurryup.ogg";
@@ -99,10 +99,10 @@ constexpr auto TIME_BONUS_SOUND  = "timebonus.ogg";
 /****************************************************************************/
 
 /** The players' score */
-extern std::array<unsigned int, MAX_PLAYERS> score;
+extern std::array<unsigned, MAX_PLAYERS> score;
 
 /** The remaining of 'continues' per player */
-extern std::array<unsigned short, MAX_PLAYERS> playerContinues;
+extern std::array<unsigned, MAX_PLAYERS> playerContinues;
 
 bool init();
 

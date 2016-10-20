@@ -84,11 +84,11 @@ public:
 	explicit LevelManager();
 
 	/** Generates n players and returns them. If n > MAX_PLAYERS, only generate MAX_PLAYERS players. */
-	auto createNewPlayers(unsigned short n = Game::MAX_PLAYERS) -> std::vector<Game::Player*>;
+	auto createNewPlayers(unsigned n = Game::MAX_PLAYERS) -> std::vector<Game::Player*>;
 
 	bool isPlayer(const Game::Entity& e) const;
 	/** Returns the id-th player (id starting from 1) */
-	const std::shared_ptr<Game::Player> getPlayer(unsigned short id) const;
+	const std::shared_ptr<Game::Player> getPlayer(unsigned id) const;
 
 	const Game::EntityGroup& getEntities() const { return entities; }
 	Game::EntityGroup& getEntities() { return entities; }
@@ -103,7 +103,7 @@ public:
 
 	bool isBombAt(const sf::Vector2i& tile) const;
 	/** Returns the number of bombs currently deployed by id-th player */
-	unsigned short bombsDeployedBy(unsigned short id) const;
+	unsigned bombsDeployedBy(unsigned id) const;
 
 	/** Checks whether the owner of `am` can proceed along direction `dir` */
 	bool canGo(const Game::AxisMoving& am, const Game::Direction dir) const;

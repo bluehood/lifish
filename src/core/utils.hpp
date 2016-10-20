@@ -65,7 +65,7 @@ constexpr double sqrDistance(const sf::Vector2<T>& a, const sf::Vector2<R>& b) {
 	return (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y);
 }
 
-constexpr short manhattanDistance(const sf::Vector2i& tileA, const sf::Vector2i& tileB) {
+constexpr int manhattanDistance(const sf::Vector2i& tileA, const sf::Vector2i& tileB) {
 	return Game::abs(tileA.x - tileB.x) + Game::abs(tileA.y - tileB.y);
 }
 
@@ -101,7 +101,7 @@ void testMusic();
 void maybeShowFPS(sf::RenderWindow& window);
 
 namespace KeyUtils {
-	short keyToNumber(sf::Keyboard::Key key);
+	int keyToNumber(sf::Keyboard::Key key);
 
 	std::string keyToString(sf::Keyboard::Key key);
 }

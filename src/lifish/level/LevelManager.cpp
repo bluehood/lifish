@@ -25,9 +25,9 @@ LevelManager::LevelManager()
 	dropTextManager.subscribe(entities);
 }
 
-auto LevelManager::createNewPlayers(unsigned short n) -> std::vector<Game::Player*> {
+auto LevelManager::createNewPlayers(unsigned n) -> std::vector<Game::Player*> {
 	std::vector<Game::Player*> pls;
-	for (int i = 0; i < n && i < Game::MAX_PLAYERS; ++i) {
+	for (unsigned i = 0; i < n && i < Game::MAX_PLAYERS; ++i) {
 		// Pointers kept by LevelManager
 		players[i] = std::make_shared<Game::Player>(sf::Vector2f(0, 0), i + 1);
 		// Pointers owned by EntityGroup
@@ -82,7 +82,7 @@ bool LevelManager::isPlayer(const Game::Entity& e) const {
 	return false;
 }
 
-const std::shared_ptr<Game::Player> LevelManager::getPlayer(unsigned short id) const {
+const std::shared_ptr<Game::Player> LevelManager::getPlayer(unsigned id) const {
 	return players[id-1];
 }
 
@@ -137,14 +137,14 @@ void LevelManager::reset() {
 }
 
 bool LevelManager::isBombAt(const sf::Vector2i& tile) const {
-	for (unsigned short i = 0; i < bombs.size(); ++i)
+	for (unsigned i = 0; i < bombs.size(); ++i)
 		for (auto bomb : bombs[i])
 			if (!bomb.expired() && Game::tile(bomb.lock()->getPosition()) == tile)
 				return true;
 	return false;
 }
 
-unsigned short LevelManager::bombsDeployedBy(unsigned short id) const {
+unsigned LevelManager::bombsDeployedBy(unsigned id) const {
 	return std::count_if(bombs[id-1].begin(), bombs[id-1].end(), [] (const std::weak_ptr<Game::Bomb>& b) {
 		return !b.expired();
 	});
@@ -169,7 +169,7 @@ void LevelManager::_spawn(Game::Entity *e) {
 void LevelManager::_spawnBomb(Game::Bomb *b) {
 	const auto id = b->getSourcePlayer().getInfo().id - 1;
 	// Spawn bomb only if player has not deployed all the available ones already
-	for (unsigned short i = 0; i < bombs[id].size(); ++i) {
+	for (unsigned i = 0; i < bombs[id].size(); ++i) {
 		if (bombs[id][i].expired()) {
 			std::shared_ptr<Game::Bomb> bomb(b);
 			entities.add(bomb);
@@ -255,7 +255,7 @@ void LevelManager::_checkSpecialConditions() {
 }
 
 void LevelManager::_checkResurrect() {
-	unsigned short living_players = 0;
+	unsigned living_players = 0;
 
 	for (auto& player : players) {
 		auto klb = player->get<Game::Killable>();
@@ -299,7 +299,7 @@ bool LevelManager::canGo(const Game::AxisMoving& am, const Game::Direction dir) 
 		return true;
 	}
 
-	if (iposx <= 0 || iposx > LEVEL_WIDTH || iposy <= 0 || iposy > LEVEL_HEIGHT)
+	if (iposx <= 0 || iposx > int(LEVEL_WIDTH) || iposy <= 0 || iposy > int(LEVEL_HEIGHT))
 		return false;
 
 	const auto collider = am.getOwner().get<Game::Collider>();

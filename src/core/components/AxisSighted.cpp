@@ -32,7 +32,7 @@ void AxisSighted::update() {
 	Game::Component::update();
 	if (entities == nullptr) return;
 
-	for (unsigned short i = 0; i < (unsigned short)Game::Direction::NONE; ++i) {
+	for (unsigned i = 0; i < (unsigned)Game::Direction::NONE; ++i) {
 		_fillLine(static_cast<Game::Direction>(i));	
 	}
 }
@@ -57,8 +57,8 @@ void AxisSighted::_fillLine(const Game::Direction dir) {
 	});
 
 	std::sort(seen[dir].begin(), seen[dir].end(), [] (
-				const std::pair<const Game::Entity*, unsigned short> a,
-				const std::pair<const Game::Entity*, unsigned short> b)
+				const std::pair<const Game::Entity*, unsigned> a,
+				const std::pair<const Game::Entity*, unsigned> b)
 	{
 		return a.second < b.second;
 	});

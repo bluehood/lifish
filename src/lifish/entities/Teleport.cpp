@@ -23,7 +23,7 @@ Teleport::Teleport(const sf::Vector2f& pos)
 	addComponent(new Game::Collider(*this, [this] (Game::Collider& c) { warp(c); }, Game::Layers::TELEPORTS));
 
 	auto& anim = animated->addAnimation("teleport");
-	for (unsigned short i = 0; i < N_ANIM_FRAMES; ++i)
+	for (unsigned i = 0; i < N_ANIM_FRAMES; ++i)
 		anim.addFrame(sf::IntRect(i * TILE_SIZE, 0, TILE_SIZE, TILE_SIZE));
 	
 	auto& animatedSprite = animated->getSprite();

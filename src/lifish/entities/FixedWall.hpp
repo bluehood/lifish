@@ -11,7 +11,7 @@ namespace Game {
  */
 class FixedWall : public Game::Entity {
 public:
-	explicit FixedWall(const sf::Vector2f& pos, const unsigned short id);
+	explicit FixedWall(const sf::Vector2f& pos, const unsigned id);
 };
 
 }

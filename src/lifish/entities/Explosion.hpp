@@ -30,16 +30,16 @@ class Explosion : public Game::Entity, public sf::Drawable {
 	Game::Collider *explCollider = nullptr;
 
 	/** The radius of this explosion */
-	unsigned short radius;
+	unsigned radius;
 	
 	/** The damage caused by this explosion per tick */
-	unsigned short damage;
+	unsigned damage;
 
 	/** The tiles involved in this explosion (valid after calling propagate());
 	 *  more specifically, this is a 4-element array containing the propagation
 	 *  distance in the 4 directions. The array is indexed with ANIM_UP etc
 	 */
-	std::array<unsigned short, 4> propagation;
+	std::array<unsigned, 4> propagation;
 
 	/** The player who dropped the bomb this explosion originated from */
 	const Game::Player *const sourcePlayer;
@@ -59,9 +59,9 @@ public:
 	 *  In this case, whenever points should be given to a player, no points
 	 *  are given at all.
 	 */
-	explicit Explosion(const sf::Vector2f& pos, unsigned short radius, 
+	explicit Explosion(const sf::Vector2f& pos, unsigned radius, 
 			const Game::Player *const sourcePlayer = nullptr,
-			unsigned short damage = 1);
+			unsigned damage = 1);
 
 	/** Calculate the tiles this explosion propagates to and fill `propagation`
 	 *  (fixed walls and borders stop the explosion). Also kills enemies and
@@ -74,7 +74,7 @@ public:
 
 	const Game::Player* getSourcePlayer() const { return sourcePlayer; }
 
-	unsigned short getDamage() const { return damage; }
+	unsigned getDamage() const { return damage; }
 
 	/** Use this function to tell this Explosion it damaged this Entity;
 	 *  Explosion can be then queries via `hasDamaged(Entity)`.

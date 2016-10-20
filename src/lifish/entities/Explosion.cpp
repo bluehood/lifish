@@ -16,13 +16,14 @@
 #include "CompoundCollider.hpp"
 #include <list>
 #include <algorithm>
+#include <iostream>
 
 using Game::Explosion;
 using Game::TILE_SIZE;
 using Game::Direction;
 
-Explosion::Explosion(const sf::Vector2f& pos, unsigned short _radius, 
-		const Game::Player *const source, unsigned short damage)
+Explosion::Explosion(const sf::Vector2f& pos, unsigned _radius,
+		const Game::Player *const source, unsigned damage)
 	: Game::Entity(pos)
 	, radius(_radius)
 	, damage(damage)
@@ -67,8 +68,8 @@ Game::Explosion* Explosion::propagate(Game::LevelManager& lm) {
 	bool blocked[] = { false, false, false, false };
 	auto& entities = lm.getEntities();
 	
-	for (unsigned short dir = 0; dir < 4; ++dir) {	
-		for (unsigned short r = 1; r <= radius; ++r) {
+	for (unsigned dir = 0; dir < 4; ++dir) {	
+		for (unsigned r = 1; r <= radius; ++r) {
 			if (!propagating[dir]) continue;
 
 			sf::Vector2i new_tile = m_tile;
@@ -87,8 +88,8 @@ Game::Explosion* Explosion::propagate(Game::LevelManager& lm) {
 				break;
 			}
 			
-			if (new_tile.x < 1 || new_tile.x > Game::LEVEL_WIDTH 
-					|| new_tile.y < 1 || new_tile.y > Game::LEVEL_HEIGHT) {
+			if (new_tile.x < 1 || new_tile.x > int(Game::LEVEL_WIDTH)
+					|| new_tile.y < 1 || new_tile.y > int(Game::LEVEL_HEIGHT)) {
 				propagating[dir] = false;
 				continue;
 			}
@@ -124,7 +125,7 @@ Game::Explosion* Explosion::propagate(Game::LevelManager& lm) {
 					- (blocked[Direction::RIGHT] ? TILE_SIZE - 1 : 0),
 				TILE_SIZE - 2),
 			// offset
-			sf::Vector2f(-TILE_SIZE * propagation[Direction::LEFT], 1)),
+			sf::Vector2f(-signed(TILE_SIZE) * propagation[Direction::LEFT], 1)),
 		Game::Collider(*this, Game::Layers::EXPLOSIONS,
 			// size
 			sf::Vector2i(
@@ -132,10 +133,10 @@ Game::Explosion* Explosion::propagate(Game::LevelManager& lm) {
 				TILE_SIZE * (propagation[Direction::UP] + propagation[Direction::DOWN] + 1)
 					- (blocked[Direction::DOWN] ? TILE_SIZE - 1 : 0)),
 			// offset
-			sf::Vector2f(1, -TILE_SIZE * propagation[Direction::UP]))
+			sf::Vector2f(1, -signed(TILE_SIZE) * propagation[Direction::UP]))
 	}));
 
-	for (unsigned short i = 0; i < 4; ++i)
+	for (unsigned i = 0; i < 4; ++i)
 		if (blocked[i]) --propagation[i];
 	_setPropagatedAnims();
 
@@ -145,7 +146,7 @@ Game::Explosion* Explosion::propagate(Game::LevelManager& lm) {
 }
 
 void Explosion::_setPropagatedAnims() {
-	const unsigned short hsize = TILE_SIZE * (propagation[Direction::RIGHT] + propagation[Direction::LEFT] + 1);
+	const unsigned hsize = TILE_SIZE * (propagation[Direction::RIGHT] + propagation[Direction::LEFT] + 1);
 	explosionH->addAnimation("explode", {
 		sf::IntRect(0, 0, hsize, TILE_SIZE),
 		sf::IntRect(0, TILE_SIZE, hsize, TILE_SIZE),
@@ -155,7 +156,7 @@ void Explosion::_setPropagatedAnims() {
 		sf::IntRect(0, TILE_SIZE, hsize, TILE_SIZE),
 		sf::IntRect(0, 0, hsize, TILE_SIZE)
 	}, true);
-	const unsigned short vsize = TILE_SIZE * (propagation[Direction::DOWN] + propagation[Direction::UP] + 1);
+	const unsigned vsize = TILE_SIZE * (propagation[Direction::DOWN] + propagation[Direction::UP] + 1);
 	explosionV->addAnimation("explode", {
 		sf::IntRect(0, 0, TILE_SIZE, vsize),
 		sf::IntRect(TILE_SIZE, 0, TILE_SIZE, vsize),

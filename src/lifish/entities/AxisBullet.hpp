@@ -17,7 +17,7 @@ class AxisBullet : public Game::Bullet {
 	 *  If 4 => this bullet has different animations for each direction, up to 2.
 	 *  The effective number of frames is established by nMotionFrames.
 	 */
-	unsigned short directionality = 1;
+	unsigned directionality = 1;
 
 public:
 	/** Constructs a Bullet with a source Entity (using that Entity's position) */
@@ -28,7 +28,7 @@ public:
 class AxisBulletPresets {
 	friend class Game::AxisBullet;
 
-	static void setup(Game::AxisBullet& b, unsigned short id);
+	static void setup(Game::AxisBullet& b, unsigned id);
 };
 
 }

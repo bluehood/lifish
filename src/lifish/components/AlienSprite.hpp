@@ -17,8 +17,8 @@ class MovingAnimator;
  * an Entity, thus cannot be used standalone.
  */
 class AlienSprite : public Game::Component {
-	constexpr static unsigned short WALK_N_FRAMES = 4;
-	constexpr static unsigned short DEATH_N_FRAMES = 2;
+	constexpr static unsigned WALK_N_FRAMES = 4;
+	constexpr static unsigned DEATH_N_FRAMES = 2;
 
 	Game::Animated *animated = nullptr;
 	Game::MovingAnimator *movingAnimator = nullptr;

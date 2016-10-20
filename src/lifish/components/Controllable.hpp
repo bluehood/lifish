@@ -13,7 +13,7 @@ class AxisMoving;
 class Controllable : public Game::Component {
 	const sf::Window *window = nullptr;
 	const std::array<sf::Keyboard::Key, Game::Controls::CONTROLS_NUM>& controls;
-	short joystickUsed = -1;
+	int joystickUsed = -1;
 	Game::AxisMoving *moving = nullptr;
 	bool active = true;
 
@@ -25,7 +25,7 @@ public:
 	void update() override;
 
 	void setWindow(const sf::Window *w) { window = w; }
-	void setJoystickUsed(short idx) { joystickUsed = idx; }
+	void setJoystickUsed(int idx) { joystickUsed = idx; }
 
 	bool hasFocus() const { return window != nullptr && window->hasFocus(); }
 	void setActive(bool a) { active = a; }

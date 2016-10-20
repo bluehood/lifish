@@ -15,7 +15,7 @@ class Animated;
  */
 class Coin : public Game::Entity {
 	const static sf::Time GRAB_TIME; 
-	constexpr static unsigned int VALUE = 150;
+	constexpr static unsigned VALUE = 150;
 
 	Game::Clock *grabClock;
 	Game::Grabbable *grabbable = nullptr;

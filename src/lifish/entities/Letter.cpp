@@ -21,13 +21,13 @@ using Game::Conf::Player::N_EXTRA_LETTERS;
 
 const sf::Time Letter::TRANSITION_DELAY = sf::milliseconds(3000);
 
-static std::uniform_int_distribution<unsigned short> dist(0, N_EXTRA_LETTERS - 1);
+static std::uniform_int_distribution<unsigned> dist(0, N_EXTRA_LETTERS - 1);
 
-unsigned short Letter::randomId() {
+unsigned Letter::randomId() {
 	return dist(Game::rng);
 }
 
-Letter::Letter(const sf::Vector2f& pos, unsigned short _id)
+Letter::Letter(const sf::Vector2f& pos, unsigned _id)
 	: Game::Entity(pos)
 	, id(_id)
 {
@@ -58,7 +58,7 @@ Letter::Letter(const sf::Vector2f& pos, unsigned short _id)
 
 	auto& animatedSprite = animated->getSprite();
 
-	for (unsigned short i = 0; i < N_EXTRA_LETTERS; ++i) {	
+	for (unsigned i = 0; i < N_EXTRA_LETTERS; ++i) {	
 		auto& anim = animated->addAnimation(Game::to_string(i));
 		// Total different frames are 4 * N_EXTRA_LETTERS
 		// (full letter + 3 transitions to next, cyclic).
@@ -67,8 +67,8 @@ Letter::Letter(const sf::Vector2f& pos, unsigned short _id)
 		// where (i-th final letter) and ((i+1)-th initial letter) are the same
 		// frame. This way we can tell when the letter has ended its transition:
 		// that is when animations[i].isPlaying() == false.
-		for (unsigned short j = 0; j < 5; ++j) {
-			const unsigned short idx = i * 4 + j;
+		for (unsigned j = 0; j < 5; ++j) {
+			const unsigned idx = i * 4 + j;
 			anim.addFrame(sf::IntRect(
 					(idx % 10) * TILE_SIZE,
 					((idx % (N_EXTRA_LETTERS * 4)) / 10)  * TILE_SIZE,

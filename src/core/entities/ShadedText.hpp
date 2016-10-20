@@ -30,7 +30,7 @@ public:
 
 	void setStyle(sf::Text::Style style);
 	void setString(const std::string& str);
-	void setCharacterSize(unsigned int size);
+	void setCharacterSize(unsigned size);
 	void setShadowSpacing(float spx, float spy);
 	void setFGColor(const sf::Color& fg) { fgtext.setFillColor(fg); }
 	void setBGColor(const sf::Color& bg) { bgtext.setFillColor(bg); }

@@ -21,7 +21,7 @@ static void add_style_property(Game::UI::ScreenStyle& style, const std::string& 
 	else if (key == "font")
 		style.font = value.get<std::string>();
 	else if (key == "character-size")
-		style.characterSize = value.get<unsigned int>();
+		style.characterSize = value.get<unsigned>();
 	else if (key == "v-align")
 		style.vAlign = value.get<std::string>();
 	else if (key == "h-align")
@@ -207,7 +207,7 @@ void ScreenBuilder::_fixAlign(Game::UI::Screen& screen) {
 
 	for (auto& pair : toBeAligned) {
 		auto& e = pair.first;
-		unsigned short row = pair.second;
+		unsigned row = pair.second;
 		const float xOffset = rowAligns[row] == "left" ? H_PADDING
 					: rowAligns[row] == "right" ? (screen.size.x - rowWidths[row] - H_PADDING)
 					: (screen.size.x - rowWidths[row]) / 2;

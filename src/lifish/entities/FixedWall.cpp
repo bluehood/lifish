@@ -10,7 +10,7 @@
 using Game::FixedWall;
 using Game::TILE_SIZE;
 
-FixedWall::FixedWall(const sf::Vector2f& pos, const unsigned short id) 
+FixedWall::FixedWall(const sf::Vector2f& pos, const unsigned id) 
 	: Game::Entity(pos)
 {
 	addComponent(new Game::Fixed(*this));

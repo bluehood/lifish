@@ -35,7 +35,7 @@ public:
 
 	/** Loads a game state saved in `filename` into `lr` and `start_level` */
 	static bool loadGame(const std::string& filename,
-			Game::LevelManager& lr, unsigned short& start_level);
+			Game::LevelManager& lr, unsigned& start_level);
 };
 
 }

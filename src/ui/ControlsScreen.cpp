@@ -138,7 +138,7 @@ ControlsScreen::ControlsScreen(const sf::RenderWindow& window, const sf::Vector2
 	callbacks["change_bomb"] = [this] () { return _changeControl("change_bomb"); };
 }
 
-Action ControlsScreen::_selectPlayer(unsigned short id) {
+Action ControlsScreen::_selectPlayer(unsigned id) {
 	if (selectedPlayer == id) return Action::DO_NOTHING;
 	interactables["p" + Game::to_string(selectedPlayer)]->setColor(sf::Color::White);
 	selectedPlayer = id;
@@ -158,7 +158,7 @@ Action ControlsScreen::_selectPlayer(unsigned short id) {
 				Game::Controls::players[selectedPlayer-1][it->second]));
 	}
 
-	const short used = Game::Controls::useJoystick[selectedPlayer-1];
+	const int used = Game::Controls::useJoystick[selectedPlayer-1];
 	interactables["joystick_toggle"]->getText()->setString(used == -1 ? "NO" :
 			std::string("Joystick") + Game::to_string(used));
 
@@ -167,7 +167,7 @@ Action ControlsScreen::_selectPlayer(unsigned short id) {
 
 void ControlsScreen::update() {
 	Game::UI::Screen::update();
-	for (unsigned short i = 0; i < Game::MAX_PLAYERS; ++i) {
+	for (unsigned i = 0; i < Game::MAX_PLAYERS; ++i) {
 		auto& text = interactables["p" + Game::to_string(i+1)];
 		if (selectedPlayer == i + 1) 
 			text->setColor(sf::Color::Yellow);
@@ -194,7 +194,7 @@ bool ControlsScreen::receiveEvent(const sf::Event& event) {
 		{
 			// Only meaningful if we're using a joystick (and the correct one)
 			if (Game::Controls::useJoystick[selectedPlayer-1] < 0 ||
-				short(event.joystickButton.joystickId) !=
+				int(event.joystickButton.joystickId) !=
 					Game::Controls::useJoystick[selectedPlayer-1])
 			{
 				break;
@@ -260,13 +260,13 @@ Action ControlsScreen::_changeControl(const std::string& textKey) {
 
 Action ControlsScreen::_toggleJoystick() {
 	// Retreive the list of connected joysticks
-	std::vector<short> joysticks;
+	std::vector<int> joysticks;
 	joysticks.reserve(sf::Joystick::Count);
 	
 	// Index of the currently used joystick, or -1 if no joystick is in use
-	short idx = -1;
+	int idx = -1;
 	// Currently used joystick (-1 if none)
-	short current = Game::Controls::useJoystick[selectedPlayer-1];
+	int current = Game::Controls::useJoystick[selectedPlayer-1];
 
 	for (auto i = 0; i < sf::Joystick::Count; ++i) {
 		if (sf::Joystick::isConnected(i)) {
@@ -278,7 +278,7 @@ Action ControlsScreen::_toggleJoystick() {
 
 	if (current == -1)
 		current = joysticks[0];
-	else if (idx < static_cast<short>(joysticks.size()) - 1)
+	else if (idx < static_cast<int>(joysticks.size()) - 1)
 		current = joysticks[++idx];
 	else
 		current = -1;

@@ -13,7 +13,7 @@ protected:
 	const int pointsGiven;
 	bool givenPoints = false;
 	/** The id of the player who points are given to */
-	short target = -1;
+	int target = -1;
 
 public:
 	explicit Scored(Game::Entity& owner, const int points) 
@@ -30,9 +30,9 @@ public:
 		return pointsGiven;
 	}
 
-	short getTarget() const { return target; }
+	int getTarget() const { return target; }
 	/** Sets this component to give points to `t`-th player */
-	void setTarget(unsigned short t);
+	void setTarget(unsigned t);
 };
 
 }

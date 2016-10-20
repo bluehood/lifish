@@ -9,7 +9,7 @@ static Direction directions[] = {
 	Direction::LEFT 
 };
 
-Direction Game::turnRight(const Direction dir, short times) {
+Direction Game::turnRight(const Direction dir, int times) {
 	if (dir == Direction::NONE) return Direction::NONE;
 
 	int i = 0;

@@ -24,7 +24,7 @@ class Player;
  */
 class SidePanel final : public sf::Drawable, private sf::NonCopyable {
 	// Elements' coordinates (in pixel)
-	constexpr static unsigned short PLAYER_HEAD_WIDTH = 32,
+	constexpr static unsigned PLAYER_HEAD_WIDTH = 32,
 	                                PLAYER_HEAD_HEIGHT = 23,
 	                                N_LIVES_X = 55,
 	                                N_LIVES_Y_1 = 57,
@@ -62,7 +62,7 @@ class SidePanel final : public sf::Drawable, private sf::NonCopyable {
 	sf::Texture *playerHeadsTexture;
 
 	/** The health symbols' sprites: empty, half, full */
-	enum : unsigned short {
+	enum : unsigned {
 		HEALTH_EMPTY = 0,
 		HEALTH_HALF  = 1,
 		HEALTH_FULL  = 2

@@ -57,6 +57,6 @@ inline Direction oppositeDirection(const Direction dir) {
 /** Turns right `times` times (negative is OK, means 'turn left') starting from `dir`
  *  and returns the corresponding direction.
  */
-Direction turnRight(const Direction dir, short times);
+Direction turnRight(const Direction dir, int times);
 
 }

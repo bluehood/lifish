@@ -1,7 +1,7 @@
 #include "game_values.hpp"
 
 /** Relative bonus probabilities */
-std::discrete_distribution<unsigned short> Game::Conf::Bonus::distribution {
+std::discrete_distribution<unsigned> Game::Conf::Bonus::distribution {
 	5,   // max bombs
 	4,   // quick fuse
 	5,   // max range

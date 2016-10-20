@@ -51,7 +51,7 @@ static Game::Direction select_random_viable(
 		const Game::Direction opp)
 {
 	Game::Direction dirs[4];
-	unsigned short n = 0;
+	unsigned n = 0;
 	for (const auto& d : directions)
 		if (lm.canGo(moving, d) && d != opp) dirs[n++] = d;
 	if (n == 0)
@@ -63,8 +63,8 @@ static Game::Direction select_random_viable(
 static Game::Direction seeing_player(const Game::LevelManager& lm, const Game::AxisSighted& sighted) {
 	const auto& seen = sighted.entitiesSeen();
 	Game::Direction dir = Game::Direction::NONE;
-	unsigned short dist = Game::LEVEL_WIDTH + 1;
-	for (unsigned short i = 0; i < 4; ++i) {
+	unsigned dist = Game::LEVEL_WIDTH + 1;
+	for (unsigned i = 0; i < 4; ++i) {
 		for (const auto& pair : seen[i]) {
 			if (lm.isPlayer(*pair.first) && pair.second < dist) {
 				dir = static_cast<Game::Direction>(i);
@@ -119,7 +119,7 @@ AIBoundFunction Game::ai_random(Game::Entity& entity) {
 		}
 		moving->setDistTravelled(0);
 		D dirs[4];
-		unsigned short n = 0;
+		unsigned n = 0;
 		if (entity.isAligned('x')) {
 			if (lm.canGo(*moving, D::UP)) dirs[n++] = D::UP;
 			if (lm.canGo(*moving, D::DOWN)) dirs[n++] = D::DOWN;
