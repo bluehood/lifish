@@ -10,6 +10,7 @@
 #include "Music.hpp"
 #include "SidePanel.hpp"
 #include "LevelSet.hpp"
+#include "Effects.hpp"
 #include "Bonusable.hpp"
 #include "Boss.hpp"
 #include "UI.hpp"
@@ -174,6 +175,23 @@ int main(int argc, char **argv) {
 	//window.setVerticalSyncEnabled(vsync);
 	window.setJoystickThreshold(Game::JOYSTICK_INPUT_THRESHOLD);
 	Game::options.showFPS = true;
+
+	Game::Effects fx(SCREEN_SIZE);
+	if (sf::Shader::isAvailable()) {
+		auto& shader = fx.addShader(Game::getAsset("shaders", "lighting.frag"), sf::Shader::Fragment);
+		const sf::Glsl::Vec2 light_pos[] = {
+			sf::Glsl::Vec2(400, 300),
+			sf::Glsl::Vec2(600, 400)
+		};
+		const float light_intensity[] = {
+			0.2,
+			2.0
+		};
+		shader.setUniform("tex", sf::Shader::CurrentTexture);
+		shader.setUniformArray("light_position", light_pos, 2);
+		shader.setUniformArray("light_intensity", light_intensity, 2);
+		shader.setUniform("n_lights", 2);
+	}
 
 	// Setup icon
 	load_icon(window);
@@ -381,10 +399,16 @@ int main(int argc, char **argv) {
 				lm.update();
 
 			sidePanel.update();
+
 			// Draw everything
 			window.clear();
-			window.draw(lm);
-			window.draw(sidePanel);
+			if (sf::Shader::isAvailable()) {
+				fx.render({&lm, &sidePanel});
+				fx.drawWithEffects(window);
+			} else {
+				window.draw(lm);
+				window.draw(sidePanel);
+			}
 			if (debug)
 				Debug::DebugRenderer::drawColliders(window, lm.getEntities());
 		}

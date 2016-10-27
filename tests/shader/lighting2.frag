@@ -4,7 +4,7 @@
 	if (n_lights > n) { \
 		vec4 c = light_influence(n, light_color[n]); \
 		color = mix(color, c, c.a); \
-	}
+	} else return color;
 		
 uniform sampler2D tex;
 uniform int n_lights;
@@ -21,7 +21,9 @@ vec4 light_influence(int idx, vec3 lcol) {
 	vec2 c = gl_FragCoord.xy;
 
 	float dist = (l.x - c.x)*(l.x - c.x) + (l.y - c.y)*(l.y - c.y);
-	float alpha = light_intensity[idx] * (1000.0/(1.0+dist));//(1.0 - dist / light_radius[idx] / light_radius[idx]);
+	float alpha = 	light_intensity[idx] * (1000.0/(1.0+dist))
+			//(1.0 - dist / light_radius[idx] / light_radius[idx]);
+			;
 	alpha = max(alpha, 0.0);
 
 	return vec4(lcol.xyz, alpha);
