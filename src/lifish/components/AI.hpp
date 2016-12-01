@@ -23,6 +23,8 @@ class AI : public Game::Component {
 	Game::Moving *moving = nullptr;
 
 public:
+	ENTITY_ID("AI")
+
 	explicit AI(Game::Entity& owner, AIFunction ai);
 
 	void setAI(AIFunction newAI);

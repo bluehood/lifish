@@ -86,6 +86,8 @@ class Player : public Game::Entity {
 	void _checkCollision(Game::Collider& cld);
 
 public:
+	ENTITY_ID("Player")
+
 	/** Creates a player with the default state and id `id` */
 	explicit Player(const sf::Vector2f& pos, const unsigned short id);
 	/** Creates a player whose state is described by `info` */

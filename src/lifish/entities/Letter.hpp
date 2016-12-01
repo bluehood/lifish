@@ -25,6 +25,8 @@ class Letter : public Game::Entity {
 	bool transitioning = false;
 
 public:
+	ENTITY_ID("Letter")
+
 	static unsigned short randomId();
 
 	explicit Letter(const sf::Vector2f& pos, unsigned short id);

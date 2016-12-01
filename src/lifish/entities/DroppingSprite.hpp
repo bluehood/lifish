@@ -25,6 +25,8 @@ class DroppingSprite : public Game::Entity {
 	bool playing = false;
 
 public:
+	ENTITY_ID("DroppingSprite")
+
 	explicit DroppingSprite(const std::string& texture_name, 
 			const sf::Vector2i& texture_rect, float speed = 230.f);
 

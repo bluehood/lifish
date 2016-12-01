@@ -32,6 +32,7 @@ class Bomb : public Game::Entity {
 	const Game::Player& sourcePlayer;
 
 public:
+	ENTITY_ID("Bomb")
 
 	explicit Bomb(const sf::Vector2f& pos, const Game::Player& source, 
 			const sf::Time& fuseTime = Game::Conf::Bomb::DEFAULT_FUSE, 

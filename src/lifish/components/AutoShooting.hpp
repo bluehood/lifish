@@ -19,6 +19,8 @@ class AutoShooting : public Game::Component {
 	Game::Shooting *shooting = nullptr;
 
 public:
+	ENTITY_ID("AutoShooting")
+
 	explicit AutoShooting(Game::Entity& owner);
 
 	void shoot(Game::Direction dir = Game::Direction::NONE);

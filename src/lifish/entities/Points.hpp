@@ -13,6 +13,8 @@ class Points : public Game::Entity {
 	Game::ShadedText text;
 
 public:
+	ENTITY_ID("Points")
+
 	constexpr static unsigned short CHARACTER_SIZE = 10;
 	constexpr static float SPEED = 30.f;
 

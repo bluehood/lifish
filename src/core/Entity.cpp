@@ -15,6 +15,10 @@ Entity::Entity(const sf::Vector2f& pos)
 
 Entity::~Entity() {}
 
+const char* Entity::getEntityID() const {
+	return "Entity";
+}
+
 void Entity::setOrigin(const sf::Vector2f& origin) {
 	WithOrigin::setOrigin(origin);
 	for (auto& c : components)

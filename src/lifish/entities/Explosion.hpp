@@ -58,6 +58,8 @@ class Explosion : public Game::Entity, public sf::Drawable {
 	void _setPropagatedAnims();
 
 public:
+	ENTITY_ID("Explosion")
+
 	/** If sourcePlayer == nullptr, the explosion wasn't originated by a bomb.
 	 *  In this case, whenever points should be given to a player, no points
 	 *  are given at all.

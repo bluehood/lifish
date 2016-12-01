@@ -28,6 +28,8 @@ protected:
 	void _checkCollision(Game::Collider& cld);
 
 public:
+	ENTITY_ID("BreakableWall")
+
 	explicit BreakableWall(const sf::Vector2f& pos, const unsigned short id, unsigned short life = 1);
 };
 

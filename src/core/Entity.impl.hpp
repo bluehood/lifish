@@ -12,9 +12,8 @@ template<class T>
 T* Entity::get() const {
 	for (auto& comp : components) {
 		Component *ptr = comp.get();
-		T* derived = nullptr;
-		if (ptr && (derived = dynamic_cast<T*>(ptr)))
-			return derived;
+		if (ptr && T::_ENTITY_ID == ptr->getEntityID())
+			return static_cast<T*>(ptr);
 	}
 	return nullptr;
 }
@@ -25,8 +24,8 @@ std::vector<T*> Entity::getAll() const {
 	for (auto& comp : components) {
 		Component *ptr = comp.get();
 		T* derived = nullptr;
-		if (ptr && (derived = dynamic_cast<T*>(ptr)))
-			all.push_back(derived);
+		if (ptr && T::_ENTITY_ID == ptr->getEntityID())
+			all.push_back(static_cast<T*>(ptr));
 	}
 	return all;
 }
@@ -36,9 +35,8 @@ std::vector<T*> Entity::getAllRecursive() const {
 	std::vector<T*> all;
 	for (auto& comp : components) {
 		Component *ptr = comp.get();
-		T* derived = nullptr;
-		if (ptr && (derived = dynamic_cast<T*>(ptr)))
-			all.push_back(derived);
+		if (ptr && T::_ENTITY_ID == ptr->getEntityID())
+			all.push_back(static_cast<T*>(ptr));
 		auto sub = ptr->getAllRecursive<T>();
 		all.insert(all.end(), sub.begin(), sub.end());
 	}
@@ -49,7 +47,7 @@ template<class T>
 std::shared_ptr<T> Entity::getShared() const {
 	for (auto& comp : components) {
 		Component *ptr = comp.get();
-		if (ptr && dynamic_cast<T*>(ptr) != nullptr)
+		if (ptr && T::_ENTITY_ID == ptr->getEntityID())
 			return std::static_pointer_cast<T>(comp);
 	}
 	return std::shared_ptr<T>();
@@ -60,7 +58,7 @@ std::vector<std::shared_ptr<T>> Entity::getAllRecursiveShared() const {
 	std::vector<std::shared_ptr<T>> all;
 	for (auto& comp : components) {
 		Component *ptr = comp.get();
-		if (ptr && dynamic_cast<T*>(ptr) != nullptr)
+		if (ptr && T::_ENTITY_ID == ptr->getEntityID())
 			all.push_back(std::static_pointer_cast<T>(comp));
 		auto sub = ptr->getAllRecursiveShared<T>();
 		all.insert(all.end(), sub.begin(), sub.end());

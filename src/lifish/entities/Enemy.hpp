@@ -86,6 +86,8 @@ protected:
 	void _checkShoot();
 
 public:
+	ENTITY_ID("Enemy")
+
 	constexpr static float BASE_SPEED = 75.f;
 
 	unsigned short distanceWithNearestPlayer = 2 * Game::LEVEL_WIDTH * Game::TILE_SIZE;

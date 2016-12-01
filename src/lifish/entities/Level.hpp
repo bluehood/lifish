@@ -88,6 +88,8 @@ class Level final
 	bool _setTilemap(const std::string& tilemap);
 
 public:
+	ENTITY_ID("Level")
+
 	/** Constructs a level without a specified time and tileset. init() must
 	 *  be called before using this level. You need to specify a LevelSet
 	 *  this Level belongs to.

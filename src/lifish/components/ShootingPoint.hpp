@@ -19,6 +19,7 @@ class ShootingPoint : public Game::Component {
 	Game::AutoShooting *autoShooting = nullptr; 
 
 public:
+	ENTITY_ID("ShootingPoint")
 	COMP_NOT_UNIQUE
 
 	explicit ShootingPoint(Game::Entity& owner, const Game::Attack& attack, float visionRadius = -1);

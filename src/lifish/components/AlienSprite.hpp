@@ -24,6 +24,8 @@ class AlienSprite : public Game::Component {
 	Game::MovingAnimator *movingAnimator = nullptr;
 
 public:
+	ENTITY_ID("AlienSprite")
+
 	explicit AlienSprite(Game::Entity& owner);
 
 	Game::Entity* init() override;

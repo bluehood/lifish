@@ -30,6 +30,8 @@ class Teleport : public Game::Entity {
 	void warp(Game::Collider& cld);
 
 public:
+	ENTITY_ID("Teleport")
+
 	explicit Teleport(const sf::Vector2f& pos);
 
 	Teleport* next() const { return _next; }

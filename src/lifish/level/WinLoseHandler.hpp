@@ -15,7 +15,6 @@ class WindowContext;
 /**
  * This class handles the winning and losing conditions and switching
  * between levels.
- * TODO: make this compatible with multithreading
  */
 class WinLoseHandler final {
 public:

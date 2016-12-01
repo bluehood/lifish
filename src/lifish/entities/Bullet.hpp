@@ -38,6 +38,8 @@ protected:
 	void _destroy();
 
 public:
+	ENTITY_ID("Bullet")
+
 	constexpr static float BASE_SPEED = Game::Conf::Bullet::BASE_SPEED;
 
 	/** Constructs a Bullet without a source (must specify the position) */

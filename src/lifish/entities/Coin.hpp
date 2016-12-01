@@ -25,6 +25,8 @@ class Coin : public Game::Entity {
 	void _grab();
 
 public:
+	ENTITY_ID("Coin")
+
 	explicit Coin(const sf::Vector2f& pos);
 };
 

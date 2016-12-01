@@ -23,6 +23,8 @@ class Bonus : public Game::Entity {
 
 	void _grab(Game::Player& player);
 public:
+	ENTITY_ID("Bonus")
+
 	explicit Bonus(const sf::Vector2f& pos, const Game::BonusType type);
 
 	Game::BonusType getType() const { return type; }

@@ -14,6 +14,8 @@ class Flash : public Game::Entity {
 	Game::Animated *animated = nullptr;
 
 public:
+	ENTITY_ID("Flash")
+
 	explicit Flash(const sf::Vector2f& pos);
 };
 

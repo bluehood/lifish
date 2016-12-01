@@ -240,7 +240,7 @@ void Game::PlayerDrawProxy::draw(sf::RenderTarget& target, sf::RenderStates stat
 		{
 			AnimatedSprite shieldSprite(player.animated->getSprite());
 			// TODO: scale & offset
-			shieldSprite.setColor(sf::Color(0, 255, 0, 180));
+			shieldSprite.setColor(sf::Color(0, 255, 0, 150));
 			target.draw(shieldSprite, states);
 		}
 	}

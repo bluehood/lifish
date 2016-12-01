@@ -9,6 +9,8 @@ class Grabbable : public Game::Component {
 	Game::Entity *grabbingEntity = nullptr;
 
 public:
+	ENTITY_ID("Grabbable")
+
 	explicit Grabbable(Game::Entity& owner)
 		: Game::Component(owner) 
 	{}

@@ -13,6 +13,8 @@ class ShadedText final : public Game::Entity, public sf::Drawable {
 	sf::Vector2f shadowSpacing;
 
 public:
+	ENTITY_ID("ShadedText")
+
 	ShadedText() {}
 	ShadedText(
 		const std::string& fontname,

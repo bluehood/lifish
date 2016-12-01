@@ -13,6 +13,8 @@ class BossExplosion : public Game::Entity {
 	Game::Animated *animated = nullptr;
 
 public:
+	ENTITY_ID("BossExplosion")
+
 	explicit BossExplosion(const sf::Vector2f& pos);
 };
 

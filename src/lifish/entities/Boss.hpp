@@ -31,6 +31,8 @@ protected:
 	/** `true` while deathClock->getElapsedTime() < Game::Conf::Boss::DEATH_TIME */
 	bool _killInProgress() const;
 public:
+	ENTITY_ID("Boss")
+
 	explicit Boss(const sf::Vector2f& pos);
 
 	void update() override;

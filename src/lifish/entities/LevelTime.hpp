@@ -24,6 +24,8 @@ private:
 	HurryUpResponse hurryUpResponse = HurryUpResponse::HURRY_UP_OFF;
 
 public:
+	ENTITY_ID("LevelTime")
+
 	explicit LevelTime(sf::Time time = sf::Time::Zero);
 
 	/** Sets the initialTime to `time`, resets and pauses the clock */

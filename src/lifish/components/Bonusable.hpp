@@ -18,6 +18,8 @@ protected:
 	std::array<Game::Clock*, Game::Conf::Bonus::N_BONUS_TYPES> bonusClock;
 
 public:
+	ENTITY_ID("Bonusable")
+
 	explicit Bonusable(Game::Entity& owner);
 
 	void giveBonus(Game::BonusType type, const sf::Time& time);

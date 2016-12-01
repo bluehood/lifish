@@ -6,6 +6,14 @@
 #include "WithOrigin.hpp"
 #include "Stringable.hpp"
 
+#define ENTITY_ID(id) \
+	static constexpr const char *_ENTITY_ID = id; \
+	const char* getEntityID() const override { return id; }
+
+#define V_ENTITY_ID(id) \
+	static constexpr const char *_ENTITY_ID = id; \
+	virtual const char* getEntityID() const override { return id; }
+
 namespace Game {
 
 class Component;
@@ -19,9 +27,13 @@ class Entity : public Game::WithOrigin, public Game::Stringable {
 protected:
 	std::vector<std::shared_ptr<Game::Component>> components;
 	sf::Vector2f position;
+
 	std::string _toString(unsigned short indent) const;
 
 public:
+	static constexpr const char *_ENTITY_ID = "Entity";
+	virtual const char* getEntityID() const;
+
 	explicit Entity();
 
 	explicit Entity(const sf::Vector2f& pos);

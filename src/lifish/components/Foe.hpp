@@ -10,6 +10,8 @@ namespace Game {
  */
 class Foe : public Game::Component {
 public:
+	ENTITY_ID("Foe")
+
 	explicit Foe(Game::Entity& owner) : Game::Component(owner) {}
 };
 

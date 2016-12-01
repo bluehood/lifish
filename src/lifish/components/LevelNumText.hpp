@@ -10,6 +10,8 @@ class LevelNumText : public Game::Component, public sf::Drawable {
 	Game::ShadedText text;
 
 public:
+	ENTITY_ID("LevelNumText")
+
 	explicit LevelNumText(Game::Entity& owner, 
 			const unsigned short levelnum);
 

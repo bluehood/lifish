@@ -31,6 +31,8 @@ protected:
 	Game::AxisMoving *ownerMoving = nullptr;
 	
 public:
+	ENTITY_ID("Shooting")
+
 	explicit Shooting(Game::Entity& owner, const Attack& attack);
 
 	const Attack& getAttack() const { return attack; }
