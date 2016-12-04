@@ -14,6 +14,8 @@ protected:
 	sf::Sprite sprite;
 
 public:
+	ENTITY_ID("Sprite")
+
 	explicit Sprite(Game::Entity& owner, const std::string& texture_name);
 	explicit Sprite(Game::Entity& owner, const std::string& texture_name,
 			const sf::IntRect& textureDivision);

@@ -7,6 +7,7 @@ protected:
 	bool active;
 
 public:
+	Activable(bool active = true) : active(active) {}
 	virtual ~Activable() {}
 
 	virtual void setActive(bool b) { active = b; }	

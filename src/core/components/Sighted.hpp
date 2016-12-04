@@ -30,6 +30,7 @@ protected:
 	bool _isOpaque(Game::Layers::Layer layer) const;
 
 public:
+	ENTITY_ID("Sighted")
 	COMP_NOT_UNIQUE
 
 	explicit Sighted(Game::Entity& owner, float visionRadius);

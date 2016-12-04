@@ -7,6 +7,8 @@ namespace Game {
 class ZIndexed : public Game::Component {
 	int zIndex = 0;
 public:
+	ENTITY_ID("ZIndexed")
+
 	explicit ZIndexed(Game::Entity& owner, int z) 
 		: Game::Component(owner)
 		, zIndex(z) {}

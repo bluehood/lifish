@@ -175,7 +175,7 @@ bool LevelManager::canDeployBombAt(const sf::Vector2i& tile) const {
 	bool there_are_expl = false;
 	entities.apply([tile, &there_are_expl] (const Game::Entity *e) {
 		if (there_are_expl) return;
-		if (Game::tile(e->getPosition()) == tile && dynamic_cast<const Game::Explosion*>(e) != nullptr)
+		if (Game::tile(e->getPosition()) == tile && e->is<Game::Explosion>())
 			there_are_expl = true;
 	});
 	return !there_are_expl;
@@ -205,8 +205,8 @@ bool LevelManager::isLevelClear() const {
 }
 
 void LevelManager::_spawn(Game::Entity *e) {
-	if (auto b = dynamic_cast<Game::Bomb*>(e))
-		_spawnBomb(b);
+	if (e->isExactly<Game::Bomb>())
+		_spawnBomb(static_cast<Game::Bomb*>(e));
 	else
 		entities.add(e);
 }
@@ -275,10 +275,9 @@ bool LevelManager::_shouldTriggerExtraGame() const {
 	entities.apply([&there_are_coins] (const Game::Entity *e) {
 		if (there_are_coins) return;
 
-		auto coin = dynamic_cast<const Game::Coin*>(e);
-		if (coin == nullptr) return;
+		if (!e->isExactly<Game::Coin>()) return;
 
-		if (!coin->get<Game::Killable>()->isKilled()) {
+		if (!e->get<Game::Killable>()->isKilled()) {
 			there_are_coins = true;
 			return;
 		}

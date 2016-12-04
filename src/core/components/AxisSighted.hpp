@@ -19,6 +19,8 @@ class AxisSighted : public Game::Sighted {
 	void _fillLine(const Game::Direction dir);
 
 public:
+	ENTITY_ID("AxisSighted")
+
 	explicit AxisSighted(Game::Entity& owner, float visionRadius = -1);
 
 	/** @return A list of pair {entity, distance_in_tiles (discrete)} as seen in all directions */

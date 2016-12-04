@@ -2,17 +2,14 @@
 
 #include <memory>
 #include <vector>
+#include <cstring>
 #include <SFML/System.hpp>
 #include "WithOrigin.hpp"
 #include "Stringable.hpp"
 
 #define ENTITY_ID(id) \
-	static constexpr const char *_ENTITY_ID = id; \
-	const char* getEntityID() const override { return id; }
-
-#define V_ENTITY_ID(id) \
-	static constexpr const char *_ENTITY_ID = id; \
-	virtual const char* getEntityID() const override { return id; }
+	const char* getEntityID() const { return _ENTITY_ID; } \
+	static constexpr const char *_ENTITY_ID = id "\0";
 
 namespace Game {
 
@@ -41,6 +38,12 @@ public:
 
 	template<class T>
 	T* addComponent(T* comp);
+
+	template<class T>
+	bool is() const;
+
+	template<class T>
+	bool isExactly() const;	
 
 	template<class T>
 	T* get() const;

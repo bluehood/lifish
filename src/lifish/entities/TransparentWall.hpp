@@ -9,6 +9,8 @@ namespace Game {
  */
 class TransparentWall : public Game::BreakableWall {
 public:
+	ENTITY_ID("TransparentWall")
+
 	constexpr static unsigned int SCORE = 20;
 	explicit TransparentWall(const sf::Vector2f& pos);
 };

@@ -18,6 +18,8 @@ protected:
 	CheckKillCallback checkKillProgress;
 
 public:
+	ENTITY_ID("Killable")
+
 	explicit Killable(Game::Entity& owner); 
 	explicit Killable(Game::Entity& owner, OnKillCallback callback); 
 	explicit Killable(Game::Entity& owner, OnKillCallback callback, CheckKillCallback checkKill); 

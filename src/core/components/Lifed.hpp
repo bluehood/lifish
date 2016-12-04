@@ -13,6 +13,8 @@ protected:
 	short life;
 	const short maxLife;
 public:
+	ENTITY_ID("Lifed")
+
 	explicit Lifed(Game::Entity& owner, const short life);
 
 	bool isAlive() const { return life > 0; }

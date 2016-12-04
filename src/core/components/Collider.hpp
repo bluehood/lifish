@@ -29,6 +29,7 @@ protected:
 	CollisionFunc onCollision;
 
 public:
+	ENTITY_ID("Collider")
 	COMP_NOT_UNIQUE
 
 	explicit Collider(Game::Entity& owner, 

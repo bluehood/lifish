@@ -12,6 +12,7 @@ namespace Game {
 class Sounded : public Game::Component {
 	std::vector<std::string> soundFiles;
 public:
+	ENTITY_ID("Sounded")
 	explicit Sounded(Game::Entity& owner, std::initializer_list<std::string> _soundFiles) 
 		: Game::Component(owner)
 	{

@@ -11,6 +11,8 @@ class FreeSighted : public Game::Sighted {
 	SeenEntitiesList seen;
 
 public:
+	ENTITY_ID("FreeSighted")
+
 	explicit FreeSighted(Game::Entity& owner, float visionRadius = -1);
 
 	/** @return A list of pairs {entity, squared distance in pixel} */

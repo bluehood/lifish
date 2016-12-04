@@ -21,6 +21,8 @@ class AxisMoving : public Game::Moving {
 	void _ensureAlign();
 
 public:
+	ENTITY_ID("AxisMoving")
+
 	explicit AxisMoving(Game::Entity& owner, float speed, 
 			Game::Direction dir = Game::Direction::NONE);
 

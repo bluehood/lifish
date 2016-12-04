@@ -202,7 +202,7 @@ template<class T>
 size_t EntityGroup::size() const {
 	size_t sz = 0;
 	for (auto& e : entities) {
-		if (dynamic_cast<T*>(e.get()) != nullptr)
+		if (e->is<T>())
 			++sz;
 	}
 	return sz;

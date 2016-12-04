@@ -17,6 +17,8 @@ class RegularEntityDeath : public Game::Component {
 	std::unordered_map<Game::Component*, bool> origAutoRealign;
 
 public:
+	ENTITY_ID("RegularEntityDeath")
+
 	explicit RegularEntityDeath(Game::Entity& owner, sf::Time deathTime);
 
 	void kill();

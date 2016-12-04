@@ -174,7 +174,7 @@ void Enemy::_checkShoot() {
 	
 	const auto& entitiesSeen = sighted->entitiesSeen(moving->getDirection());
 	for (const auto& pair : entitiesSeen) {
-		if (dynamic_cast<const Game::Player*>(pair.first) != nullptr) {
+		if (pair.first->isExactly<Game::Player>()) {
 			autoShooting->shoot();
 			return;
 		}
@@ -196,9 +196,10 @@ void Enemy::_checkCollision(Game::Collider& coll) {
 	const auto& expl = static_cast<const Game::Explosion&>(coll.getOwner());
 	if (lifed->decLife(expl.getDamage()) <= 0) {
 		killable->kill();	
-		const auto source = dynamic_cast<const Game::Player*>(expl.getSourceEntity());
-		if (source != nullptr)
+		if (expl.getSourceEntity()->isExactly<Game::Player>()) {
+			const auto source = static_cast<const Game::Player*>(expl.getSourceEntity());
 			get<Game::Scored>()->setTarget(source->getInfo().id);
+		}
 	}
 }
 

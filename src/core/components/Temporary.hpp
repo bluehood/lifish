@@ -12,6 +12,8 @@ class Temporary : public Game::Killable {
 	std::function<bool()> expireCondition;
 
 public:
+	ENTITY_ID("Temporary")
+
 	explicit Temporary(Game::Entity& owner, std::function<bool()> expireCondition)
 		: Game::Killable(owner)
 		, expireCondition(expireCondition)

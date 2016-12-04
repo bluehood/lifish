@@ -48,6 +48,8 @@ protected:
 	 */
 	float _effectiveSpeed() const;
 public:
+	ENTITY_ID("Moving")
+
 	explicit Moving(Game::Entity& owner, float speed);
 
 	float getSpeed() const { return speed; }

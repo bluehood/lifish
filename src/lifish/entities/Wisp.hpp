@@ -12,6 +12,8 @@ class Wisp : public Game::Enemy {
 
 	void _checkCollision(Game::Collider& c) override;
 public:
+	ENTITY_ID("Wisp")
+
 	explicit Wisp(const sf::Vector2f& pos, const Game::EnemyInfo& info);
 
 	void update() override;

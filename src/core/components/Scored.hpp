@@ -16,6 +16,8 @@ protected:
 	short target = -1;
 
 public:
+	ENTITY_ID("Scored")
+
 	explicit Scored(Game::Entity& owner, const int points) 
 		: Game::Component(owner)
 		, pointsGiven(points)

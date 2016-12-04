@@ -12,6 +12,8 @@ class FreeMoving : public Game::Moving {
 	sf::Vector2f velocity;
 
 public:
+	ENTITY_ID("FreeMoving")
+
 	explicit FreeMoving(Game::Entity& owner, float speed, 
 			sf::Vector2f velocity = sf::Vector2f(0.f, 0.f));
 

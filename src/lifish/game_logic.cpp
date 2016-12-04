@@ -28,8 +28,8 @@ using EntityList = std::list<Game::Entity*>;
 void Game::Logic::bombExplosionLogic(Game::Entity *e, Game::LevelManager& lm,
 		EntityList& tbspawned, EntityList& tbkilled)
 {
-	auto bomb = dynamic_cast<Game::Bomb*>(e);
-	if (bomb == nullptr) return;
+	if (!e->isExactly<Game::Bomb>()) return;
+	auto bomb = static_cast<Game::Bomb*>(e);
 
 	if (bomb->isFuseOver()) {
 		auto killable = bomb->get<Game::Killable>();
@@ -90,7 +90,7 @@ void Game::Logic::scoredKillablesLogic(Game::Entity *e, Game::LevelManager&,
 	auto klb = e->get<Game::Killable>();
 	if (klb != nullptr && klb->isKilled()) {
 		// Special behaviour for bosses
-		const bool is_boss = dynamic_cast<const Game::Boss*>(&klb->getOwner()) != nullptr;
+		const bool is_boss = klb->getOwner().is<Game::Boss>();
 		if (is_boss && klb->isKillInProgress()) return;
 
 		// Give and spawn points
@@ -132,9 +132,9 @@ void Game::Logic::shootLogic(Game::Entity *e, Game::LevelManager&,
 }
 
 void Game::Logic::bonusGrabLogic(Game::Entity *e, Game::LevelManager &lm, EntityList&, EntityList&) {
-	auto bonus = dynamic_cast<Game::Bonus*>(e);
-	if (bonus == nullptr) return;
-	
+	if (!e->isExactly<Game::Bonus>()) return;
+
+	auto bonus = static_cast<Game::Bonus*>(e);
 	auto grb = bonus->get<Game::Grabbable>();
 	if (grb->isGrabbed()) return;
 	

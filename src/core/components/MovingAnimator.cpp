@@ -6,6 +6,7 @@ using Game::MovingAnimator;
 
 MovingAnimator::MovingAnimator(Game::Entity& owner)
 	: Game::Component(owner)
+	, Game::Activable(true)
 {}
 
 Game::Entity* MovingAnimator::init() {

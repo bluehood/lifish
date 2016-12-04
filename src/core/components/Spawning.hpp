@@ -33,6 +33,8 @@ class Spawning : public Game::Component {
 	SpawnCondition _spawnOnDeath(const Game::Killable*);
 
 public:
+	ENTITY_ID("Spawning")
+
 	/** Constructs Spawning with the "spawn on death" condition. */
 	explicit Spawning(Game::Entity& owner, SpawnFunction spawnFunction);
 	explicit Spawning(Game::Entity& owner, SpawnCondition spawnCondition, SpawnFunction spawnFunction);

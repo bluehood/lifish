@@ -17,6 +17,8 @@ class CompoundCollider : public Game::Collider {
 
 	void _calcBoundingRect();
 public:
+	ENTITY_ID("CompoundCollider")
+
 	explicit CompoundCollider(Game::Entity& owner, Game::Layers::Layer layer, 
 			std::initializer_list<Game::Collider> clds);
 
