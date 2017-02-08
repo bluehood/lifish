@@ -17,6 +17,12 @@ AxisMoving::AxisMoving(lif::Entity& owner, float speed, lif::Direction dir)
 	moving = dir != lif::Direction::NONE;
 }
 
+lif::Entity* AxisMoving::init() {
+	lif::Moving::init();
+	owner.aliasComponent<lif::Moving>(*this);
+	return this;
+}
+
 void AxisMoving::update() {
 	lif::Component::update();
 	if (!moving || _handleBlock()) return;

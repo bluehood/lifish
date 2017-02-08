@@ -6,6 +6,12 @@ BufferedSpawner::BufferedSpawner(lif::Entity& owner)
 	: lif::Spawning(owner)
 {}
 
+lif::Entity* BufferedSpawner::init() {
+	lif::Spawning::init();
+	owner.aliasComponent<lif::Spawning>(*this);
+	return this;
+}
+
 std::unique_ptr<lif::Entity> BufferedSpawner::spawn() {
 	std::unique_ptr<lif::Entity> result;
 	if (!spawned.empty()) {

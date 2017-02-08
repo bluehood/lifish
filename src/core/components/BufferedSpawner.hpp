@@ -22,6 +22,8 @@ public:
 	std::unique_ptr<lif::Entity> spawn() override;
 
 	void addSpawned(lif::Entity *e);
+
+	lif::Entity* init() override;
 };
 
 }

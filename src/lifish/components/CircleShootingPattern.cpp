@@ -11,6 +11,12 @@ CircleShootingPattern::CircleShootingPattern(lif::Entity& owner, const lif::Bull
 	shootClock = addComponent(new lif::Clock(*this));
 }
 
+lif::Entity* CircleShootingPattern::init() {
+	lif::ShootingPattern::init();
+	owner.aliasComponent<lif::ShootingPattern>(*this);
+	return this;
+}
+
 void CircleShootingPattern::update() {
 	lif::Component::update();
 

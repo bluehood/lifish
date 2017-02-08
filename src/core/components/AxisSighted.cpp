@@ -2,6 +2,7 @@
 #include "utils.hpp"
 #include "Collider.hpp"
 #include "EntityGroup.hpp"
+#include <iostream>
 
 using lif::AxisSighted;
 
@@ -28,6 +29,13 @@ AxisSighted::AxisSighted(lif::Entity& owner, float visionRadius)
 	: lif::Sighted(owner, visionRadius)
 {
 	vision.fill(visionRadius * lif::TILE_SIZE);
+}
+
+lif::Entity* AxisSighted::init() {
+	lif::Sighted::init();
+	std::cout <<"registering alias for Sighted\n";
+	owner.aliasComponent<lif::Sighted>(*this);
+	return this;
 }
 
 void AxisSighted::update() {

@@ -30,6 +30,11 @@ public:
 		setActive(true);
 	}
 
+	virtual lif::Entity* init() override {
+		lif::BufferedSpawner::init();
+		owner.aliasComponent<lif::BufferedSpawner>(*this);
+		return this;
+	}
 	virtual void update() override = 0;
 };
 

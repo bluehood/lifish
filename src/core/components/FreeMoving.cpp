@@ -11,6 +11,13 @@ FreeMoving::FreeMoving(lif::Entity& owner, float speed, sf::Vector2f velocity)
 	setVelocity(velocity);
 }
 
+lif::Entity* FreeMoving::init() {
+	lif::Moving::init();
+	owner.aliasComponent<lif::Moving>(*this);
+	return this;
+}
+
+
 void FreeMoving::update() {
 	lif::Component::update();
 	if (!moving || _handleBlock()) return;

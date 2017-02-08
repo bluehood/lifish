@@ -21,6 +21,7 @@ public:
 	template<class T>
 	std::weak_ptr<T> nearest();
 	
+	lif::Entity* init() override;
 	void update() override;
 };
 

@@ -30,6 +30,12 @@ public:
 		, expireCondition(expireCondition)
 	{}
 
+	lif::Entity* init() override {
+		lif::Component::init();
+		owner.aliasComponent<lif::Killable>(*this);
+		return this;
+	}
+
 	void update() override {
 		lif::Component::update();
 		if (!killed && expireCondition())

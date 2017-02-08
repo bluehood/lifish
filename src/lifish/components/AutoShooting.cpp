@@ -15,6 +15,7 @@ lif::Entity* AutoShooting::init() {
 	shooting = owner.get<Shooting>();
 	if (shooting == nullptr)
 		throw std::logic_error("owner of AutoShooting has no Shooting component!");
+	owner.aliasComponent<lif::BufferedSpawner>(*this);
 	return this;
 }
 

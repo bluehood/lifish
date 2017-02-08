@@ -2,10 +2,15 @@
 
 #include <memory>
 #include <vector>
+#include <map>
+#include <typeinfo>
+#include <typeindex>
 #include <SFML/System.hpp>
 #include "Activable.hpp"
 #include "WithOrigin.hpp"
 #include "Stringable.hpp"
+
+#include <iostream>
 
 namespace lif {
 
@@ -15,10 +20,17 @@ class Component;
  * Base class for game entities (walls, enemies, players, ...)
  */
 class Entity : public lif::WithOrigin, public lif::Stringable {
+
+	using CompKey = std::type_index;
+
 	bool _initialized = false;
 
+
+	template<class T>
+	CompKey _compKey() const;
+
 protected:
-	std::vector<std::shared_ptr<lif::Component>> components;
+	std::map<CompKey, std::vector<std::shared_ptr<lif::Component>>> components;
 	sf::Vector2f position;
 	std::string _toString(unsigned short indent) const;
 
@@ -30,6 +42,9 @@ public:
 
 	template<class T>
 	T* addComponent(T* comp);
+
+	template<class Alias, class Real>
+	void aliasComponent(const Real& comp);
 
 	template<class T>
 	T* get() const;

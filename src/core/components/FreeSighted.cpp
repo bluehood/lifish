@@ -8,6 +8,12 @@ FreeSighted::FreeSighted(lif::Entity& owner, float visionRadius)
 	: lif::Sighted(owner, visionRadius)
 {}
 
+lif::Entity* FreeSighted::init() {
+	lif::Sighted::init();
+	owner.aliasComponent<lif::Sighted>(*this);
+	return this;
+}
+
 void FreeSighted::update() {
 	lif::Component::update();
 	if (entities == nullptr) return;

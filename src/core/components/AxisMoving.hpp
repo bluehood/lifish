@@ -46,6 +46,8 @@ public:
 
 	void realign();
 	void stop() override;
+
+	lif::Entity* init() override;
 	void update() override;
 };
 

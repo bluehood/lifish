@@ -20,6 +20,7 @@ lif::Entity* ScatterVsPlayerPattern::init() {
 	if (sighted == nullptr)
 		throw std::invalid_argument("Owner of ScatterVsPlayerPattern has no FreeSighted!");
 	
+	owner.aliasComponent<lif::ShootingPattern>(*this);
 	return this;
 }
 

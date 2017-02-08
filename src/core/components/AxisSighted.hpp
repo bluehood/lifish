@@ -41,6 +41,7 @@ public:
 		return vision[static_cast<std::size_t>(dir)];
 	}
 
+	lif::Entity* init() override;
 	void update() override;
 };
 

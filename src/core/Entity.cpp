@@ -44,8 +44,9 @@ Entity::~Entity() {}
 
 void Entity::setOrigin(const sf::Vector2f& origin) {
 	WithOrigin::setOrigin(origin);
-	for (auto& c : components)
-		c->setOrigin(origin);
+	for (auto& pair : components)
+		for (auto& c : pair.second)
+			c->setOrigin(origin);
 }
 
 bool Entity::isAligned(const char axis) const {
@@ -58,19 +59,23 @@ bool Entity::isAligned(const char axis) const {
 }
 
 lif::Entity* Entity::init() {
+	std::cout << "initializing " << typeid(*this).name() << std::endl;
 	if (_initialized) return this;
 
-	for (auto& c : components)
-		c->init();
+	for (auto it = components.begin(); it != components.end(); ++it) {
+		for (auto& c : it->second)
+			c->init();
+	}
 	
 	_initialized = true;
 	return this;
 }
 
 void Entity::update() {
-	for (auto& c : components)
-		if (c->isActive())
-			c->update();
+	for (auto& pair : components)
+		for (auto& c : pair.second)
+			if (c->isActive())
+				c->update();
 }
 
 std::string Entity::_toString(unsigned short indent) const {
@@ -86,8 +91,9 @@ std::string Entity::_toString(unsigned short indent) const {
 	if (components.size() > 0) {
 		ss << "\r\n";
 		put_indent(indent) << "{\r\n";
-		for (const auto& c : components) {
-			ss << c->_toString(indent + 1) << "\r\n";
+		for (const auto& pair : components) {
+			for (const auto& c : pair.second)
+				ss << c->_toString(indent + 1) << "\r\n";
 		}
 		put_indent(indent) << "}";
 	}

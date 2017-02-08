@@ -41,6 +41,7 @@ public:
 	 */
 	explicit CircleShootingPattern(lif::Entity& owner, const lif::BulletInfo& bullet);
 	
+	lif::Entity* init() override;
 	void update() override;
 };
 
