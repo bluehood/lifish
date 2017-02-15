@@ -61,6 +61,9 @@ Game::Action ScreenHandler::handleScreenEvents(sf::RenderWindow& window, ScreenT
 			case sf::Event::Closed:
 				window.close();
 				break;
+			case sf::Event::Resized:
+				window.setView(Game::keep_ratio(event.size, SCREEN_SIZE));
+				break;
 			case sf::Event::MouseMoved:
 				cur_screen->triggerMouseOver(
 						window.mapPixelToCoords(sf::Mouse::getPosition(window)));

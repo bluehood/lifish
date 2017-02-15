@@ -237,6 +237,9 @@ void play_game(sf::RenderWindow& window, const std::string& level_set,
 			case sf::Event::Closed:
 				window.close();
 				break;
+			case sf::Event::Resized:
+				window.setView(Game::keep_ratio(event.size, Game::SCREEN_SIZE));
+				break;
 			case sf::Event::KeyPressed:
 				switch (event.key.code) {
 				case sf::Keyboard::Key::Escape:

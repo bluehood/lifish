@@ -81,6 +81,8 @@ constexpr unsigned short SIDE_PANEL_HEIGHT = 480;
 constexpr unsigned short WINDOW_WIDTH = SIDE_PANEL_WIDTH + (LEVEL_WIDTH + 2) * TILE_SIZE;
 constexpr unsigned short WINDOW_HEIGHT = (LEVEL_HEIGHT + 2) * TILE_SIZE;
 
+const sf::Vector2u SCREEN_SIZE(Game::WINDOW_WIDTH, Game::WINDOW_HEIGHT);
+
 /** How much the main game window is shifted relative to the
  *  SFML window (horizontally)
  */

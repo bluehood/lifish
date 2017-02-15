@@ -122,6 +122,8 @@ void testMusic();
 /** If Game::options.showFPS == true, then display FPS on screen */
 void maybeShowFPS(sf::RenderWindow& window);
 
+sf::View keep_ratio(const sf::Event::SizeEvent& size, const sf::Vector2u& designedsize);
+
 /** Selects a random direction which the entity can go to; only choose
  * `opp` if no other directions are viable.
  */
