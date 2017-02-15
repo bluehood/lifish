@@ -185,6 +185,7 @@ void Explosion::checkHit(Game::LevelRenderer *const lr) {
 			e->decLife(1);
 			if (lr->isPlayer(e)) {
 				e->setHurt(true);
+				Game::cache.playSound(e->getSoundFile(Game::Sounds::HURT));
 				if (animatedSprite.getCurrentFrame() == animatedSprite.getAnimation()->getSize() - 1)
 					e->giveShield(Game::DAMAGE_SHIELD_TIME);
 				else

@@ -123,12 +123,12 @@ namespace Sounds {
 	constexpr unsigned short ATTACK = 2;
 }
 
-constexpr auto HURRY_UP_SOUND    = "hurryup.ogg";
-constexpr auto GAME_OVER_SOUND   = "gameover.ogg";
-constexpr auto EXTRA_GAME_SOUND  = "extragame.ogg";
-constexpr auto EXTRA_LIFE_SOUND  = "extralife.ogg";
-constexpr auto LEVEL_CLEAR_SOUND = "levelclear.ogg";
-constexpr auto TIME_BONUS_SOUND  = "timebonus.ogg";
+constexpr auto HURRY_UP_SOUND    = "HurryUp.wav";
+constexpr auto GAME_OVER_SOUND   = "GameOver.wav";
+constexpr auto EXTRA_GAME_SOUND  = "EXTRAGame.wav";
+constexpr auto EXTRA_LIFE_SOUND  = "ExtraLife.wav";
+constexpr auto LEVEL_CLEAR_SOUND = "CompleteLevel.wav";
+constexpr auto TIME_BONUS_SOUND  = "TimeBonus.wav";
 
 /** Threshold value to consider an input from joystick getAxisPosition(). */
 constexpr short JOYSTICK_INPUT_THRESHOLD = 50;

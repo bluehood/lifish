@@ -586,6 +586,7 @@ void LevelRenderer::detectCollisions() {
 						if (!viable) continue;
 					}
 
+					Game::cache.playSound(teleport->getSoundFile());
 					_pushTemporary(new Game::Flash(teleport->getPosition()));
 					_pushTemporary(new Game::Flash(next->getPosition()));
 
@@ -630,7 +631,7 @@ void LevelRenderer::detectCollisions() {
 								Game::to_string(_getPlayerIndex(player) + 1) + "UP",
 								sf::Color(77, 184, 255, 255), 15);
 						_pushTemporary(upText);
-						Game::cache.playSound(Game::getAsset("test", Game::EXTRA_LIFE_SOUND));
+						Game::cache.playSound(Game::getAsset("sounds", Game::EXTRA_LIFE_SOUND));
 					}
 
 					delete letter;
@@ -1352,7 +1353,7 @@ void LevelRenderer::checkHurryUp() {
 	} else if (!hurryUpWarningGiven && diff <= 31) {
 		hurryUpText.play();
 		hurryUpText.setOrigin(origin);
-		Game::cache.playSound(Game::getAsset("test", Game::HURRY_UP_SOUND));
+		Game::cache.playSound(Game::getAsset("sounds", Game::HURRY_UP_SOUND));
 		hurryUpWarningGiven = true;
 	}
 }
@@ -1361,13 +1362,13 @@ void LevelRenderer::triggerGameOver() {
 	Game::stopMusic();
 	gameOverText.play(); 
 	gameOverText.setOrigin(origin); 
-	Game::cache.playSound(Game::getAsset("test", Game::GAME_OVER_SOUND));
+	Game::cache.playSound(Game::getAsset("sounds", Game::GAME_OVER_SOUND));
 }
 
 void LevelRenderer::_triggerExtraGame() {
 	extraGameText.play(); 
 	extraGameText.setOrigin(origin);
-	Game::cache.playSound(Game::getAsset("test", Game::EXTRA_GAME_SOUND));
+	Game::cache.playSound(Game::getAsset("sounds", Game::EXTRA_GAME_SOUND));
 	for (auto& e : movingEntities) {
 		if (isPlayer(e)) continue;
 		auto enemy = static_cast<Game::Enemy*>(e);

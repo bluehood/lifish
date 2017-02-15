@@ -1,13 +1,14 @@
 #pragma once
 
 #include "Animated.hpp"
+#include "Sounded.hpp"
 
 namespace Game {
 
 /**
  * A teleport can be used both by players and enemies.
  */
-class Teleport : public Game::Animated {
+class Teleport : public Game::Animated, public Game::Sounded {
 	constexpr static unsigned int COOLDOWN_TIME = 1000; // milliseconds
 
 	/** The Teleport this one teleports to */

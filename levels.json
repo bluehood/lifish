@@ -4,27 +4,67 @@
 	"difficulty": "average",
 	"tracks": [
 		{
-			"name": "DMZ beat",
-			"author": "Giacomo Parolini",
+			"name": "mus_1",
+			"author": "George E. Kouba, Jr.",
 			"loop": {
-				"start": 7.386,
-				"length": 44.279
+				"start": 0.0,
+				"length": 126.0
 			}
 		},
 		{
-			"name": "Spirit Party",
-			"author": "Luca Barazzetta",
+			"name": "mus_2",
+			"author": "George E. Kouba, Jr.",
 			"loop": {
-				"start": 3.428,
-				"length": 106.3
+				"start": 0.0,
+				"length": 134.0 
 			}
 		},
 		{
-			"name": "Tick Tock",
-			"author": "Luca Barazzetta",
+			"name": "mus_3",
+			"author": "George E. Kouba, Jr.",
 			"loop": {
-				"start": 3.428,
-				"length": 96.0
+				"start": 0.0,
+				"length": 85.0 
+			}
+		},
+		{
+			"name": "mus_4",
+			"author": "George E. Kouba, Jr.",
+			"loop": {
+				"start": 0.0,
+				"length": 128.0 
+			}
+		},
+		{
+			"name": "mus_5",
+			"author": "George E. Kouba, Jr.",
+			"loop": {
+				"start": 0.0,
+				"length": 127.0 
+			}
+		},
+		{
+			"name": "mus_6",
+			"author": "George E. Kouba, Jr.",
+			"loop": {
+				"start": 0.0,
+				"length": 102.0 
+			}
+		},
+		{
+			"name": "mus_7",
+			"author": "George E. Kouba, Jr.",
+			"loop": {
+				"start": 0.0,
+				"length": 134.0 
+			}
+		},
+		{
+			"name": "mus_8",
+			"author": "George E. Kouba, Jr.",
+			"loop": {
+				"start": 0.0,
+				"length": 102.0 
 			}
 		}
 	],
@@ -403,7 +443,7 @@
 		},
 		{
 			"time": 240,
-			"music": 3,
+			"music": 4,
 			"tileIDs": {
 				"bg": 4,
 				"border": 4,
@@ -414,7 +454,7 @@
 		},
 		{
 			"time": 240,
-			"music": 3,
+			"music": 4,
 			"tileIDs": {
 				"bg": 4,
 				"border": 4,
@@ -425,7 +465,7 @@
 		},
 		{
 			"time": 240,
-			"music": 3,
+			"music": 4,
 			"tileIDs": {
 				"bg": 4,
 				"border": 4,
@@ -436,7 +476,7 @@
 		},
 		{
 			"time": 240,
-			"music": 3,
+			"music": 4,
 			"tileIDs": {
 				"bg": 4,
 				"border": 4,
@@ -447,7 +487,7 @@
 		},
 		{
 			"time": 240,
-			"music": 3,
+			"music": 4,
 			"tileIDs": {
 				"bg": 4,
 				"border": 4,
@@ -458,7 +498,7 @@
 		},
 		{
 			"time": 240,
-			"music": 3,
+			"music": 4,
 			"tileIDs": {
 				"bg": 4,
 				"border": 4,
@@ -469,7 +509,7 @@
 		},
 		{
 			"time": 240,
-			"music": 3,
+			"music": 4,
 			"tileIDs": {
 				"bg": 4,
 				"border": 4,
@@ -480,7 +520,7 @@
 		},
 		{
 			"time": 240,
-			"music": 3,
+			"music": 4,
 			"tileIDs": {
 				"bg": 4,
 				"border": 4,
@@ -491,7 +531,7 @@
 		},
 		{
 			"time": 240,
-			"music": 3,
+			"music": 4,
 			"tileIDs": {
 				"bg": 4,
 				"border": 4,
@@ -502,7 +542,7 @@
 		},
 		{
 			"time": 240,
-			"music": 3,
+			"music": 4,
 			"tileIDs": {
 				"bg": 4,
 				"border": 4,
@@ -513,7 +553,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 5,
 			"tileIDs": {
 				"bg": 5,
 				"border": 5,
@@ -524,7 +564,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 5,
 			"tileIDs": {
 				"bg": 5,
 				"border": 5,
@@ -535,7 +575,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 5,
 			"tileIDs": {
 				"bg": 5,
 				"border": 5,
@@ -546,7 +586,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 5,
 			"tileIDs": {
 				"bg": 5,
 				"border": 5,
@@ -557,7 +597,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 5,
 			"tileIDs": {
 				"bg": 5,
 				"border": 5,
@@ -568,7 +608,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 5,
 			"tileIDs": {
 				"bg": 5,
 				"border": 5,
@@ -579,7 +619,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 5,
 			"tileIDs": {
 				"bg": 5,
 				"border": 5,
@@ -590,7 +630,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 5,
 			"tileIDs": {
 				"bg": 5,
 				"border": 5,
@@ -601,7 +641,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 5,
 			"tileIDs": {
 				"bg": 5,
 				"border": 5,
@@ -612,7 +652,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 5,
 			"tileIDs": {
 				"bg": 5,
 				"border": 5,
@@ -623,7 +663,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 6,
 			"tileIDs": {
 				"bg": 6,
 				"border": 6,
@@ -634,7 +674,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 6,
 			"tileIDs": {
 				"bg": 6,
 				"border": 6,
@@ -645,7 +685,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 6,
 			"tileIDs": {
 				"bg": 6,
 				"border": 6,
@@ -656,7 +696,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 6,
 			"tileIDs": {
 				"bg": 6,
 				"border": 6,
@@ -667,7 +707,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 6,
 			"tileIDs": {
 				"bg": 6,
 				"border": 6,
@@ -678,7 +718,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 6,
 			"tileIDs": {
 				"bg": 6,
 				"border": 6,
@@ -689,7 +729,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 6,
 			"tileIDs": {
 				"bg": 6,
 				"border": 6,
@@ -700,7 +740,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 6,
 			"tileIDs": {
 				"bg": 6,
 				"border": 6,
@@ -711,7 +751,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 6,
 			"tileIDs": {
 				"bg": 6,
 				"border": 6,
@@ -722,7 +762,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 6,
 			"tileIDs": {
 				"bg": 6,
 				"border": 6,
@@ -733,7 +773,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 7,
 			"tileIDs": {
 				"bg": 7,
 				"border": 7,
@@ -744,7 +784,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 7,
 			"tileIDs": {
 				"bg": 7,
 				"border": 7,
@@ -755,7 +795,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 7,
 			"tileIDs": {
 				"bg": 7,
 				"border": 7,
@@ -766,7 +806,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 7,
 			"tileIDs": {
 				"bg": 7,
 				"border": 7,
@@ -777,7 +817,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 7,
 			"tileIDs": {
 				"bg": 7,
 				"border": 7,
@@ -788,7 +828,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 7,
 			"tileIDs": {
 				"bg": 7,
 				"border": 7,
@@ -799,7 +839,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 7,
 			"tileIDs": {
 				"bg": 7,
 				"border": 7,
@@ -810,7 +850,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 7,
 			"tileIDs": {
 				"bg": 7,
 				"border": 7,
@@ -821,7 +861,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 7,
 			"tileIDs": {
 				"bg": 7,
 				"border": 7,
@@ -832,7 +872,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 7,
 			"tileIDs": {
 				"bg": 7,
 				"border": 7,
@@ -843,7 +883,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 8,
 			"tileIDs": {
 				"bg": 8,
 				"border": 8,
@@ -854,7 +894,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 8,
 			"tileIDs": {
 				"bg": 8,
 				"border": 8,
@@ -865,7 +905,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 8,
 			"tileIDs": {
 				"bg": 8,
 				"border": 8,
@@ -876,7 +916,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 8,
 			"tileIDs": {
 				"bg": 8,
 				"border": 8,
@@ -887,7 +927,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 8,
 			"tileIDs": {
 				"bg": 8,
 				"border": 8,
@@ -898,7 +938,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 8,
 			"tileIDs": {
 				"bg": 8,
 				"border": 8,
@@ -909,7 +949,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 8,
 			"tileIDs": {
 				"bg": 8,
 				"border": 8,
@@ -920,7 +960,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 8,
 			"tileIDs": {
 				"bg": 8,
 				"border": 8,
@@ -931,7 +971,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 8,
 			"tileIDs": {
 				"bg": 8,
 				"border": 8,
@@ -942,7 +982,7 @@
 		},
 		{
 			"time": 300,
-			"music": 3,
+			"music": 8,
 			"tileIDs": {
 				"bg": 8,
 				"border": 8,

@@ -6,14 +6,14 @@ using Game::Player;
 
 Player::Player(sf::Vector2f pos, const unsigned short id) :
 	Game::LifedMovingEntity(
-			pos,
-			Game::getAsset("graphics", std::string("player") + Game::to_string(id) + std::string(".png")), 
-			MAX_LIFE,
-			{
-				Game::getAsset("test", std::string("player") + Game::to_string(id) + std::string("_death.ogg")),
-				Game::getAsset("test", std::string("player") + Game::to_string(id) + std::string("_hurt.ogg")),
-				Game::getAsset("test", std::string("player") + Game::to_string(id) + std::string("_win.ogg")),
-			})
+		pos,
+		Game::getAsset("graphics", std::string("player") + Game::to_string(id) + std::string(".png")), 
+		MAX_LIFE,
+		{
+			Game::getAsset("sounds", std::string("P") + Game::to_string(id) + std::string("Death.wav")),
+			Game::getAsset("sounds", std::string("P") + Game::to_string(id) + std::string("Ouch.wav")),
+			Game::getAsset("sounds", std::string("P") + Game::to_string(id) + std::string("Complete.wav")),
+		})
 {
 	speed = 150.f;
 	transparentTo.players = false;

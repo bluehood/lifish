@@ -7,6 +7,7 @@ using Game::TILE_SIZE;
 
 Teleport::Teleport(const sf::Vector2f& _pos) 
 	: Game::Animated(_pos, Game::getAsset("graphics", "teleport.png"))
+	, Game::Sounded({ Game::getAsset("sounds", "Teleport.wav") })
 {
 	animations[0].setSpriteSheet(*texture);
 
