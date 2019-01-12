@@ -1,9 +1,13 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+
 #include "Bullet.hpp"
 #include "Angle.hpp"
 
 namespace lif {
+class Angle;
+class Entity;
 
 /** A Bullet which travels along any angle */
 class FreeBullet : public lif::Bullet {

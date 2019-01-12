@@ -1,5 +1,18 @@
 /// Entity template methods implementation
 
+#include <algorithm>
+#include <memory>
+#include <stdexcept>
+#include <string>
+#include <typeinfo>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
+namespace lif {
+class Component;
+}  // namespace lif
+
 template<class T>
 T* Entity::addComponent(const std::shared_ptr<T>& comp) {
 	if (T::requiredUnique() && get<T>() != nullptr)

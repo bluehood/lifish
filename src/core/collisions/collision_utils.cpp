@@ -1,7 +1,16 @@
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Vector2.inl>
+#include <algorithm>
+#include <memory>
+
 #include "collision_utils.hpp"
 #include "AxisMoving.hpp"
 #include "Collider.hpp"
 #include "BaseLevelManager.hpp"
+#include "CollisionDetector.hpp"
+#include "EntityGroup.hpp"
+#include "core.hpp"
+#include "utils.hpp"
 
 using lif::TILE_SIZE;
 

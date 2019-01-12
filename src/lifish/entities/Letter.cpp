@@ -1,3 +1,10 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <random>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Letter.hpp"
 #include "Animated.hpp"
 #include "Collider.hpp"
@@ -7,13 +14,15 @@
 #include "Player.hpp"
 #include "Scored.hpp"
 #include "Sounded.hpp"
-#include "Temporary.hpp"
 #include "Time.hpp"
 #include "conf/player.hpp"
-#include "conf/zindex.hpp"
-#include "game.hpp"
-#include "utils.hpp"
-#include <random>
+#include "AnimatedSprite.hpp"
+#include "Animation.hpp"
+#include "Entity.inl"
+#include "Killable.hpp"
+#include "collision_layers.hpp"
+#include "core.hpp"
+#include "sid.hpp"
 
 using lif::Letter;
 using lif::TILE_SIZE;

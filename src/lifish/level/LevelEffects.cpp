@@ -1,3 +1,16 @@
+#include <SFML/Graphics/BlendMode.hpp>
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/System/Vector2.inl>
+#include <array>
+#include <iosfwd>
+#include <memory>
+#include <stdexcept>
+#include <unordered_set>
+
 #include "LevelEffects.hpp"
 #include "Entity.hpp"
 #include "LevelManager.hpp"
@@ -7,6 +20,10 @@
 #include "Fog.hpp"
 #include "game.hpp"
 #include "LightSource.hpp"
+#include "Direction.hpp"
+#include "Entity.inl"
+#include "EntityGroup.hpp"
+#include "core.hpp"
 
 using lif::LevelEffects;
 using lif::TILE_SIZE;

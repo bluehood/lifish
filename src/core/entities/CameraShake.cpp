@@ -1,10 +1,19 @@
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/View.hpp>
+#include <SFML/System/Vector2.inl>
+#include <random>
+#include <algorithm>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "CameraShake.hpp"
 #include "CameraShakeRequest.hpp"
 #include "Temporary.hpp"
 #include "Time.hpp"
 #include "core.hpp"
-#include <cmath>
-#include <random>
+#include "Entity.inl"
 
 using lif::CameraShake;
 

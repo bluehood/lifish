@@ -1,6 +1,17 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/Texture.hpp>
+#include <algorithm>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "AcidPond.hpp"
 #include "Sprite.hpp"
 #include "Drawable.hpp"
+#include "Entity.inl"
+#include "collision_layers.hpp"
+#include "core.hpp"
 
 using lif::AcidPond;
 

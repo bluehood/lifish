@@ -5,8 +5,10 @@
 #include <array>
 #include <cstdint>
 #include <initializer_list>
+
 #include "collision_layers.hpp"
 #include "Component.hpp"
+#include "Entity.hpp"
 
 namespace lif {
 

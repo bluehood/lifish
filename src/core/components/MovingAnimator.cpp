@@ -1,6 +1,14 @@
+#include <memory>
+#include <stdexcept>
+#include <string>
+#include <unordered_map>
+
 #include "MovingAnimator.hpp"
 #include "AxisMoving.hpp"
 #include "Animated.hpp"
+#include "AnimatedSprite.hpp"
+#include "Entity.inl"
+#include "sid.hpp"
 
 using lif::MovingAnimator;
 

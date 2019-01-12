@@ -1,11 +1,19 @@
 #pragma once
 
+#include <stddef.h>
+#include <SFML/System/Clock.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <array>
+#include <string>
+
 #include "Screen.hpp"
 
 namespace sf {
 
 class RectangleShape;
+class Event;
+class RenderWindow;
+class Window;
 
 }
 

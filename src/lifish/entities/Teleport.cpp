@@ -1,3 +1,10 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Vector2.inl>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Teleport.hpp"
 #include "Animated.hpp"
 #include "AxisMoving.hpp"
@@ -10,7 +17,13 @@
 #include "Spawning.hpp"
 #include "Time.hpp"
 #include "conf/teleport.hpp"
-#include "game.hpp"
+#include "AnimatedSprite.hpp"
+#include "Animation.hpp"
+#include "Entity.inl"
+#include "collision_layers.hpp"
+#include "core.hpp"
+#include "sid.hpp"
+#include "utils.hpp"
 
 using lif::Teleport;
 using lif::TILE_SIZE;

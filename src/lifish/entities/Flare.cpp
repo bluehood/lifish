@@ -1,8 +1,16 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/System/Vector2.inl>
+#include <algorithm>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Flare.hpp"
 #include "LightSource.hpp"
 #include "Temporary.hpp"
 #include "Time.hpp"
 #include "core.hpp"
+#include "Entity.inl"
 
 using lif::Flare;
 

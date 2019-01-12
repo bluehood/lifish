@@ -1,3 +1,10 @@
+#include <bits/exception.h>
+#include <SFML/System/Time.hpp>
+#include <iostream>
+#include <fstream>
+#include <memory>
+#include <unordered_map>
+
 #include "SaveManager.hpp"
 #include "LevelManager.hpp"
 #include "Player.hpp"
@@ -5,8 +12,7 @@
 #include "LevelSet.hpp"
 #include "json.hpp"
 #include "Lifed.hpp"
-#include "utils.hpp"
-#include <iostream>
+#include "Entity.inl"
 
 using lif::SaveManager;
 

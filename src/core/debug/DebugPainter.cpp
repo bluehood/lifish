@@ -1,4 +1,13 @@
+#include <SFML/Graphics/CircleShape.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/Text.hpp>
+#include <utility>
+
 #include "DebugPainter.hpp"
+#include "GameCache.hpp"
+#include "core.hpp"
+#include "game.hpp"
 
 using lif::DebugPainter;
 

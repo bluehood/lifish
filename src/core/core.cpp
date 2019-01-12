@@ -1,12 +1,13 @@
+#include <bits/exception.h>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <chrono>
+#include <cstring>
+
 #include "core.hpp"
 #include "GameCache.hpp"
 #include "Options.hpp"
 #include "Time.hpp"
-#ifndef RELEASE
-	#include "DebugPainter.hpp"
-#endif
-#include <chrono>
-#include <cstring>
 
 #if defined(SFML_SYSTEM_MACOS)
 #	include <mach-o/dyld.h>

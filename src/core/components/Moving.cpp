@@ -1,6 +1,11 @@
+#include <memory>
+#include <unordered_map>
+
 #include "Moving.hpp"
 #include "Collider.hpp"
 #include "Time.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::Moving;
 

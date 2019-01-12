@@ -28,6 +28,11 @@
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/System/NonCopyable.hpp>
 #include <vector>
+#include <iosfwd>
+
+namespace sf {
+class Texture;
+}  // namespace sf
 
 class Animation : sf::NonCopyable
 {

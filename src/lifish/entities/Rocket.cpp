@@ -1,7 +1,15 @@
+#include <SFML/System/Time.hpp>
+
 #include "Rocket.hpp"
 #include "Moving.hpp"
 #include "Time.hpp"
 #include "conf/bullet.hpp"
+#include "Bullet.hpp"
+#include "core.hpp"
+
+namespace lif {
+class Entity;
+}  // namespace lif
 
 using lif::Rocket;
 

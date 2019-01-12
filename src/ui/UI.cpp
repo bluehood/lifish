@@ -1,5 +1,11 @@
-#include "Interactable.hpp"
-#include "utils.hpp"
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <iostream>
+#include <algorithm>
+#include <functional>
+
 #include "input_utils.hpp"
 #include "UI.hpp"
 #include "contexts.hpp"
@@ -7,8 +13,13 @@
 #include "BaseEventHandler.hpp"
 #include "screen_callbacks.hpp"
 #include "SaveScreen.hpp"
-#include <exception>
-#include <iostream>
+#include "WithOrigin.hpp"
+#include "core.hpp"
+
+namespace sf {
+class RenderWindow;
+class Window;
+}  // namespace sf
 
 using lif::ui::UI;
 

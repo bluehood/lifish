@@ -1,6 +1,9 @@
+#include <SFML/System/Time.hpp>
+#include <iostream>
+#include <string>
+
 #include "Music.hpp"
 #include "LoopingMusic.hpp"
-#include <iostream>
 
 using lif::Music;
 

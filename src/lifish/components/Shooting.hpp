@@ -1,17 +1,23 @@
 #pragma once
 
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <exception>
+#include <memory>
+
 #include "Angle.hpp"
 #include "Attack.hpp"
 #include "BufferedSpawner.hpp"
 #include "Component.hpp"
 #include "Direction.hpp"
-#include <exception>
-#include <memory>
+#include "Entity.hpp"
 
 namespace lif {
 
 class FreeBullet;
 class AxisMoving;
+class Angle;
+class Bullet;
 
 /**
  * A Shooting is a component that manages a single Attack type.

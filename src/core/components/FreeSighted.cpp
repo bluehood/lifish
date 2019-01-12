@@ -1,6 +1,13 @@
+#include <memory>
+#include <unordered_map>
+
 #include "FreeSighted.hpp"
 #include "utils.hpp"
-#include "LevelManager.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "EntityGroup.hpp"
+#include "Killable.hpp"
+#include "core.hpp"
 
 using lif::FreeSighted;
 

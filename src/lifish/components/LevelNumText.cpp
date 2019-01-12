@@ -1,6 +1,14 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/Text.hpp>
+#include <SFML/System/Vector2.inl>
+
 #include "LevelNumText.hpp"
 #include "game.hpp"
 #include "utils.hpp"
+#include "core.hpp"
 
 using lif::LevelNumText;
 

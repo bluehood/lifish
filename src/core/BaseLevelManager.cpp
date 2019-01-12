@@ -1,7 +1,14 @@
+#include <memory>
+#include <ostream>
+#include <unordered_map>
+
 #include "BaseLevelManager.hpp"
 #include "AxisMoving.hpp"
-#include "Clock.hpp"
 #include "Time.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "core.hpp"
+#include "utils.hpp"
 
 using lif::BaseLevelManager;
 

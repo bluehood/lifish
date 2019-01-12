@@ -1,4 +1,14 @@
+#include <SFML/System/Time.hpp>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "GuidedBullet.hpp"
+#include "Entity.inl"
+
+namespace lif {
+class Entity;
+}  // namespace lif
 
 using lif::GuidedBullet;
 

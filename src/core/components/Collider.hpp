@@ -1,10 +1,18 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.inl>
 #include <functional>
 #include <memory>
-#include <SFML/Graphics.hpp>
+#include <string>
+#include <vector>
+
 #include "Component.hpp"
 #include "collision_layers.hpp"
+#include "Entity.hpp"
+#include "core.hpp"
 
 namespace lif {
 

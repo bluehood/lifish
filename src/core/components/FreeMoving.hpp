@@ -1,8 +1,12 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.inl>
+
 #include "Moving.hpp"
 
 namespace lif {
+class Entity;
 
 /**
  * An object moving in any direction. Does not align to grid.

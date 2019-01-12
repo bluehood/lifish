@@ -3,9 +3,12 @@
  * Headers for the AI functions
  */
 
+#include <array>
+
 #include "AI.hpp"
 
 namespace lif {
+class Entity;
 
 constexpr unsigned short AI_FUNCTIONS_NUM = 6;
 

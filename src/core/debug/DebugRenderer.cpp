@@ -1,8 +1,19 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.inl>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+
 #include "DebugRenderer.hpp"
 #include "SHCollisionDetector.hpp"
 #include "EntityGroup.hpp"
 #include "DebugPainter.hpp"
-#include <sstream>
+#include "Collider.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 #define COLLIDER_REGULAR_COLOR sf::Color(255, 0, 255, 110)
 #define COLLIDER_PHANTOM_COLOR sf::Color(194, 194, 194, 110)

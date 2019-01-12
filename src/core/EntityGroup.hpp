@@ -1,12 +1,8 @@
 #pragma once
 
-#include "Collider.hpp"
-#include "Entity.hpp"
-#include "Fixed.hpp"
-#include "Killable.hpp"
-#include "Moving.hpp"
-#include "Temporary.hpp"
 #include <SFML/System/NonCopyable.hpp>
+#include <ext/alloc_traits.h>
+#include <SFML/Graphics/Rect.hpp>
 #include <algorithm>
 #include <array>
 #include <functional>
@@ -15,6 +11,15 @@
 #include <type_traits>
 #include <unordered_set>
 #include <vector>
+#include <cstddef>
+#include <utility>
+
+#include "Collider.hpp"
+#include "Entity.hpp"
+#include "Fixed.hpp"
+#include "Killable.hpp"
+#include "Moving.hpp"
+#include "Temporary.hpp"
 #ifdef MULTITHREADED
 #	include <mutex>
 #endif
@@ -23,6 +28,8 @@ namespace lif {
 
 class CollisionDetector;
 class LevelRenderer;
+class Collider;
+class Killable;
 
 /**
  * A container for Entities, providing convenient methods for operating

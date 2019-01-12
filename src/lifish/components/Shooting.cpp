@@ -1,3 +1,8 @@
+#include <SFML/System/Vector2.inl>
+#include <stdexcept>
+#include <unordered_map>
+#include <utility>
+
 #include "Shooting.hpp"
 #include "AxisMoving.hpp"
 #include "BulletFactory.hpp"
@@ -5,7 +10,11 @@
 #include "Sounded.hpp"
 #include "Time.hpp"
 #include "utils.hpp"
-#include <exception>
+#include "Angle.hpp"
+#include "Bullet.hpp"
+#include "Entity.inl"
+#include "Moving.hpp"
+#include "core.hpp"
 
 using lif::Shooting;
 

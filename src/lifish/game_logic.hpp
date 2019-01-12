@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <functional>
+
 #include "BaseLevelManager.hpp"
 
 #define DEF_LOGIC(name) \

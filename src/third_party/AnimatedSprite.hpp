@@ -31,8 +31,17 @@
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/Graphics/Vertex.hpp>
+#include <iosfwd>
 
 class Animation;
+namespace sf {
+class RenderTarget;
+class Texture;
+}  // namespace sf
 
 class AnimatedSprite : public sf::Drawable, public sf::Transformable
 {

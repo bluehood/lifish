@@ -1,10 +1,18 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <array>
 #include <unordered_set>
-#include <SFML/Graphics.hpp>
+
 #include "Entity.hpp"
 #include "collision_layers.hpp"
+
+namespace sf {
+class RenderTarget;
+}  // namespace sf
 
 namespace lif {
 

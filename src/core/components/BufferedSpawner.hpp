@@ -2,7 +2,9 @@
 
 #include <memory>
 #include <queue>
+
 #include "Spawning.hpp"
+#include "Entity.hpp"
 
 namespace lif {
 

@@ -1,7 +1,15 @@
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <random>
+#include <utility>
+
 #include "ai_helpers.hpp"
 #include "LevelManager.hpp"
 #include "AxisMoving.hpp"
 #include "AxisSighted.hpp"
+#include "Entity.hpp"
+#include "core.hpp"
+#include "utils.hpp"
 
 using D = lif::Direction;
 

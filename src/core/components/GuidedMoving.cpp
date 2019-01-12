@@ -1,7 +1,12 @@
+#include <SFML/System/Vector2.inl>
+#include <algorithm>
+#include <numeric>
+
 #include "GuidedMoving.hpp"
 #include "Time.hpp"
 #include "utils.hpp"
-#include <algorithm>
+#include "Entity.hpp"
+#include "core.hpp"
 
 using lif::GuidedMoving;
 

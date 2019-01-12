@@ -1,3 +1,8 @@
+#include <map>
+#include <stdexcept>
+#include <string>
+#include <unordered_map>
+
 #include "BulletFactory.hpp"
 #include "Grenade.hpp"
 #include "Missile.hpp"
@@ -7,6 +12,11 @@
 #include "FreeBullet.hpp"
 #include "Rocket.hpp"
 #include "collision_layers.hpp"
+#include "Angle.hpp"
+#include "Bullet.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::BulletFactory;
 

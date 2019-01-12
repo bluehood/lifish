@@ -1,19 +1,28 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Bomb.hpp"
 #include "Animated.hpp"
 #include "Collider.hpp"
 #include "Drawable.hpp"
 #include "Explosion.hpp"
-#include "Fixed.hpp"
 #include "GameCache.hpp"
 #include "LightSource.hpp"
-#include "Player.hpp"
 #include "Sounded.hpp"
 #include "Spawning.hpp"
 #include "Temporary.hpp"
 #include "Time.hpp"
 #include "ZIndexed.hpp"
 #include "conf/zindex.hpp"
-#include "game.hpp"
+#include "AnimatedSprite.hpp"
+#include "Entity.inl"
+#include "Killable.hpp"
+#include "collision_layers.hpp"
+#include "core.hpp"
+#include "sid.hpp"
 
 using lif::Bomb;
 using lif::TILE_SIZE;

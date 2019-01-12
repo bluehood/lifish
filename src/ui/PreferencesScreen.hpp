@@ -1,7 +1,14 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+
 #include "Action.hpp"
 #include "Screen.hpp"
+
+namespace sf {
+class RenderWindow;
+class Texture;
+}  // namespace sf
 
 namespace lif {
 

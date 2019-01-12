@@ -1,3 +1,18 @@
+#include <assert.h>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <iostream>
+#include <memory>
+#include <algorithm>
+#include <string>
+#include <type_traits>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
 #include "PreferencesScreen.hpp"
 #include "GameCache.hpp"
 #include "Interactable.hpp"
@@ -6,8 +21,13 @@
 #include "ShadedText.hpp"
 #include "game.hpp"
 #include "utils.hpp"
-#include <iostream>
-#include <memory>
+#include "Direction.hpp"
+#include "TransitionGraph.hpp"
+#include "core.hpp"
+
+namespace sf {
+class RenderWindow;
+}  // namespace sf
 
 using lif::ui::PreferencesScreen;
 using lif::ui::Interactable;

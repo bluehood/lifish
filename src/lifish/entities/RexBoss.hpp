@@ -1,10 +1,15 @@
 #pragma once
 
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <array>
+#include <functional>
+#include <vector>
+
 #include "Boss.hpp"
 #include "Direction.hpp"
 #include "game.hpp"
 #include "state_function.hpp"
-#include <array>
 
 namespace lif {
 

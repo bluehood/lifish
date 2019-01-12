@@ -1,14 +1,16 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/Texture.hpp>
+#include <iostream>
+#include <memory>
+
 #include "Level.hpp"
-#include "game.hpp"
 #include "GameCache.hpp"
 #include "LevelSet.hpp"
-#include "utils.hpp"
-#include "LoopingMusic.hpp"
-#include "Drawable.hpp"
-#include "ShadedText.hpp"
 #include "Music.hpp"
 #include "LevelNumText.hpp"
-#include <sstream>
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::Level;
 using lif::pwd;

@@ -2,6 +2,7 @@
 
 #include "Component.hpp"
 #include "Direction.hpp"
+#include "Entity.hpp"
 
 namespace lif {
 

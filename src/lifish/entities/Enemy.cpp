@@ -1,3 +1,16 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <sstream>
+#include <array>
+#include <functional>
+#include <stdexcept>
+#include <string>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
 #include "Enemy.hpp"
 #include "AI.hpp"
 #include "Absorbable.hpp"
@@ -8,7 +21,6 @@
 #include "Bonusable.hpp"
 #include "Collider.hpp"
 #include "Drawable.hpp"
-#include "Explosion.hpp"
 #include "Foe.hpp"
 #include "Killable.hpp"
 #include "Letter.hpp"
@@ -16,7 +28,6 @@
 #include "Lifed.hpp"
 #include "LightSource.hpp"
 #include "MovingAnimator.hpp"
-#include "Player.hpp"
 #include "RegularEntityDeath.hpp"
 #include "Scored.hpp"
 #include "Shooting.hpp"
@@ -28,7 +39,14 @@
 #include "conf/enemy.hpp"
 #include "conf/zindex.hpp"
 #include "utils.hpp"
-#include <sstream>
+#include "AnimatedSprite.hpp"
+#include "Animation.hpp"
+#include "Direction.hpp"
+#include "Entity.inl"
+#include "bonus_type.hpp"
+#include "collision_layers.hpp"
+#include "core.hpp"
+#include "sid.hpp"
 
 using lif::Enemy;
 using lif::TILE_SIZE;

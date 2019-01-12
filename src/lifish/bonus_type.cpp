@@ -1,3 +1,8 @@
+#include <SFML/System/Time.hpp>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "bonus_type.hpp"
 #include "LevelManager.hpp"
 #include "Player.hpp"
@@ -8,6 +13,12 @@
 #include "Enemy.hpp"
 #include "Bonusable.hpp"
 #include "game.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "EntityGroup.hpp"
+#include "conf/bomb.hpp"
+#include "conf/bonus.hpp"
+#include "conf/player.hpp"
 
 using B = lif::BonusType;
 

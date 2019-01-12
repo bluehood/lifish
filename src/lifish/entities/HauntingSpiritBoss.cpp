@@ -1,3 +1,13 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Vector2.inl>
+#include <algorithm>
+#include <cassert>
+#include <random>
+#include <unordered_map>
+#include <utility>
+
 #include "HauntingSpiritBoss.hpp"
 #include "Angle.hpp"
 #include "Animated.hpp"
@@ -16,8 +26,13 @@
 #include "conf/boss.hpp"
 #include "conf/zindex.hpp"
 #include "core.hpp"
-#include <algorithm>
-#include <cassert>
+#include "AnimatedSprite.hpp"
+#include "BufferedSpawner.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "ShootingPattern.hpp"
+#include "collision_layers.hpp"
+#include "sid.hpp"
 
 #define BIND(f) std::bind(&HauntingSpiritBoss:: f, this)
 

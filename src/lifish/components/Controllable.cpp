@@ -1,6 +1,13 @@
+#include <SFML/Window/Joystick.hpp>
+#include <memory>
+#include <stdexcept>
+#include <unordered_map>
+
 #include "Controllable.hpp"
 #include "AxisMoving.hpp"
-#include <exception>
+#include "Direction.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::Controllable;
 

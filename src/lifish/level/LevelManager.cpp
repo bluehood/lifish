@@ -1,25 +1,48 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.inl>
+#include <cassert>
+#include <memory>
+#include <algorithm>
+#include <stdexcept>
+#include <string>
+#include <unordered_set>
+#include <vector>
+
 #include "LevelManager.hpp"
 #include "AxisMoving.hpp"
 #include "Bomb.hpp"
 #include "Bonusable.hpp"
 #include "Coin.hpp"
-#include "Controllable.hpp"
 #include "Enemy.hpp"
-#include "Explosion.hpp"
 #include "Foe.hpp"
 #include "Letter.hpp"
 #include "Level.hpp"
 #include "LevelLoader.hpp"
 #include "LevelSet.hpp"
 #include "Lifed.hpp"
-#include "Options.hpp"
 #include "Player.hpp"
 #include "SaveManager.hpp"
 #include "Shooting.hpp"
 #include "core.hpp"
 #include "game_logic.hpp"
-#include <cassert>
-#include <memory>
+#include "Collider.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "EntityGroup.hpp"
+#include "Fixed.hpp"
+#include "Killable.hpp"
+#include "LevelTime.hpp"
+#include "Moving.hpp"
+#include "SHCollisionDetector.hpp"
+#include "bonus_type.hpp"
+#include "collision_layers.hpp"
+#include "utils.hpp"
+
+namespace sf {
+class RenderTarget;
+}  // namespace sf
 
 using lif::LevelManager;
 

@@ -1,7 +1,10 @@
 #pragma once
 
-#include "Enemy.hpp"
 #include <SFML/System.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+
+#include "Enemy.hpp"
 
 namespace lif {
 

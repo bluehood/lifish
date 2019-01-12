@@ -1,8 +1,11 @@
 #pragma once
 
+#include <SFML/System.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+
 #include "Entity.hpp"
 #include "conf/bomb.hpp"
-#include <SFML/System.hpp>
 
 namespace lif {
 

@@ -1,12 +1,31 @@
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/Text.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <memory>
+#include <algorithm>
+#include <functional>
+#include <string>
+#include <type_traits>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
 #include "LoadScreen.hpp"
 #include "ShadedText.hpp"
-#include "Drawable.hpp"
 #include "Interactable.hpp"
 #include "game.hpp"
 #include "utils.hpp"
 #include "SaveScreen.hpp"
-#include <memory>
-#include <SFML/Graphics.hpp>
+#include "Action.hpp"
+#include "Direction.hpp"
+#include "TransitionGraph.hpp"
+#include "core.hpp"
+
+namespace sf {
+class RenderWindow;
+}  // namespace sf
 
 using lif::ui::LoadScreen;
 

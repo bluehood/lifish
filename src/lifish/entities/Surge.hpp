@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+
 #include "Angle.hpp"
 #include "Entity.hpp"
 #include "LevelManager.hpp"
@@ -7,6 +9,7 @@
 namespace lif {
 
 class Animated;
+class LevelManager;
 
 class Surge : public lif::Entity {
 

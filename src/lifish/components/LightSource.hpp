@@ -1,9 +1,11 @@
 #pragma once
 
+#include <SFML/Graphics/Color.hpp>
 #include <array>
 #include <vector>
-#include <SFML/Graphics/Color.hpp>
+
 #include "Component.hpp"
+#include "Entity.hpp"
 
 namespace lif {
 

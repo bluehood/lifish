@@ -1,15 +1,23 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Spikes.hpp"
 #include "Animated.hpp"
 #include "Collider.hpp"
-#include "ZIndexed.hpp"
 #include "Bonusable.hpp"
 #include "Player.hpp"
 #include "Drawable.hpp"
 #include "Lifed.hpp"
 #include "Killable.hpp"
 #include "collision_layers.hpp"
-#include "conf/zindex.hpp"
 #include "conf/enemy.hpp"
+#include "AnimatedSprite.hpp"
+#include "Entity.inl"
+#include "bonus_type.hpp"
+#include "core.hpp"
 
 using lif::Spikes;
 

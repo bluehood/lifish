@@ -1,10 +1,31 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/Texture.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.inl>
+#include <SFML/Window/Event.hpp>
+#include <algorithm>
+#include <memory>
+#include <stdexcept>
+#include <tuple>
+#include <unordered_map>
+#include <utility>
+
 #include "CutscenePlayer.hpp"
 #include "BaseEventHandler.hpp"
 #include "Sprite.hpp"
 #include "FreeMoving.hpp"
 #include "utils.hpp"
 #include "game.hpp"
-#include <algorithm>
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "core.hpp"
+
+namespace sf {
+class Window;
+}  // namespace sf
 
 using lif::CutscenePlayer;
 

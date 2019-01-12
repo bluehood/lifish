@@ -1,14 +1,17 @@
 #pragma once
 
+#include <SFML/System/NonCopyable.hpp>
 #include <memory>
 #include <string>
 #include <vector>
 #include <unordered_map>
-#include <SFML/System/NonCopyable.hpp>
+#include <array>
+
 #include "Level.hpp"
 #include "Track.hpp"
 #include "Stringable.hpp"
 #include "Enemy.hpp"
+#include "game.hpp"
 
 namespace lif {
 

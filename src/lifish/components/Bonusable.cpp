@@ -1,3 +1,6 @@
+#include <algorithm>
+#include <iosfwd>
+
 #include "Bonusable.hpp"
 #include "Time.hpp"
 #include "core.hpp"

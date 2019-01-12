@@ -1,16 +1,26 @@
 #pragma once
 
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <array>
+#include <memory>
+#include <functional>
+#include <vector>
+
 #include "Boss.hpp"
 #include "game.hpp"
 #include "state_function.hpp"
-#include <array>
-#include <memory>
+
+namespace sf {
+class Color;
+}  // namespace sf
 
 namespace lif {
 
 class Animated;
 class BufferedSpawner;
 class ShootingPattern;
+class Killable;
 
 class HauntingSpiritBoss : public lif::Boss {
 

@@ -1,20 +1,19 @@
+#include <memory>
+#include <unordered_map>
+
 #include "WinLoseHandler.hpp"
-#include "Bonusable.hpp"
-#include "Controllable.hpp"
 #include "GameCache.hpp"
 #include "Killable.hpp"
-#include "Level.hpp"
 #include "LevelManager.hpp"
-#include "LevelSet.hpp"
-#include "Music.hpp"
 #include "MusicManager.hpp"
-#include "Options.hpp"
 #include "Player.hpp"
-#include "SidePanel.hpp"
 #include "Sounded.hpp"
 #include "Time.hpp"
 #include "game.hpp"
-#include <iostream>
+#include "DroppingTextManager.hpp"
+#include "Entity.inl"
+#include "LevelTime.hpp"
+#include "core.hpp"
 
 using lif::WinLoseHandler;
 using State = WinLoseHandler::State;

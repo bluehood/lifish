@@ -1,7 +1,13 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/View.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <SFML/Window/Window.hpp>
+
 #include "BaseEventHandler.hpp"
 #include "Options.hpp"
 #include "core.hpp"
-#include <SFML/Graphics.hpp>
 
 using lif::BaseEventHandler;
 

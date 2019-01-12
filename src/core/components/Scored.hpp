@@ -1,7 +1,9 @@
 #pragma once
 
 #include <exception>
+
 #include "Component.hpp"
+#include "Entity.hpp"
 
 namespace lif {
 

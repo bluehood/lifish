@@ -1,7 +1,10 @@
 #pragma once
 
-#include <vector>
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <vector>
+
 #include "Direction.hpp"
 
 namespace lif {

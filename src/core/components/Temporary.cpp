@@ -1,4 +1,5 @@
 #include "Temporary.hpp"
+#include "Entity.hpp"
 
 using lif::Temporary;
 

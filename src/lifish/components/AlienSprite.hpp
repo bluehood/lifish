@@ -1,7 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+
 #include "Component.hpp"
+#include "Entity.hpp"
 
 namespace lif {
 

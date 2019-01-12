@@ -1,15 +1,24 @@
+#include <ext/alloc_traits.h>
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <iostream>
+#include <unordered_map>
+#include <iterator>
+#include <memory>
+#include <set>
+#include <stdexcept>
+
 #include "ScreenBuilder.hpp"
 #include "ScreenStyle.hpp"
 #include "Screen.hpp"
 #include "GameCache.hpp"
-#include "utils.hpp"
 #include "Interactable.hpp"
-#include <iostream>
-#include <exception>
-#include <fstream>
-#include <unordered_map>
-#include <algorithm>
 #include "game.hpp"
+#include "Direction.hpp"
+#include "ShadedText.hpp"
+#include "TransitionGraph.hpp"
+#include "core.hpp"
 
 using lif::ui::ScreenBuilder;
 using json = nlohmann::json;

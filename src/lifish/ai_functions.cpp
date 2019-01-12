@@ -1,3 +1,11 @@
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <random>
+#include <functional>
+#include <memory>
+#include <stdexcept>
+#include <unordered_map>
+
 #include "ai_functions.hpp"
 #include "ai_helpers.hpp"
 #include "LevelManager.hpp"
@@ -5,15 +13,13 @@
 #include "GameCache.hpp"
 #include "utils.hpp"
 #include "AxisSighted.hpp"
-#include "game.hpp"
 #include "Shooting.hpp"
 #include "Sounded.hpp"
-#include "Enemy.hpp"
 #include "Collider.hpp"
-#include <random>
-#include <exception>
-
-#include <iostream>
+#include "Direction.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::AIBoundFunction;
 using D = lif::Direction;

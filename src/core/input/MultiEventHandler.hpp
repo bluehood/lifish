@@ -1,11 +1,17 @@
 #pragma once
 
-#include <vector>
-#include <memory>
 #include <SFML/System/NonCopyable.hpp>
 #include <SFML/Window/Window.hpp>
 #include <SFML/Window/Event.hpp>
+#include <vector>
+#include <memory>
+#include <utility>
+
 #include "EventHandler.hpp"
+
+namespace sf {
+class Window;
+}  // namespace sf
 
 namespace lif {
 

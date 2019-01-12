@@ -1,9 +1,17 @@
 #pragma once
 
-#include <array>
 #include <SFML/System.hpp>
+#include <SFML/System/NonCopyable.hpp>
+#include <SFML/Window/Joystick.hpp>
+#include <array>
+
 #include "JoystickListener.hpp"
 #include "EventHandler.hpp"
+
+namespace sf {
+class Event;
+class Window;
+}  // namespace sf
 
 namespace lif {
 

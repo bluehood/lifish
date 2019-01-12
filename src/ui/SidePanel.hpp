@@ -1,11 +1,24 @@
 #pragma once
 
-#include <array>
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/System/NonCopyable.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <array>
+
 #include "conf/bonus.hpp"
 #include "conf/player.hpp"
 #include "game.hpp"
 #include "utils.hpp"
+
+namespace sf {
+class RenderTarget;
+class Texture;
+}  // namespace sf
 
 namespace lif {
 

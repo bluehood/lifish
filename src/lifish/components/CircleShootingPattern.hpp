@@ -1,10 +1,13 @@
 #pragma once
 
+#include <SFML/System.hpp>
+#include <SFML/System/Time.hpp>
+
 #include "Angle.hpp"
 #include "ShootingPattern.hpp"
-#include <SFML/System.hpp>
 
 namespace lif {
+class Entity;
 
 /**
  * Shoots bullets in a circular fashion:

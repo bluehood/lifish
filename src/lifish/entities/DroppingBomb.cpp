@@ -1,10 +1,20 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.inl>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "DroppingBomb.hpp"
 #include "Animated.hpp"
 #include "Drawable.hpp"
 #include "Spawning.hpp"
 #include "Temporary.hpp"
 #include "Bomb.hpp"
-#include "game.hpp"
+#include "AnimatedSprite.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::DroppingBomb;
 using lif::TILE_SIZE;

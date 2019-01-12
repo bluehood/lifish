@@ -1,3 +1,8 @@
+#include <algorithm>
+#include <memory>
+#include <stdexcept>
+#include <unordered_map>
+
 #include "collision_functions.hpp"
 #include "Bonusable.hpp"
 #include "Explosion.hpp"
@@ -6,6 +11,10 @@
 #include "Player.hpp"
 #include "Scored.hpp"
 #include "utils.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "bonus_type.hpp"
+#include "collision_layers.hpp"
 
 using CollisionFunc = lif::Collider::CollisionFunc;
 

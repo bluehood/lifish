@@ -1,3 +1,11 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Time.hpp>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Torch.hpp"
 #include "Animated.hpp"
 #include "Level.hpp"
@@ -7,6 +15,8 @@
 #include "entity_type.hpp"
 #include "core.hpp"
 #include "conf/zindex.hpp"
+#include "AnimatedSprite.hpp"
+#include "Entity.inl"
 
 using lif::Torch;
 

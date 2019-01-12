@@ -1,6 +1,10 @@
+#include <unordered_map>
+#include <vector>
+
 #include "ShootingPoint.hpp"
 #include "Shooting.hpp"
 #include "FreeSighted.hpp"
+#include "Entity.inl"
 
 using lif::ShootingPoint;
 

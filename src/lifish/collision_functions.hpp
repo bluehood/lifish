@@ -3,6 +3,7 @@
 #include "Collider.hpp"
 
 namespace lif {
+class Entity;
 
 enum CollisionFuncOptions : unsigned {
 	/** Only be hit by explosion originated at distance 1 from entity */

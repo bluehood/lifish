@@ -1,13 +1,27 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <string>
+#include <unordered_map>
+#include <vector>
+#include <initializer_list>
+
 #include "AnimatedSprite.hpp"
 #include "Animation.hpp"
 #include "Component.hpp"
 #include "sid.hpp"
-#include <SFML/Graphics.hpp>
-#include <string>
-#include <unordered_map>
-#include <vector>
+#include "Entity.hpp"
+
+class Animation;
+namespace sf {
+class RenderTarget;
+class Texture;
+}  // namespace sf
 
 namespace lif {
 

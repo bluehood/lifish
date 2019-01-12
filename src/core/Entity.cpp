@@ -1,10 +1,11 @@
-#include "Entity.hpp"
-#include "GameCache.hpp"
-#include "core.hpp"
-#include "Component.hpp"
-#include "utils.hpp"
-#include <sstream>
+#include <SFML/System/Vector2.hpp>
 #include <iostream>
+#include <algorithm>
+#include <typeinfo>
+
+#include "Entity.hpp"
+#include "core.hpp"
+#include "utils.hpp"
 
 // Note: in theory, this should check for HAVE_CXA_DEMANGLE.
 // The GCC version that I'm using, though, despite being pretty recent (6.2.1),

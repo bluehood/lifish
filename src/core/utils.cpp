@@ -1,9 +1,10 @@
+#include <SFML/Audio/Music.hpp>
+#include <SFML/System/Sleep.hpp>
+#include <SFML/System/Time.hpp>
+
 #include "utils.hpp"
 #include "Options.hpp"
-#include "LoopingMusic.hpp"
-#include "ShadedText.hpp"
 #include "json.hpp"
-#include <random>
 
 using json = nlohmann::json;
 

@@ -1,7 +1,9 @@
 #pragma once
 
-#include <initializer_list>
 #include <SFML/System.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <initializer_list>
+
 #include "Entity.hpp"
 #include "collision_layers.hpp"
 

@@ -1,3 +1,10 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Vector2.inl>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "DroppingSprite.hpp"
 #include "AxisMoving.hpp"
 #include "Drawable.hpp"
@@ -6,6 +13,9 @@
 #include "ZIndexed.hpp"
 #include "conf/zindex.hpp"
 #include "game.hpp"
+#include "Direction.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::DroppingSprite;
 

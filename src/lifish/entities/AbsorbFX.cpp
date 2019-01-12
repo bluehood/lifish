@@ -1,3 +1,13 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.inl>
+#include <unordered_map>
+#include <vector>
+
 #include "AbsorbFX.hpp"
 #include "Drawable.hpp"
 #include "Sprite.hpp"
@@ -6,6 +16,8 @@
 #include "ZIndexed.hpp"
 #include "conf/zindex.hpp"
 #include "utils.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::AbsorbFX;
 

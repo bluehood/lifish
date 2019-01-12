@@ -1,9 +1,11 @@
 #pragma once
 
-#include "Entity.hpp"
-#include "collision_layers.hpp"
+#include <SFML/System/Time.hpp>
 #include <initializer_list>
 #include <vector>
+
+#include "Entity.hpp"
+#include "collision_layers.hpp"
 
 namespace lif {
 

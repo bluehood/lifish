@@ -1,3 +1,15 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.inl>
+#include <algorithm>
+#include <functional>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "HauntedStatue.hpp"
 #include "Animated.hpp"
 #include "Collider.hpp"
@@ -12,6 +24,8 @@
 #include "conf/boss.hpp"
 #include "conf/zindex.hpp"
 #include "core.hpp"
+#include "AnimatedSprite.hpp"
+#include "Entity.inl"
 
 using lif::HauntedStatue;
 using lif::TILE_SIZE;

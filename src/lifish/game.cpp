@@ -1,12 +1,12 @@
-#include "game.hpp"
-#include "LoopingMusic.hpp"
-#include "controls.hpp"
-#include "collision_layers.hpp"
+#include <SFML/Window/Joystick.hpp>
 #include <string>
-#include <cstring>
 #include <sstream>
 #include <array>
-#include "conf/player.hpp"
+
+#include "game.hpp"
+#include "controls.hpp"
+#include "collision_layers.hpp"
+#include "core.hpp"
 
 bool lif::init() {
 	if (!lif::initCore()) return false;

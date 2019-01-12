@@ -1,9 +1,12 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+
 #include "Bullet.hpp"
 #include "Direction.hpp"
 
 namespace lif {
+class Entity;
 
 /** A Bullet which travels along axes */
 class AxisBullet : public lif::Bullet {

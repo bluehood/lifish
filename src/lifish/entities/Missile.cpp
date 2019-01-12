@@ -1,5 +1,12 @@
+#include <math.h>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.inl>
+#include <random>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Missile.hpp"
-#include "Animated.hpp"
 #include "Collider.hpp"
 #include "Drawable.hpp"
 #include "Killable.hpp"
@@ -8,8 +15,10 @@
 #include "Temporary.hpp"
 #include "Time.hpp"
 #include "core.hpp"
-#include <random>
-#include <tuple>
+#include "Bullet.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "GuidedMoving.hpp"
 
 using lif::Missile;
 

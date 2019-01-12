@@ -1,9 +1,12 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+
 #include "Moving.hpp"
 #include "Direction.hpp"
 
 namespace lif {
+class Entity;
 
 /**
  * An object moving only parallel to axes

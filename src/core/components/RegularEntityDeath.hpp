@@ -1,7 +1,10 @@
 #pragma once
 
-#include "Component.hpp"
+#include <SFML/System/Time.hpp>
 #include <unordered_map>
+
+#include "Component.hpp"
+#include "Entity.hpp"
 
 namespace lif {
 

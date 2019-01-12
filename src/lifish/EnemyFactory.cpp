@@ -1,3 +1,7 @@
+#include <SFML/System/Time.hpp>
+#include <unordered_map>
+#include <vector>
+
 #include "EnemyFactory.hpp"
 #include "AI.hpp"
 #include "AlienPredator.hpp"
@@ -8,6 +12,8 @@
 #include "Sighted.hpp"
 #include "Wisp.hpp"
 #include "collision_layers.hpp"
+#include "Enemy.hpp"
+#include "Entity.inl"
 
 using lif::EnemyFactory;
 

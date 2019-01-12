@@ -1,12 +1,21 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <random>
+#include <algorithm>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "BossExplosion.hpp"
-#include "Drawable.hpp"
 #include "Animated.hpp"
 #include "ZIndexed.hpp"
 #include "Sounded.hpp"
-#include "Temporary.hpp"
 #include "conf/zindex.hpp"
-#include "utils.hpp"
-#include <random>
+#include "AnimatedSprite.hpp"
+#include "Entity.inl"
+#include "core.hpp"
+#include "sid.hpp"
 
 using lif::BossExplosion;
 using lif::TILE_SIZE;

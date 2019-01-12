@@ -1,11 +1,23 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Time.hpp>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "AxisBullet.hpp"
 #include "AxisMoving.hpp"
 #include "Animated.hpp"
 #include "Drawable.hpp"
-#include "Collider.hpp"
-#include "Killable.hpp"
-#include "game.hpp"
 #include "conf/bullet.hpp"
+#include "AnimatedSprite.hpp"
+#include "Animation.hpp"
+#include "Entity.inl"
+#include "core.hpp"
+
+namespace lif {
+class Entity;
+}  // namespace lif
 
 using lif::AxisBullet;
 using lif::TILE_SIZE;

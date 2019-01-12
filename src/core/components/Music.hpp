@@ -1,9 +1,11 @@
 #pragma once
 
-#include <memory>
 #include <SFML/Audio/InputSoundFile.hpp>
+#include <memory>
+
 #include "Component.hpp"
 #include "Track.hpp"
+#include "Entity.hpp"
 
 class LoopingMusic;
 

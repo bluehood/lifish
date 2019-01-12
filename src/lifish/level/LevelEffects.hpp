@@ -1,10 +1,19 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+#include <SFML/System/NonCopyable.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/RenderTexture.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <set>
 #include <tuple>
 #include <vector>
-#include <SFML/Graphics.hpp>
-#include <SFML/System/NonCopyable.hpp>
+#include <utility>
+
+namespace sf {
+class RectangleShape;
+class RenderTarget;
+}  // namespace sf
 
 namespace lif {
 

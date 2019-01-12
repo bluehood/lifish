@@ -1,5 +1,6 @@
+#include <SFML/Window/Window.hpp>
+
 #include "MultiEventHandler.hpp"
-#include <SFML/Window.hpp>
 
 using lif::MultiEventHandler;
 

@@ -1,3 +1,13 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Vector2.inl>
+#include <list>
+#include <iterator>
+#include <memory>
+#include <random>
+#include <unordered_map>
+#include <vector>
+
 #include "AlienPredator.hpp"
 #include "AI.hpp"
 #include "AcidPond.hpp"
@@ -12,8 +22,15 @@
 #include "Temporary.hpp"
 #include "Time.hpp"
 #include "core.hpp"
-#include <limits>
-#include <list>
+#include "Animation.hpp"
+#include "Collider.hpp"
+#include "Direction.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "EntityGroup.hpp"
+#include "Killable.hpp"
+#include "game.hpp"
+#include "utils.hpp"
 
 using lif::AlienPredator;
 using lif::TILE_SIZE;

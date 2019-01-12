@@ -1,3 +1,5 @@
+#include <SFML/System/Time.hpp>
+
 #include "camera_utils.hpp"
 #include "GlobalDataPipe.hpp"
 #include "CameraShakeRequest.hpp"

@@ -2,7 +2,9 @@
 
 #include <memory>
 #include <functional>
+
 #include "Component.hpp"
+#include "Entity.hpp"
 
 namespace lif {
 

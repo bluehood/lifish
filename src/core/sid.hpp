@@ -1,7 +1,10 @@
 #pragma once
 
+#include <bits/stdint-uintn.h>
 #include <cstdint>
 #include <string>
+#include <stdexcept>
+#include <utility>
 #ifndef RELEASE
 	#include <unordered_map>
 #endif

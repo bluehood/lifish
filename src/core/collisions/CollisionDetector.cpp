@@ -1,5 +1,4 @@
 #include "CollisionDetector.hpp"
-#include "EntityGroup.hpp"
 
 using lif::CollisionDetector;
 

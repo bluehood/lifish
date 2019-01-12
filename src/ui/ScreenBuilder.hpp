@@ -1,11 +1,21 @@
 #pragma once
 
+#include <SFML/System.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/NonCopyable.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <string>
 #include <vector>
 #include <utility>
-#include <SFML/System.hpp>
-#include <SFML/Graphics.hpp>
+
 #include "json.hpp"
+
+namespace sf {
+class Drawable;
+}  // namespace sf
 
 namespace lif {
 

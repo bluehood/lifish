@@ -1,7 +1,15 @@
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.inl>
+#include <random>
+#include <memory>
+#include <stdexcept>
+#include <unordered_map>
+
 #include "LeapingMovement.hpp"
 #include "AxisMoving.hpp"
 #include "utils.hpp"
-#include <random>
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::LeapingMovement;
 

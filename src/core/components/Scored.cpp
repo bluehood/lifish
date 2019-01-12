@@ -1,3 +1,5 @@
+#include <stdexcept>
+
 #include "Scored.hpp"
 #include "game.hpp"
 

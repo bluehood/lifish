@@ -1,7 +1,8 @@
 #pragma once
 
-#include <string>
 #include <SFML/Window.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <string>
 
 namespace lif {
 

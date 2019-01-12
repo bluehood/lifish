@@ -1,6 +1,9 @@
+#include <memory>
+#include <unordered_map>
+
 #include "AI.hpp"
-#include "AxisMoving.hpp"
-#include "LevelManager.hpp"
+#include "Entity.inl"
+#include "Moving.hpp"
 
 using lif::AI;
 

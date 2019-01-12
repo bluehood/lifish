@@ -1,4 +1,5 @@
 #include "screen_callbacks.hpp"
+#include "Action.hpp"
 
 using ScreenCallback = lif::ui::Screen::Callback;
 using lif::ui::Action;

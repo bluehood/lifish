@@ -1,9 +1,17 @@
 #pragma once
 
-#include <array>
-#include <ostream>
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics.hpp>
+#include <math.h>
+#include <stdlib.h>
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <array>
+#include <ostream>
+#include <string>
+
 #include "Angle.hpp"
 #include "core.hpp"
 #include "json.hpp"
@@ -11,6 +19,7 @@
 // Enable automatic sf::Time / json conversion:
 // https://github.com/nlohmann/json#basic-usage
 namespace sf {
+class Time;
 
 void to_json(nlohmann::json& json, const sf::Time& time);
 void from_json(const nlohmann::json& json, sf::Time& time);

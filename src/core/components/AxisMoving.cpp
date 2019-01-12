@@ -1,9 +1,11 @@
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.inl>
+
 #include "AxisMoving.hpp"
-#include "Shooting.hpp"
 #include "Time.hpp"
 #include "core.hpp"
 #include "utils.hpp"
-#include <exception>
+#include "Entity.hpp"
 
 using lif::AxisMoving;
 using lif::TILE_SIZE;

@@ -1,8 +1,11 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+
 #include "Enemy.hpp"
 
 namespace lif {
+class Collider;
 
 class Wisp : public lif::Enemy {
 

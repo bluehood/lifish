@@ -1,4 +1,10 @@
+#include <SFML/Window/Event.hpp>
+
 #include "JoystickManager.hpp"
+
+namespace sf {
+class Window;
+}  // namespace sf
 
 using lif::joystick::JoystickManager;
 

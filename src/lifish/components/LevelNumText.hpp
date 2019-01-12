@@ -1,8 +1,18 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/System/Vector2.hpp>
+
 #include "Component.hpp"
 #include "ShadedText.hpp"
-#include <SFML/Graphics.hpp>
+#include "Entity.hpp"
+
+namespace sf {
+class RenderTarget;
+}  // namespace sf
 
 namespace lif {
 

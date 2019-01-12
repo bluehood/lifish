@@ -1,6 +1,10 @@
+#include <SFML/System/Time.hpp>
+
 #include "FreeMoving.hpp"
 #include "Time.hpp"
 #include "utils.hpp"
+#include "Entity.hpp"
+#include "core.hpp"
 
 using lif::FreeMoving;
 

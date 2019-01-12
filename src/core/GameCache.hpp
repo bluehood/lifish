@@ -1,13 +1,22 @@
 #pragma once
 
-#include "sid.hpp"
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/System/NonCopyable.hpp>
+#include <SFML/Audio/Sound.hpp>
 #include <list>
 #include <string>
 #include <unordered_map>
 #include <vector>
+#include <iosfwd>
+
+#include "sid.hpp"
+
+namespace sf {
+class Font;
+class SoundBuffer;
+class Texture;
+}  // namespace sf
 
 namespace lif {
 

@@ -1,6 +1,9 @@
+#include <stdexcept>
+#include <unordered_map>
+
 #include "Spawning.hpp"
 #include "Killable.hpp"
-#include <exception>
+#include "Entity.inl"
 
 using lif::Spawning;
 

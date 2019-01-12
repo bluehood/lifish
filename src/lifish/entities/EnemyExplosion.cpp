@@ -1,7 +1,13 @@
+#include <SFML/Graphics/Color.hpp>
+
 #include "EnemyExplosion.hpp"
 #include "Animated.hpp"
-#include "Collider.hpp"
 #include "collision_layers.hpp"
+#include "AnimatedSprite.hpp"
+
+namespace lif {
+class Entity;
+}  // namespace lif
 
 using lif::EnemyExplosion;
 

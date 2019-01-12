@@ -2,10 +2,14 @@
 
 /** General-purpose game setup */
 #include <SFML/System.hpp>
+#include <stddef.h>
 #include <chrono>
 #include <random>
 #include <sstream>
 #include <string>
+
+#include "Options.hpp"
+#include "Time.hpp"
 
 // Fallback in case the game wasn't compiled properly with cmake
 #ifndef VERSION
@@ -74,6 +78,7 @@ extern lif::MusicManager *musicManager;
 
 #ifndef RELEASE
 class DebugPainter;
+
 /** See musicManager */
 extern lif::DebugPainter *debugPainter;
 #endif

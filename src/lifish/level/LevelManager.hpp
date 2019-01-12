@@ -1,7 +1,12 @@
 #pragma once
 
-#include <array>
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <array>
+#include <memory>
+
 #include "BaseLevelManager.hpp"
 #include "DroppingTextManager.hpp"
 #include "LevelRenderer.hpp"
@@ -10,6 +15,11 @@
 #include "conf/player.hpp"
 #include "Direction.hpp"
 #include "game.hpp"
+#include "Level.hpp"
+
+namespace sf {
+class RenderTarget;
+}  // namespace sf
 
 namespace lif {
 
@@ -22,6 +32,8 @@ class Player;
 class Bomb;
 class Level;
 class AxisMoving;
+class Entity;
+class LevelTime;
 
 /** The class that manages all the level's entities and events.
  *  In particular, its update() method updates all entities,

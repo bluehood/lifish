@@ -1,3 +1,12 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/Texture.hpp>
+#include <algorithm>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Fire.hpp"
 #include "Animated.hpp"
 #include "Drawable.hpp"
@@ -5,6 +14,8 @@
 #include "Temporary.hpp"
 #include "Time.hpp"
 #include "core.hpp"
+#include "Entity.inl"
+#include "collision_layers.hpp"
 
 using lif::Fire;
 using lif::TILE_SIZE;

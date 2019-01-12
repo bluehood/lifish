@@ -1,8 +1,17 @@
 #pragma once
 
-#include "Pond.hpp"
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <array>
+
+#include "Pond.hpp"
+
+namespace sf {
+class RenderTarget;
+}  // namespace sf
 
 namespace lif {
 

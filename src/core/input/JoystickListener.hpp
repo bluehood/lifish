@@ -1,8 +1,11 @@
 #pragma once
 
-#include <array>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
+#include <SFML/System/NonCopyable.hpp>
+#include <SFML/Window/Joystick.hpp>
+#include <array>
+#include <utility>
 
 namespace lif {
 

@@ -1,3 +1,19 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.inl>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <iomanip>
+#include <iostream>
+#include <map>
+#include <algorithm>
+#include <memory>
+#include <string>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
 #include "DebugEventHandler.hpp"
 #include "Bonusable.hpp"
 #include "Boss.hpp"
@@ -13,10 +29,20 @@
 #include "Player.hpp"
 #include "Time.hpp"
 #include "collision_utils.hpp"
-#include "game.hpp"
-#include <iomanip>
-#include <iostream>
-#include <map>
+#include "Angle.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "EntityGroup.hpp"
+#include "Level.hpp"
+#include "LevelManager.hpp"
+#include "LevelSet.hpp"
+#include "WinLoseHandler.hpp"
+#include "bonus_type.hpp"
+#include "core.hpp"
+
+namespace sf {
+class Window;
+}  // namespace sf
 
 using lif::debug::DebugEventHandler;
 

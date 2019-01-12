@@ -1,7 +1,11 @@
 #pragma once
 
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+
 #include "Angle.hpp"
 #include "ShootingPattern.hpp"
+#include "Entity.hpp"
 
 namespace lif {
 

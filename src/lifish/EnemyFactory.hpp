@@ -1,12 +1,16 @@
 #pragma once
 
-#include "Enemy.hpp"
 #include <SFML/System.hpp>
+#include <SFML/System/NonCopyable.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <memory>
+
+#include "Enemy.hpp"
 
 namespace lif {
 
 class LevelManager;
+class Enemy;
 
 class EnemyFactory final : private sf::NonCopyable {
 public:

@@ -1,7 +1,18 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <memory>
+#include <stdexcept>
+#include <unordered_map>
+
 #include "HurtDrawProxy.hpp"
 #include "Animated.hpp"
 #include "Time.hpp"
 #include "conf/global.hpp"
+#include "AnimatedSprite.hpp"
+#include "Animation.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::HurtDrawProxy;
 

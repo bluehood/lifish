@@ -1,32 +1,44 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <array>
+#include <functional>
+#include <iostream>
+#include <memory>
+#include <stdexcept>
+#include <unordered_map>
+
 #include "game_logic.hpp"
-#include "AI.hpp"
 #include "AbsorbFX.hpp"
 #include "Absorbable.hpp"
 #include "AxisMoving.hpp"
 #include "Bomb.hpp"
 #include "Bonus.hpp"
-#include "Bonusable.hpp"
 #include "Boss.hpp"
-#include "BreakableWall.hpp"
-#include "Bullet.hpp"
 #include "Controllable.hpp"
-#include "Enemy.hpp"
 #include "Explosion.hpp"
 #include "GameCache.hpp"
 #include "Grabbable.hpp"
 #include "Killable.hpp"
-#include "Letter.hpp"
 #include "LevelManager.hpp"
 #include "Lifed.hpp"
-#include "Options.hpp"
 #include "Player.hpp"
 #include "Points.hpp"
 #include "Scored.hpp"
-#include "ShootingPoint.hpp"
 #include "Sounded.hpp"
 #include "Spawning.hpp"
 #include "Time.hpp"
-#include <array>
+#include "Collider.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "bonus_type.hpp"
+#include "conf/player.hpp"
+#include "core.hpp"
+#include "game.hpp"
+#include "utils.hpp"
 
 using EntityList = std::vector<lif::Entity*>;
 

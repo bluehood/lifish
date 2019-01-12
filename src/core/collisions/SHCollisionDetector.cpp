@@ -1,9 +1,22 @@
+#include <assert.h>
+#include <ext/alloc_traits.h>
+#include <SFML/System/Vector2.inl>
+#include <algorithm>
+#include <unordered_map>
+
 #include "SHCollisionDetector.hpp"
 #include "AxisMoving.hpp"
-#include "Direction.hpp"
 #include "EntityGroup.hpp"
 #include "collision_utils.hpp"
-#include <iostream>
+#include "Collider.hpp"
+#include "Counter.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "Fixed.hpp"
+#include "Moving.hpp"
+#include "Stats.hpp"
+#include "TimeStats.hpp"
+#include "core.hpp"
 
 using namespace lif::collision_utils;
 using lif::SHContainer;

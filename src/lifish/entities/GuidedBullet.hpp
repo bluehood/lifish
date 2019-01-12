@@ -1,9 +1,17 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+#include <initializer_list>
+
 #include "Bullet.hpp"
 #include "GuidedMoving.hpp"
 
+namespace sf {
+class Time;
+}  // namespace sf
+
 namespace lif {
+class Entity;
 
 /** A bullet with a GuidedMoving component. */
 class GuidedBullet : public lif::Bullet {

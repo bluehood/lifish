@@ -1,10 +1,12 @@
 #pragma once
 
+#include <SFML/System/Time.hpp>
+#include <array>
+
 #include "Component.hpp"
 #include "bonus_type.hpp"
 #include "conf/bonus.hpp"
-#include <SFML/System/Time.hpp>
-#include <array>
+#include "Entity.hpp"
 
 namespace lif {
 

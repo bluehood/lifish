@@ -1,9 +1,11 @@
-#include "EntityGroup.hpp"
-#include "Component.hpp"
-#include "Killable.hpp"
+#include <SFML/Graphics/Rect.inl>
 #include <algorithm>
-#include <iostream>
-#include <sstream>
+#include <unordered_set>
+
+#include "EntityGroup.hpp"
+#include "Killable.hpp"
+#include "Collider.hpp"
+#include "Entity.inl"
 
 using lif::EntityGroup;
 

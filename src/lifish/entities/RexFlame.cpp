@@ -1,10 +1,21 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <algorithm>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "RexFlame.hpp"
-#include "Collider.hpp"
 #include "Drawable.hpp"
 #include "Sprite.hpp"
 #include "Temporary.hpp"
 #include "Time.hpp"
 #include "conf/boss.hpp"
+#include "Entity.inl"
+#include "collision_layers.hpp"
+#include "core.hpp"
 
 using lif::RexFlame;
 

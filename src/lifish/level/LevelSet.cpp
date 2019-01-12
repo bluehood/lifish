@@ -1,9 +1,13 @@
+#include <SFML/System/Time.hpp>
+#include <iostream>
+#include <stdexcept>
+#include <unordered_set>
+#include <utility>
+
 #include "LevelSet.hpp"
 #include "json.hpp"
-#include "utils.hpp"
-#include <exception>
-#include <fstream>
-#include <iostream>
+#include "Attack.hpp"
+#include "core.hpp"
 
 using json = nlohmann::json;
 using lif::LevelSet;

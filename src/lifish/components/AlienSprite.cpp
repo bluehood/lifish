@@ -1,11 +1,21 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Time.hpp>
+#include <algorithm>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "AlienSprite.hpp"
-#include "game.hpp"
-#include "GameCache.hpp"
 #include "MovingAnimator.hpp"
 #include "AxisMoving.hpp"
 #include "Animated.hpp"
-#include "utils.hpp"
 #include "Drawable.hpp"
+#include "AnimatedSprite.hpp"
+#include "Animation.hpp"
+#include "Direction.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::AlienSprite;
 using lif::Direction;

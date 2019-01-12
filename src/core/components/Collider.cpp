@@ -1,6 +1,10 @@
-#include "Collider.hpp"
+#include <SFML/Graphics/Rect.inl>
 #include <sstream>
 #include <algorithm>
+#include <array>
+#include <type_traits>
+
+#include "Collider.hpp"
 
 using lif::Collider;
 

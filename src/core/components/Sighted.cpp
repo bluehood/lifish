@@ -1,5 +1,4 @@
 #include "Sighted.hpp"
-#include "EntityGroup.hpp"
 
 using lif::Sighted;
 

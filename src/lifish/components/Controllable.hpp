@@ -1,10 +1,15 @@
 #pragma once
 
-#include <array>
 #include <SFML/Window.hpp>
 #include <SFML/System/Time.hpp>
+#include <SFML/System/Clock.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <SFML/Window/Window.hpp>
+#include <array>
+
 #include "Component.hpp"
 #include "controls.hpp"
+#include "Entity.hpp"
 
 namespace lif {
 

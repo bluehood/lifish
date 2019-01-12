@@ -1,11 +1,26 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <memory>
 #include <unordered_map>
-#include <SFML/Graphics.hpp>
+#include <sstream>
+#include <initializer_list>
+#include <stdexcept>
+#include <string>
+#include <utility>
+
 #include "WindowContext.hpp"
 #include "LoadScreen.hpp"
-#include <sstream>
+#include "Action.hpp"
+
+namespace sf {
+class Event;
+class RenderTarget;
+class RenderWindow;
+class Window;
+}  // namespace sf
 
 namespace lif {
 

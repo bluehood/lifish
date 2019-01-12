@@ -1,3 +1,11 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/Sprite.hpp>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Bonus.hpp"
 #include "Collider.hpp"
 #include "Drawable.hpp"
@@ -12,7 +20,9 @@
 #include "collision_layers.hpp"
 #include "conf/bonus.hpp"
 #include "conf/zindex.hpp"
-#include "game.hpp"
+#include "Entity.inl"
+#include "core.hpp"
+#include "sid.hpp"
 
 using lif::Bonus;
 using lif::TILE_SIZE;

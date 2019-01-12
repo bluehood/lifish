@@ -1,15 +1,23 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include <SFML/System/NonCopyable.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <string>
 #include <array>
 #include <vector>
 #include <unordered_set>
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/System/NonCopyable.hpp>
+
 #include "Entity.hpp"
 #include "Track.hpp"
 #include "entity_type.hpp"
+
+namespace sf {
+class Drawable;
+class Texture;
+}  // namespace sf
 
 namespace lif {
 

@@ -8,39 +8,50 @@
  * https://silverweed.github.io/lifish-license.txt
  * or in the LICENSE file in this repository's root directory.
 */
-#include "Bonusable.hpp"
-#include "Boss.hpp"
-#include "Controllable.hpp"
+#include <bits/exception.h>
+#include <SFML/Config.hpp>
+#include <SFML/Graphics/Image.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.inl>
+#include <SFML/Window/VideoMode.hpp>
+#include <SFML/Window/Window.hpp>
+#include <cstdlib>
+#include <iomanip>
+#include <iostream>
+#include <memory>
+#include <array>
+#include <chrono>
+#include <string>
+#include <vector>
+
 #include "ControlsScreen.hpp"
 #include "CutsceneBuilder.hpp"
 #include "CutscenePlayer.hpp"
 #include "FPSDisplayer.hpp"
 #include "GameCache.hpp"
 #include "GameContext.hpp"
-#include "Interactable.hpp"
 #include "JoystickManager.hpp"
 #include "LevelManager.hpp"
 #include "LevelSet.hpp"
 #include "LoadScreen.hpp"
-#include "Music.hpp"
 #include "MusicManager.hpp"
 #include "Options.hpp"
-#include "Player.hpp"
 #include "PreferencesScreen.hpp"
 #include "SaveScreen.hpp"
-#include "SidePanel.hpp"
 #include "Time.hpp"
 #include "UI.hpp"
 #include "WinLoseHandler.hpp"
 #include "contexts.hpp"
 #include "game.hpp"
-#include <SFML/Window.hpp>
-#include <algorithm>
-#include <cstdlib>
-#include <fstream>
-#include <iomanip>
-#include <iostream>
-#include <memory>
+#include "Cutscene.hpp"
+#include "InterlevelContext.hpp"
+#include "Level.hpp"
+#include "SaveManager.hpp"
+#include "TimeStats.hpp"
+#include "WindowContext.hpp"
+#include "core.hpp"
 
 #ifdef MULTITHREADED
 #	ifdef SFML_SYSTEM_LINUX
@@ -50,9 +61,10 @@
 #endif
 
 #ifndef RELEASE
+#	include <cassert>
+
 #	include "Stats.hpp"
 #	include "DebugPainter.hpp"
-#	include <cassert>
 #endif
 
 struct MainArgs {

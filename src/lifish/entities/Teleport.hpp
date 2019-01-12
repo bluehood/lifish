@@ -1,5 +1,8 @@
 #pragma once
 
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+
 #include "Entity.hpp"
 
 namespace lif {

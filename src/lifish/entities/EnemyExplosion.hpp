@@ -1,8 +1,11 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+
 #include "Explosion.hpp"
 
 namespace lif {
+class Entity;
 
 class EnemyExplosion : public lif::Explosion {
 public:

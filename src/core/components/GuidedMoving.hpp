@@ -1,11 +1,16 @@
 #pragma once
 
-#include "Moving.hpp"
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <functional>
 #include <initializer_list>
 #include <tuple>
+#include <vector>
+
+#include "Moving.hpp"
 
 namespace lif {
+class Entity;
 
 /**
  * A GuidedMoving has a starting and an ending position, and will travel from the first

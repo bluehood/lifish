@@ -1,10 +1,16 @@
+#include <memory>
+#include <random>
+#include <stdexcept>
+#include <unordered_map>
+
 #include "ScatterVsPlayerPattern.hpp"
 #include "BulletFactory.hpp"
-#include "FreeBullet.hpp"
 #include "FreeSighted.hpp"
 #include "Player.hpp"
 #include "Time.hpp"
-#include <cmath>
+#include "Bullet.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::ScatterVsPlayerPattern;
 

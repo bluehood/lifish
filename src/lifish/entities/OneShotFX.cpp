@@ -1,10 +1,18 @@
+#include <SFML/System/Time.hpp>
+#include <algorithm>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "OneShotFX.hpp"
-#include "game.hpp"
 #include "Drawable.hpp"
 #include "Temporary.hpp"
 #include "Animated.hpp"
 #include "ZIndexed.hpp"
 #include "conf/zindex.hpp"
+#include "AnimatedSprite.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::OneShotFX;
 

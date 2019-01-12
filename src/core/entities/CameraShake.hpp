@@ -1,7 +1,13 @@
 #pragma once
 
-#include "Entity.hpp"
 #include <SFML/Graphics.hpp>
+#include <SFML/System/Time.hpp>
+
+#include "Entity.hpp"
+
+namespace sf {
+class RenderTarget;
+}  // namespace sf
 
 namespace lif {
 

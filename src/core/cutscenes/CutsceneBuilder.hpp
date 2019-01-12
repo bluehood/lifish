@@ -2,9 +2,11 @@
 
 #include <vector>
 #include <string>
+
 #include "Cutscene.hpp"
 
 namespace lif {
+struct Cutscene;
 
 class CutsceneBuilder final {
 public:

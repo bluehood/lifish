@@ -1,3 +1,11 @@
+#include <ext/alloc_traits.h>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <random>
+#include <algorithm>
+#include <memory>
+#include <vector>
+
 #include "spawn_functions.hpp"
 #include "LevelManager.hpp"
 #include "BufferedSpawner.hpp"
@@ -6,8 +14,8 @@
 #include "EnemyFactory.hpp"
 #include "utils.hpp"
 #include "collision_utils.hpp"
-#include <random>
 #include "game.hpp"
+#include "core.hpp"
 
 void lif::spawnInFreeTiles(lif::BufferedSpawner *spawner, lif::LevelManager& lm,
 		int spawnedEnemyId, int nSpawned, int minDistFromPlayers,

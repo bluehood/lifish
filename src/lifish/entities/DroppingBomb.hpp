@@ -1,7 +1,13 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+
 #include "Entity.hpp"
 #include "conf/bomb.hpp"
+
+namespace sf {
+class Time;
+}  // namespace sf
 
 namespace lif {
 

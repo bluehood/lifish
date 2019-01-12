@@ -1,7 +1,11 @@
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/Text.hpp>
+#include <SFML/System/Time.hpp>
+#include <sstream>
+
 #include "FPSDisplayer.hpp"
 #include "core.hpp"
 #include "Options.hpp"
-#include <sstream>
 
 using lif::FPSDisplayer;
 

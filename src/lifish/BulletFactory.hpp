@@ -1,8 +1,9 @@
 #pragma once
 
-#include <memory>
 #include <SFML/System/NonCopyable.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <memory>
+
 #include "Direction.hpp"
 #include "Angle.hpp"
 
@@ -10,6 +11,7 @@ namespace lif {
 
 class Entity;
 class Bullet;
+class Angle;
 
 /**
  * Utility class used to build bullets from their infoId.

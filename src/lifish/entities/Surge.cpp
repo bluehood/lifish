@@ -1,3 +1,12 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/Transform.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.inl>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Surge.hpp"
 #include "Animated.hpp"
 #include "Bonusable.hpp"
@@ -10,6 +19,11 @@
 #include "conf/boss.hpp"
 #include "conf/zindex.hpp"
 #include "core.hpp"
+#include "AnimatedSprite.hpp"
+#include "Entity.inl"
+#include "LevelManager.hpp"
+#include "bonus_type.hpp"
+#include "game.hpp"
 
 using lif::Surge;
 

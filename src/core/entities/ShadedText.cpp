@@ -1,7 +1,15 @@
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/System/String.hpp>
+#include <algorithm>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "ShadedText.hpp"
-#include "game.hpp"
 #include "GameCache.hpp"
 #include "Drawable.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::ShadedText;
 

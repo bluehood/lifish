@@ -1,3 +1,17 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.inl>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <iostream>
+#include <algorithm>
+#include <memory>
+#include <string>
+#include <unordered_map>
+
 #include "InterlevelContext.hpp"
 #include "BaseEventHandler.hpp"
 #include "GameCache.hpp"
@@ -10,7 +24,15 @@
 #include "Time.hpp"
 #include "contexts.hpp"
 #include "input_utils.hpp"
-#include <iostream>
+#include "Entity.inl"
+#include "JoystickListener.hpp"
+#include "LevelTime.hpp"
+#include "core.hpp"
+#include "utils.hpp"
+
+namespace sf {
+class Window;
+}  // namespace sf
 
 using lif::InterlevelContext;
 

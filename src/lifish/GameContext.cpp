@@ -1,3 +1,18 @@
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <algorithm>
+#include <array>
+#include <functional>
+#include <initializer_list>
+#include <memory>
+#include <stdexcept>
+#include <unordered_map>
+#include <vector>
+
 #include "GameContext.hpp"
 #include "BaseEventHandler.hpp"
 #include "Bonusable.hpp"
@@ -9,13 +24,23 @@
 #include "Player.hpp"
 #include "SHCollisionDetector.hpp"
 #include "SaveManager.hpp"
-#include "bonus_type.hpp"
 #include "contexts.hpp"
 #include "core.hpp"
 #include "input_utils.hpp"
+#include "Activable.hpp"
+#include "CollisionDetector.hpp"
+#include "Counter.hpp"
+#include "Entity.inl"
+#include "EntityGroup.hpp"
+#include "Level.hpp"
+#include "Stats.hpp"
+#include "TimeStats.hpp"
+#include "game.hpp"
+#include "utils.hpp"
 #ifndef RELEASE
 #	include <iostream>
 #	include <iomanip>
+
 #	include "DebugRenderer.hpp"
 #	include "DebugEventHandler.hpp"
 #	include "game_logic.hpp"
@@ -24,6 +49,10 @@
 #include "CameraShake.hpp"
 #include "CameraShakeRequest.hpp"
 #include "GlobalDataPipe.hpp"
+
+namespace sf {
+class Window;
+}  // namespace sf
 
 using lif::GameContext;
 

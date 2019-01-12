@@ -1,3 +1,9 @@
+#include <memory>
+#include <stdexcept>
+#include <string>
+#include <utility>
+#include <vector>
+
 #include "RegularEntityDeath.hpp"
 #include "Animated.hpp"
 #include "AxisMoving.hpp"
@@ -7,7 +13,10 @@
 #include "MovingAnimator.hpp"
 #include "Sounded.hpp"
 #include "core.hpp"
-#include <exception>
+#include "AnimatedSprite.hpp"
+#include "Direction.hpp"
+#include "Entity.inl"
+#include "sid.hpp"
 
 using lif::RegularEntityDeath;
 

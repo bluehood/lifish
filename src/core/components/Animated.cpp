@@ -1,8 +1,12 @@
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <stdexcept>
+#include <utility>
+
 #include "Animated.hpp"
 #include "GameCache.hpp"
 #include "Time.hpp"
 #include "core.hpp"
-#include "utils.hpp"
+#include "Animation.hpp"
 
 using lif::Animated;
 

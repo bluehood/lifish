@@ -1,3 +1,11 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/Texture.hpp>
+#include <memory>
+#include <string>
+#include <unordered_map>
+#include <vector>
+
 #include "Coin.hpp"
 #include "Animated.hpp"
 #include "Collider.hpp"
@@ -10,7 +18,12 @@
 #include "Scored.hpp"
 #include "Sounded.hpp"
 #include "Time.hpp"
-#include "game.hpp"
+#include "AnimatedSprite.hpp"
+#include "Animation.hpp"
+#include "Entity.inl"
+#include "collision_layers.hpp"
+#include "core.hpp"
+#include "sid.hpp"
 
 using lif::Coin;
 using lif::TILE_SIZE;

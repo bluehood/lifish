@@ -1,8 +1,18 @@
+#include <SFML/System/Vector2.hpp>
+#include <array>
+#include <algorithm>
+#include <functional>
+#include <memory>
+#include <unordered_map>
+
 #include "AxisSighted.hpp"
 #include "utils.hpp"
 #include "Collider.hpp"
 #include "EntityGroup.hpp"
-#include <array>
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "Killable.hpp"
+#include "core.hpp"
 
 using lif::AxisSighted;
 

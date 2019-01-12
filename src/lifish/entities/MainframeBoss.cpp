@@ -1,3 +1,16 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/System/Vector2.inl>
+#include <cassert>
+#include <cstdlib>
+#include <random>
+#include <memory>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
 #include "MainframeBoss.hpp"
 #include "Animated.hpp"
 #include "Bonusable.hpp"
@@ -23,12 +36,15 @@
 #include "conf/boss.hpp"
 #include "game.hpp"
 #include "spawn_functions.hpp"
-#include <cassert>
-#include <cstdlib>
-#include <random>
-#ifndef RELEASE
-	#include "DebugPainter.hpp"
-#endif
+#include "AnimatedSprite.hpp"
+#include "Entity.inl"
+#include "EntityGroup.hpp"
+#include "LevelManager.hpp"
+#include "bonus_type.hpp"
+#include "collision_layers.hpp"
+#include "core.hpp"
+#include "sid.hpp"
+#include "utils.hpp"
 
 #define BIND(f) std::bind(&MainframeBoss:: f, this)
 

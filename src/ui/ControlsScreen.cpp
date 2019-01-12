@@ -1,12 +1,36 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/Joystick.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <iostream>
+#include <memory>
+#include <algorithm>
+#include <array>
+#include <stdexcept>
+#include <type_traits>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
 #include "ControlsScreen.hpp"
 #include "Interactable.hpp"
-#include "Options.hpp"
 #include "controls.hpp"
 #include "game.hpp"
 #include "input_utils.hpp"
 #include "utils.hpp"
-#include <iostream>
-#include <memory>
+#include "Direction.hpp"
+#include "ShadedText.hpp"
+#include "TransitionGraph.hpp"
+#include "core.hpp"
+
+namespace sf {
+class RenderWindow;
+class Window;
+}  // namespace sf
 
 using lif::ui::ControlsScreen;
 using lif::ui::Interactable;

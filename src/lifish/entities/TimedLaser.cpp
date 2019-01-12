@@ -1,3 +1,12 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.inl>
+#include <algorithm>
+#include <memory>
+#include <unordered_map>
+
 #include "TimedLaser.hpp"
 #include "Animated.hpp"
 #include "Collider.hpp"
@@ -8,6 +17,9 @@
 #include "ZIndexed.hpp"
 #include "conf/zindex.hpp"
 #include "game.hpp"
+#include "AnimatedSprite.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::TimedLaser;
 using lif::TILE_SIZE;

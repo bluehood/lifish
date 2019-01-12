@@ -1,10 +1,19 @@
 #pragma once
 
+#include <SFML/System.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <memory>
+
 #include "Attack.hpp"
 #include "Entity.hpp"
 #include "game.hpp"
-#include <SFML/System.hpp>
-#include <memory>
+
+namespace sf {
+class RenderTarget;
+}  // namespace sf
 
 namespace lif {
 

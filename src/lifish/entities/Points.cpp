@@ -1,3 +1,8 @@
+#include <SFML/System/Vector2.inl>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Points.hpp"
 #include "AxisMoving.hpp"
 #include "Direction.hpp"
@@ -7,6 +12,8 @@
 #include "conf/zindex.hpp"
 #include "game.hpp"
 #include "utils.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::Points;
 

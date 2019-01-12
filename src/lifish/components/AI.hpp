@@ -1,8 +1,10 @@
 #pragma once
 
-#include "Component.hpp"
 #include <array>
 #include <functional>
+
+#include "Component.hpp"
+#include "Entity.hpp"
 
 namespace lif {
 

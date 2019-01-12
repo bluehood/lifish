@@ -1,7 +1,13 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+
 #include "Screen.hpp"
 #include "SaveDataBrowser.hpp"
+
+namespace sf {
+class RenderWindow;
+}  // namespace sf
 
 namespace lif {
 

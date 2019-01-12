@@ -1,6 +1,11 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.inl>
+#include <memory>
+
 #include "Spawning.hpp"
+#include "Entity.hpp"
 
 namespace lif {
 

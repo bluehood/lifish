@@ -1,6 +1,16 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+#include <string>
+
 #include "Screen.hpp"
+#include "Action.hpp"
+
+namespace sf {
+class Event;
+class RenderWindow;
+class Window;
+}  // namespace sf
 
 namespace lif {
 

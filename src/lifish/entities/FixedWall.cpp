@@ -1,11 +1,20 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <algorithm>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "FixedWall.hpp"
-#include "game.hpp"
 #include "Sprite.hpp"
 #include "Drawable.hpp"
 #include "Collider.hpp"
 #include "Fixed.hpp"
 #include "ZIndexed.hpp"
 #include "conf/zindex.hpp"
+#include "Entity.inl"
+#include "collision_layers.hpp"
+#include "core.hpp"
 
 using lif::FixedWall;
 using lif::TILE_SIZE;

@@ -1,10 +1,16 @@
+#include <algorithm>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Pond.hpp"
 #include "Collider.hpp"
 #include "Lifed.hpp"
-#include "core.hpp"
 #include "Bonusable.hpp"
 #include "ZIndexed.hpp"
 #include "conf/zindex.hpp"
+#include "Entity.inl"
+#include "bonus_type.hpp"
 
 using lif::Pond;
 

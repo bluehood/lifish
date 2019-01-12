@@ -1,6 +1,12 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+
+namespace sf {
+class RenderTarget;
+}  // namespace sf
 
 namespace lif {
 

@@ -21,7 +21,14 @@
 //
 ////////////////////////////////////////////////////////////
 
+#include <algorithm>
+#include <cstddef>
+
 #include "Animation.hpp"
+
+namespace sf {
+class Texture;
+}  // namespace sf
 
 Animation::Animation() : m_texture(NULL)
 {

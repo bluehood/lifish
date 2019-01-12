@@ -1,9 +1,18 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Time.hpp>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Targeter.hpp"
 #include "Animated.hpp"
 #include "Drawable.hpp"
 #include "ZIndexed.hpp"
 #include "conf/zindex.hpp"
 #include "core.hpp"
+#include "AnimatedSprite.hpp"
+#include "Entity.inl"
 
 using lif::Targeter;
 

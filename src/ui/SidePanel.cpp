@@ -1,3 +1,15 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/Text.hpp>
+#include <SFML/Graphics/Texture.hpp>
+#include <SFML/System/Time.hpp>
+#include <iomanip>
+#include <memory>
+#include <ostream>
+#include <string>
+#include <unordered_map>
+
 #include "SidePanel.hpp"
 #include "Bonusable.hpp"
 #include "GameCache.hpp"
@@ -5,7 +17,12 @@
 #include "Lifed.hpp"
 #include "Player.hpp"
 #include "ShadedText.hpp"
-#include <iomanip>
+#include "Entity.inl"
+#include "LevelTime.hpp"
+#include "bonus_type.hpp"
+#include "conf/bomb.hpp"
+#include "core.hpp"
+#include "utils.hpp"
 
 using lif::SidePanel;
 

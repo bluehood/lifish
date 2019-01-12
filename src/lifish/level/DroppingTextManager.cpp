@@ -1,9 +1,11 @@
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.inl>
+#include <stdexcept>
+
 #include "DroppingTextManager.hpp"
 #include "DroppingSprite.hpp"
 #include "EntityGroup.hpp"
 #include "core.hpp"
-#include <SFML/System.hpp>
-#include <exception>
 
 using lif::DroppingTextManager;
 

@@ -1,8 +1,20 @@
 #pragma once
 
+#include <SFML/Graphics/CircleShape.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <functional>
+
 #include "Boss.hpp"
 #include "LevelManager.hpp"
 #include "state_function.hpp"
+#include "Angle.hpp"
+
+namespace sf {
+class RenderTarget;
+}  // namespace sf
 
 namespace lif {
 
@@ -10,6 +22,7 @@ class Animated;
 class BufferedSpawner;
 class HurtDrawProxy;
 class LightSource;
+class LevelManager;
 
 class MainframeBoss : public lif::Boss, public sf::Drawable {
 

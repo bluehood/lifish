@@ -1,10 +1,21 @@
 #pragma once
 
-#include "WindowContext.hpp"
-#include "game.hpp"
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
+#include <SFML/Graphics/Font.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/Graphics/Text.hpp>
+#include <SFML/System/Time.hpp>
 #include <array>
+
+#include "WindowContext.hpp"
+#include "game.hpp"
+
+namespace sf {
+class Event;
+class RenderTarget;
+class Window;
+}  // namespace sf
 
 namespace lif {
 

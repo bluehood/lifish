@@ -1,15 +1,29 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/System/Clock.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <string>
 #include <functional>
-#include <SFML/Graphics.hpp>
 #include <unordered_map>
 #include <memory>
 #include <vector>
+#include <utility>
+
 #include "ScreenStyle.hpp"
 #include "Action.hpp"
 #include "WindowContext.hpp"
 #include "TransitionGraph.hpp"
+
+namespace sf {
+class Event;
+class RenderTarget;
+class RenderWindow;
+class Window;
+}  // namespace sf
 
 namespace lif {
 
@@ -17,6 +31,7 @@ namespace ui {
 
 class ScreenBuilder;
 class Interactable;
+struct ScreenStyle;
 
 class Screen : public lif::WindowContext {
 public:

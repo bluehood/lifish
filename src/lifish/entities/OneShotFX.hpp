@@ -1,8 +1,11 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <initializer_list>
 #include <string>
-#include <SFML/Graphics.hpp>
+
 #include "Entity.hpp"
 
 namespace lif {

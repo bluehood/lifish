@@ -1,8 +1,11 @@
+#include <random>
+
 #include "CircleShootingPattern.hpp"
 #include "BulletFactory.hpp"
-#include "FreeBullet.hpp"
 #include "Time.hpp"
 #include "core.hpp"
+#include "Bullet.hpp"
+#include "Entity.hpp"
 
 using lif::CircleShootingPattern;
 

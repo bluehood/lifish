@@ -1,9 +1,15 @@
 #pragma once
 
+#include <array>
+#include <iosfwd>
+#include <utility>
+#include <vector>
+
 #include "Sighted.hpp"
 #include "Direction.hpp"
 
 namespace lif {
+class Entity;
 
 /** An AxisSighted entity has knowledge of entities around it along axis directions.
  *  IMPORTANT: all returned pointers are guaranteed valid only until the next call to

@@ -1,5 +1,13 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Time.hpp>
+#include <algorithm>
+#include <memory>
+#include <random>
+#include <unordered_map>
+#include <vector>
+
 #include "BreakableWall.hpp"
-#include "game.hpp"
 #include "GameCache.hpp"
 #include "Spawning.hpp"
 #include "Animated.hpp"
@@ -10,16 +18,19 @@
 #include "Lifed.hpp"
 #include "ZIndexed.hpp"
 #include "Scored.hpp"
-#include "Player.hpp"
 #include "Sounded.hpp"
-#include "Explosion.hpp"
 #include "Drawable.hpp"
 #include "Fixed.hpp"
-#include "utils.hpp"
 #include "collision_functions.hpp"
 #include "conf/wall.hpp"
 #include "conf/bonus.hpp"
 #include "conf/zindex.hpp"
+#include "AnimatedSprite.hpp"
+#include "Entity.inl"
+#include "bonus_type.hpp"
+#include "collision_layers.hpp"
+#include "core.hpp"
+#include "sid.hpp"
 
 using lif::BreakableWall;
 using lif::TILE_SIZE;

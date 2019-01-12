@@ -1,12 +1,21 @@
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.inl>
+#include <cmath>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Grenade.hpp"
 #include "GuidedMoving.hpp"
 #include "EnemyExplosion.hpp"
 #include "Killable.hpp"
 #include "Collider.hpp"
 #include "Spawning.hpp"
-#include "AxisMoving.hpp"
 #include "utils.hpp"
-#include <cmath>
+#include "Bullet.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::Grenade;
 using lif::TILE_SIZE;

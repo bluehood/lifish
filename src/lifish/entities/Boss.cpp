@@ -1,10 +1,19 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/System/Vector2.inl>
+#include <cassert>
+#include <algorithm>
+#include <memory>
+#include <random>
+#include <stdexcept>
+#include <string>
+#include <unordered_map>
+#include <vector>
+
 #include "Boss.hpp"
 #include "Absorbable.hpp"
-#include "Animated.hpp"
 #include "Bonusable.hpp"
 #include "BossExplosion.hpp"
 #include "Collider.hpp"
-#include "Drawable.hpp"
 #include "Explosion.hpp"
 #include "Foe.hpp"
 #include "GameCache.hpp"
@@ -19,8 +28,10 @@
 #include "conf/boss.hpp"
 #include "conf/player.hpp"
 #include "conf/zindex.hpp"
-#include "game.hpp"
-#include <cassert>
+#include "Entity.inl"
+#include "bonus_type.hpp"
+#include "collision_layers.hpp"
+#include "core.hpp"
 
 using lif::Boss;
 using lif::TILE_SIZE;

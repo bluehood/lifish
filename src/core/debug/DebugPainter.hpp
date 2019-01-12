@@ -1,11 +1,22 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.inl>
 #include <vector>
 #include <memory>
-#include <SFML/Graphics.hpp>
+#include <string>
+
 #include "GameCache.hpp"
 #include "Angle.hpp"
 #include "game.hpp"
+
+namespace sf {
+class RenderTarget;
+}  // namespace sf
 
 namespace lif {
 

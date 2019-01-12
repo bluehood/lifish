@@ -23,10 +23,16 @@
 
 /// This is an altered version of the source, modified by Giacomo Parolini ///
 
-#include "AnimatedSprite.hpp"
+#include <SFML/Graphics/PrimitiveType.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/Transform.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <cstddef>
 
+#include "AnimatedSprite.hpp"
 #include "Animation.hpp"
-#include "utils.hpp"
 
 AnimatedSprite::AnimatedSprite(sf::Time frameTime, bool paused, bool looped, bool hideNonLoopedOnStop) :
     m_animation(NULL), m_frameTime(frameTime), m_currentFrame(0), m_isPaused(paused),

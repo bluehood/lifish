@@ -1,8 +1,10 @@
 #pragma once
 
-#include "InterlevelContext.hpp"
 #include <SFML/Graphics.hpp>
+#include <SFML/System/Time.hpp>
 #include <memory>
+
+#include "InterlevelContext.hpp"
 
 namespace lif {
 

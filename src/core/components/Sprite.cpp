@@ -1,3 +1,5 @@
+#include <SFML/Graphics/RenderTarget.hpp>
+
 #include "Sprite.hpp"
 #include "GameCache.hpp"
 #include "core.hpp"

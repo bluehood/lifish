@@ -1,3 +1,12 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/System/Vector2.inl>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "SurgeWarn.hpp"
 #include "Drawable.hpp"
 #include "Sprite.hpp"
@@ -6,6 +15,8 @@
 #include "ZIndexed.hpp"
 #include "conf/zindex.hpp"
 #include "core.hpp"
+#include "Angle.hpp"
+#include "Entity.inl"
 
 using lif::SurgeWarn;
 

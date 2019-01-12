@@ -1,3 +1,16 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/System/Vector2.inl>
+#include <algorithm>
+#include <iostream>
+#include <iterator>
+#include <memory>
+#include <numeric>
+#include <unordered_map>
+#include <vector>
+
 #include "Player.hpp"
 #include "Animated.hpp"
 #include "ArmorFX.hpp"
@@ -20,7 +33,17 @@
 #include "ZIndexed.hpp"
 #include "conf/zindex.hpp"
 #include "utils.hpp"
-#include <sstream>
+#include "AnimatedSprite.hpp"
+#include "Animation.hpp"
+#include "Attack.hpp"
+#include "Direction.hpp"
+#include "Entity.inl"
+#include "bonus_type.hpp"
+#include "collision_layers.hpp"
+#include "controls.hpp"
+#include "core.hpp"
+#include "game.hpp"
+#include "sid.hpp"
 
 using lif::Player;
 using lif::TILE_SIZE;

@@ -2,9 +2,13 @@
 
 #include <algorithm>
 #include <memory>
+#include <utility>
+#include <vector>
+
 #include "Sighted.hpp"
 
 namespace lif {
+class Entity;
 
 /** A FreeSighted provides vision to its owner at any angle up to a certain radius.
  *  IMPORTANT: all returned pointers are guaranteed valid only until the next call to

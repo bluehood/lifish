@@ -1,7 +1,7 @@
+#include <string>
+
 #include "bullet.hpp"
-#include "AxisBullet.hpp"
-#include "FreeBullet.hpp"
-#include "core.hpp"
+#include "Bullet.hpp"
 
 std::map<unsigned, const lif::BulletData> lif::conf::bullet::data = {
 	//// AxisBullets ////

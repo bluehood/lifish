@@ -1,7 +1,16 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/System/Vector2.hpp>
+
 #include "Entity.hpp"
+
+namespace sf {
+class Color;
+class RenderTarget;
+}  // namespace sf
 
 namespace lif {
 

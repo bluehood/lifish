@@ -1,3 +1,16 @@
+#include <assert.h>
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/Texture.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/Mouse.hpp>
+#include <algorithm>
+
 #include "Screen.hpp"
 #include "GameCache.hpp"
 #include "Interactable.hpp"
@@ -5,6 +18,14 @@
 #include "ScreenBuilder.hpp"
 #include "core.hpp"
 #include "utils.hpp"
+#include "Direction.hpp"
+#include "JoystickListener.hpp"
+#include "ShadedText.hpp"
+#include "WithOrigin.hpp"
+
+namespace sf {
+class Window;
+}  // namespace sf
 
 using lif::ui::Screen;
 

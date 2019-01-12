@@ -1,15 +1,25 @@
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Texture.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.inl>
+#include <random>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Fog.hpp"
 #include "Drawable.hpp"
 #include "FreeMoving.hpp"
-#include "GameCache.hpp"
 #include "Sprite.hpp"
 #include "Time.hpp"
 #include "ZIndexed.hpp"
 #include "conf/zindex.hpp"
 #include "game.hpp"
-#include "utils.hpp"
-#include <SFML/System.hpp>
-#include <random>
+#include "Entity.inl"
+#include "core.hpp"
 
 using lif::Fog;
 

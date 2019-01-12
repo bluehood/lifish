@@ -1,6 +1,9 @@
 #pragma once
 
+#include <SFML/System/Time.hpp>
+
 #include "Component.hpp"
+#include "Entity.hpp"
 
 namespace lif {
 

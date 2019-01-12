@@ -1,3 +1,16 @@
+#include <stddef.h>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.inl>
+#include <iostream>
+#include <algorithm>
+#include <array>
+#include <memory>
+#include <set>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
 #include "LevelLoader.hpp"
 #include "Animated.hpp"
 #include "AxisSighted.hpp"
@@ -5,33 +18,37 @@
 #include "FixedWall.hpp"
 #include "Level.hpp"
 #include "LevelManager.hpp"
-#include "LevelSet.hpp"
 #include "Player.hpp"
 #include "Teleport.hpp"
-#include "game.hpp"
 //#include "AlienBoss.hpp"
 #include "AI.hpp"
 #include "AcidPond.hpp"
-#include "Cage.hpp"
 #include "Coin.hpp"
-#include "DroppingBomb.hpp"
 #include "EnemyFactory.hpp"
 #include "Flare.hpp"
 #include "Flash.hpp"
 #include "GodEyeBoss.hpp"
 #include "HauntedStatue.hpp"
 #include "HauntingSpiritBoss.hpp"
-#include "LeapingMovement.hpp"
 #include "LevelEffects.hpp"
-#include "Lifed.hpp"
 #include "MainframeBoss.hpp"
 #include "RexBoss.hpp"
 #include "Spikes.hpp"
-#include "Sprite.hpp"
-#include "TimedLaser.hpp"
 #include "Torch.hpp"
 #include "TransparentWall.hpp"
-#include <iostream>
+#include "Enemy.hpp"
+#include "Entity.inl"
+#include "EntityGroup.hpp"
+#include "LevelTime.hpp"
+#include "Moving.hpp"
+#include "collision_layers.hpp"
+#include "core.hpp"
+#include "entity_type.hpp"
+
+namespace lif {
+class Lifed;
+class Sighted;
+}  // namespace lif
 
 using lif::TILE_SIZE;
 using lif::LevelLoader;

@@ -1,6 +1,14 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.inl>
+#include <map>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "Bullet.hpp"
 #include "Animated.hpp"
-#include "AxisMoving.hpp"
 #include "Collider.hpp"
 #include "Drawable.hpp"
 #include "GameCache.hpp"
@@ -9,9 +17,14 @@
 #include "ZIndexed.hpp"
 #include "conf/bullet.hpp"
 #include "conf/zindex.hpp"
-#include "game.hpp"
 #include "utils.hpp"
-#include <algorithm>
+#include "AnimatedSprite.hpp"
+#include "Animation.hpp"
+#include "Entity.inl"
+#include "Killable.hpp"
+#include "Moving.hpp"
+#include "core.hpp"
+#include "sid.hpp"
 
 using lif::Bullet;
 using namespace std::literals::string_literals;

@@ -1,11 +1,15 @@
 #pragma once
 
-#include "CollisionDetector.hpp"
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
 #include <memory>
 #include <vector>
 
+#include "CollisionDetector.hpp"
+
 namespace lif {
+class EntityGroup;
 
 constexpr static unsigned DEFAULT_SHCD_SUBDIVISIONS = 7;
 

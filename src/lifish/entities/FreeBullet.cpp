@@ -1,13 +1,20 @@
+#include <SFML/System/Vector2.inl>
+#include <cmath>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 #include "FreeBullet.hpp"
 #include "FreeMoving.hpp"
-#include "Killable.hpp"
 #include "conf/bullet.hpp"
 #include "core.hpp"
-#include "collision_layers.hpp"
-#include "Collider.hpp"
 #include "Drawable.hpp"
-#include "Animated.hpp"
-#include <cmath>
+#include "Angle.hpp"
+#include "Entity.inl"
+
+namespace lif {
+class Entity;
+}  // namespace lif
 
 using lif::FreeBullet;
 using lif::TILE_SIZE;

@@ -1,8 +1,11 @@
 #pragma once
 
+#include <functional>
+
 #include "Killable.hpp"
 
 namespace lif {
+class Entity;
 
 /**
  * A Temporary is a special Killable component which automatically checks

@@ -1,13 +1,22 @@
 #pragma once
 
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/Graphics/RenderTexture.hpp>
+#include <memory>
+#include <string>
+#include <vector>
+
 #include "LevelManager.hpp"
 #include "LevelSet.hpp"
 #include "SidePanel.hpp"
 #include "WinLoseHandler.hpp"
 #include "WindowContext.hpp"
-#include <memory>
-#include <string>
-#include <vector>
+
+namespace sf {
+class Event;
+class RenderTarget;
+class Window;
+}  // namespace sf
 
 namespace lif {
 

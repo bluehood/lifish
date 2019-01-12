@@ -1,7 +1,13 @@
+#include <SFML/Audio/SoundBuffer.hpp>
+#include <SFML/Audio/SoundSource.hpp>
+#include <SFML/Graphics/Font.hpp>
+#include <SFML/Graphics/Texture.hpp>
+#include <iostream>
+#include <utility>
+
 #include "GameCache.hpp"
 #include "Options.hpp"
 #include "core.hpp"
-#include <iostream>
 
 using lif::GameCache;
 

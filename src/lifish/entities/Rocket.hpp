@@ -1,8 +1,13 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+
 #include "AxisBullet.hpp"
+#include "Direction.hpp"
 
 namespace lif {
+class Entity;
+struct BulletInfo;
 
 class Rocket : public lif::AxisBullet {
 

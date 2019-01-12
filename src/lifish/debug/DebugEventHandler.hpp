@@ -2,6 +2,11 @@
 
 #include "EventHandler.hpp"
 
+namespace sf {
+class Event;
+class Window;
+}  // namespace sf
+
 namespace lif {
 
 class GameContext;

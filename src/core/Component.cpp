@@ -1,4 +1,5 @@
 #include "Component.hpp"
+#include "Entity.hpp"
 
 using lif::Component;
 

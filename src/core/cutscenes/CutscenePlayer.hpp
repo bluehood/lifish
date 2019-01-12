@@ -1,11 +1,22 @@
 #pragma once
 
-#include <vector>
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/System/Clock.hpp>
+#include <SFML/System/Time.hpp>
+#include <vector>
+
 #include "WindowContext.hpp"
 #include "Cutscene.hpp"
 #include "ShadedText.hpp"
 #include "EntityGroup.hpp"
+
+namespace sf {
+class Event;
+class RenderTarget;
+class Window;
+}  // namespace sf
 
 namespace lif {
 

@@ -1,9 +1,11 @@
+#include <SFML/System/Time.hpp>
+#include <fstream>
+
 #include "CutsceneBuilder.hpp"
 #include "Options.hpp"
 #include "json.hpp"
-#include <fstream>
-#include <utility>
 #include "core.hpp"
+#include "Cutscene.hpp"
 
 using lif::CutsceneBuilder;
 using json = nlohmann::json;

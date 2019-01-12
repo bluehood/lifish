@@ -1,7 +1,20 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <string>
+
 #include "Component.hpp"
+#include "Entity.hpp"
+
+namespace sf {
+class RenderTarget;
+class Texture;
+}  // namespace sf
 
 namespace lif {
 

@@ -1,9 +1,14 @@
+#include <memory>
+#include <unordered_map>
+
 #include "TransparentWall.hpp"
-#include "game.hpp"
 #include "Collider.hpp"
 #include "ZIndexed.hpp"
 #include "Sounded.hpp"
 #include "conf/zindex.hpp"
+#include "Entity.inl"
+#include "collision_layers.hpp"
+#include "core.hpp"
 
 using lif::TransparentWall;
 

@@ -1,9 +1,17 @@
 #pragma once
 
-#include "Entity.hpp"
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <array>
 #include <memory>
+
+#include "Entity.hpp"
+
+namespace sf {
+class RenderTarget;
+}  // namespace sf
 
 namespace lif {
 

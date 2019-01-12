@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SFML/System.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <memory>
 #include <vector>
 #include <unordered_map>
@@ -7,7 +9,8 @@
 #include <typeindex>
 #include <algorithm>
 #include <utility>
-#include <SFML/System.hpp>
+#include <string>
+
 #include "Activable.hpp"
 #include "WithOrigin.hpp"
 #include "Stringable.hpp"

@@ -1,10 +1,15 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+
 #include "GuidedBullet.hpp"
+#include "Angle.hpp"
 
 namespace lif {
 
 class Drawable;
+class Entity;
+struct BulletInfo;
 
 class Missile : public lif::GuidedBullet {
 

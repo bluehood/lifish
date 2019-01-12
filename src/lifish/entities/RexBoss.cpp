@@ -1,3 +1,14 @@
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Rect.inl>
+#include <SFML/System/Vector2.inl>
+#include <algorithm>
+#include <cassert>
+#include <random>
+#include <memory>
+#include <stdexcept>
+#include <unordered_map>
+#include <utility>
+
 #include "RexBoss.hpp"
 #include "AI.hpp"
 #include "Animated.hpp"
@@ -7,7 +18,6 @@
 #include "BulletFactory.hpp"
 #include "Collider.hpp"
 #include "Drawable.hpp"
-#include "Enemy.hpp"
 #include "FreeSighted.hpp"
 #include "HurtDrawProxy.hpp"
 #include "LeapingMovement.hpp"
@@ -20,14 +30,20 @@
 #include "Scored.hpp"
 #include "Sounded.hpp"
 #include "Time.hpp"
-#include "ai_functions.hpp"
 #include "ai_helpers.hpp"
 #include "camera_utils.hpp"
 #include "conf/boss.hpp"
 #include "conf/enemy.hpp"
-#include <algorithm>
-#include <cassert>
-#include <random>
+#include "AnimatedSprite.hpp"
+#include "Bullet.hpp"
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "Killable.hpp"
+#include "bonus_type.hpp"
+#include "collision_layers.hpp"
+#include "core.hpp"
+#include "sid.hpp"
+#include "utils.hpp"
 
 #define BIND(f) std::bind(&RexBoss:: f, this)
 

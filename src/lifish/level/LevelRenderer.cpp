@@ -1,12 +1,19 @@
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <unordered_map>
+#include <vector>
+#include <algorithm>
+#include <memory>
+#include <utility>
+
 #include "LevelRenderer.hpp"
 #include "Drawable.hpp"
 #include "Level.hpp"
 #include "LevelManager.hpp"
 #include "LevelNumText.hpp"
-#include "Sprite.hpp"
 #include "ZIndexed.hpp"
-#include <unordered_map>
-#include <vector>
+#include "Entity.hpp"
+#include "Entity.inl"
+#include "EntityGroup.hpp"
 
 using lif::LevelRenderer;
 

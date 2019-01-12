@@ -1,13 +1,20 @@
 #pragma once
 
+#include <SFML/System/NonCopyable.hpp>
+#include <SFML/System/Clock.hpp>
+#include <SFML/System/Time.hpp>
+#include <functional>
+#include <vector>
+
 #include "EntityGroup.hpp"
 #include "SHCollisionDetector.hpp"
-#include <SFML/System/NonCopyable.hpp>
+#include "TimeStats.hpp"
 #ifdef MULTITHREADED
 #	include <mutex>
 #endif
 #ifndef RELEASE
 #	include "Stats.hpp"
+
 #	define DBGSTART(name) \
 		dbgStats.timer.start(name)
 #	define DBGEND(name) \
@@ -18,6 +25,9 @@
 #endif
 
 namespace lif {
+class BaseLevelManager;
+class CollisionDetector;
+class Entity;
 
 class BaseLevelManager : private sf::NonCopyable {
 public:

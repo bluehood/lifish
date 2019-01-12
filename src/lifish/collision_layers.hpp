@@ -1,5 +1,7 @@
 #pragma once
 
+#include <array>
+
 #include "utils.hpp"
 
 namespace lif {
